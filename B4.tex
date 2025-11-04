@@ -1,0 +1,362 @@
+	
+	\lecture[Costruzione di condizioni di stabilità di Bridgeland per superfici, prendendo come esempio il caso K3. Tecnica di tilting per cuori di $t$-strutture per la costruzione di opportuni cuori per le condizioni di stabilità.]{2025-10-21}
+	
+		\section{Condizioni di stabilità su superfici}
+			
+		\begin{warn*}
+			Questa lezione è stata tenuta da \textbf{Filippo Papallo} (cioè da me).
+		\end{warn*}
+		
+		Lo scopo di oggi è quello di costruire condizioni di stabilità di Bridgeland
+		per una varietà $X$ di $\dim X > 1$. Non andremo molto lontano, in quanto
+		le costruzioni note riguardano solo $\dim X = 2$ e, congetturalmente, $\dim X =3$;
+		vedremo oggi il caso delle superfici.
+		
+		Nella scorsa lezione, Arvid ci ha parlato della varietà $Stab_{\Lambda,\nu}(C)$
+		delle condizioni di stabilità nel caso in cui $C$ sia una curva proiettiva liscia:
+		\begin{enumerate}[label=\roman*)]
+			\item se $C = \PP^{1}_{\C}$, \textbf{So Okada} ha dimostrato che 
+			$Stab_{\Lambda,\nu}(\PP^{1}_{\C}) \simeq \C^{2}$ e i muri sono
+			determinati dalle equazioni
+			\begin{align*}
+				Z(\Oo(k)) = Z(\Oo(k-1)[1])\,, \quad \text{ con } k \in  \Z;
+			\end{align*}
+			quindi, a meno di autoequivalenze, abbiamo il solo muro $Z(\Oo) = Z(\Oo(-1)[1])$
+			che separa la \emph{camera di Gieseker}, data da $Z(\Oo) < Z(\Oo(-1)[1])$,
+			con la camera $Z(\Oo) > Z(\Oo(-1)[1])$ in cui
+			gli unici oggetti semistabili sono $\Oo^{\oplus m}$ e $\Oo(-1)^{\oplus m'}[1]$.
+			\item se $C$ è una curva di genere positivo, 
+			allora $Stab_{\Lambda,\nu}(C) = \sigma_{C} \cdot \widetilde{\GL}_{2}^{+}(\R)$,
+			dove $\sigma_{C} = (\Coh(C), -\rk + i \deg)$ è la condizione standard
+			vista in \textbf{\Cref{ex:curve-bridgeland}}; in altri termini,
+			su una curva tutte le condizioni di stabilità di Bridgeland sono
+			equivalenti alla nozione di $\mu$-stabilità in senso classico.
+		\end{enumerate}
+		
+		
+		Abbiamo visto infatti che in queste situazioni $\Coh(C)$ 
+		è un cuore accettabile per una possibile $\sigma \in Stab_{\Lambda,\nu}(C)$, 
+		ma non appena $\dim X \ge 2$, per il \textbf{\Cref{lemma:Toda-num}} questo fallisce.
+		Quindi, il problema non è che non abbiamo trovato la giusta carica centrale $Z$:
+		il fatto è che dobbiamo cambiare categoria!
+		
+		\begin{oss}
+			Questo non è vero nel caso di varietà non-proiettive:
+			infatti, se $X$ è una superficie K3 con $\Pic(X) = 0$,
+			allora $\Coh(X)$ può essere il cuore per una condizione di stabilità:
+			infatti, basta prendere $z:=\alpha + i\beta$ con $\beta > 0$
+			e per $\cat{v}(E) = (r,0,a)$ definire $Z(E) = -rz-a$.
+			In questa situazione, \textbf{Huybrechts, Macrì} e \textbf{Stellari}
+			hanno dimostrato che $Stab(X)$ è connessa e semplicemente connessa.
+		\end{oss}
+		
+			I primi esempi di costruzione di condizioni su una superficie $S$ sono stati 
+		trovati da Bridgeland stesso per le superfici K3 proiettive e abeliane, 
+		nell'articolo \cite{B-stab-k3}, e poi generalizzato da \textbf{Arcara} e \textbf{Bertram}
+		per superfici \emph{K-triviali}\footnote{...anche se Macrì afferma che la costruzione valga per \emph{tutte} le superfici proiettive lisce.}. Data $S$ una superficie K3 proiettiva,
+		il suo scopo principale nell'articolo è quello
+		di studiare il gruppo delle autoequivalenze $\Aut(\Db{S})$ e, per farlo,
+		caratterizza esplicitamente le condizioni di stabilità $Stab^{\dagger}(S)$
+		di una speciale componente connessa di $Stab(S)$ e come si comportano
+		i vari pezzi della sua frontiera sotto l'azione di $\Aut(\Db{S})$.
+		
+		\begin{df}
+			Una \textbf{superficie K3} è una superficie complessa $S$ compatta, 
+			semplicemente connessa, con canonico banale $\Omega_{S}^{2} \simeq \Oo_{S}$.
+			Più in generale, si può definire una \textbf{superficie K3 algebrica} su un campo $k$
+			come una varietà completa, non singolare, di $\dim S = 2$ tale che
+			\begin{align*}
+				\Omega_{S|k}^{2} \simeq \Oo_{S} \,, \quad H^{1}(S;\Z) = 0\,.
+			\end{align*}
+		\end{df}
+		
+		Prima di entrare nei dettagli tecnici della costruzione, seguiamo l'idea di Bridgeland,
+		come spiegata nell'introduzione del suo articolo.
+		Data $S$ una K3, vogliamo studiarne le condizioni di stabilità \emph{numeriche},
+		quindi consideriamo il suo \textbf{reticolo di Mukai algebrico}
+		$$\Lambda := H^{*}_{alg}(S;\Z) = H^{0}(S;\Z) \oplus \operatorname{NS}(S) \oplus H^{4}(S;\Z) \,,$$
+		che è isometrico al gruppo di Grothendieck numerico di $S$ 
+		tramite il \textbf{carattere di Chern}
+		\begin{align*}
+			\cat{v} : K_{num}(S) &\longrightarrow H^{*}_{alg}(S;\Z)\,, \\
+			\cat{v}([E]) := \ch(E) \smile \sqrt{\td(S)} &= (\rk(E), c_{1}(E), \rk(E) + \ch_{2}(E))\,,
+		\end{align*}
+		dato che $\sqrt{\td(S)} = (1,0,1)$. 
+		Supponiamo ora che $Stab(S) = Stab_{(H^{*}_{alg}, \cat{v})}(S)$ sia non vuoto.
+		Siccome siamo in spazi finito-dimensionali con prodotto scalare,
+		possiamo riscrivere l'omeomorfismo locale $\Zz$ in \eqref{local-homeo} come
+			\begin{equation*}
+				\Zz : Stab(S) \longrightarrow (H^{*}_{alg}(S;\Z) \otimes \C)^{\vee} \,,
+				\quad \Zz(\sigma) = \langle \cat{v}(\sigma), - \rangle\,, 
+			\end{equation*}
+		per un unico vettore 
+		$\cat{v}(\sigma) \in \C \oplus (\operatorname{NS}(S) \otimes \C) \oplus \C$.
+		All'interno di questo spazio vettoriale, andiamo a considerare solo i vettori
+		\begin{equation}
+			\Pp(S) := \Set{ \cat{w} \in \Lambda \otimes \C \, 
+			| \, \Span_{\R}\{ \Re \cat{w}, \Im \cat{w} \} \text{ è un piano definito positivo in } \Lambda \otimes \R }\,.
+		\end{equation}
+		
+		\begin{ex*}
+			Per ogni $\omega \in Amp(S)_{\R}$ la classe 
+			$e^{i\omega} = \left(1, i\omega, \frac{- \omega^{2}}{2}\right)$
+			appartiene in $\Pp(S)$ poiché 
+			\begin{align*}
+				\langle \Re e^{i\omega}, \Im e^{i\omega} \rangle
+				= \langle \left(1, 0, \frac{- \omega^{2}}{2}\right), 
+				\left(0, \omega, 0 \right) \rangle = 0\,, \quad \text{ e } \quad
+				(\Re e^{i\omega})^{2} = (\Im e^{i\omega})^{2} = \omega^{2} > 0\,.
+			\end{align*}
+			Inoltre, un conto veloce mostra che, per ogni $B \in \operatorname{NS}(S) \otimes \R$,
+			la moltiplicazione $e^{-B} \smile -$ è una 
+			trasformazione ortogonale di $H^{*}_{alg}(S;\Z) \otimes \R$, quindi tutti i vettori
+			della forma
+			$$e^{-B + i\omega} = \left(1, -B + i\omega, \frac{B^{2} - \omega^{2}}{2} - iB \cdot \omega \right)$$
+			appartengono a $\Pp(S)$.
+		\end{ex*}
+		
+		Per avere una descrizione più geometrica,
+		notiamo che anche $\GL_{2}^{+}(\R)$ agisce liberamente su $\Pp(S)$,
+		quindi $\Pp(S)$ può essere visto come un $\GL_{2}^{+}(\R)$-bundle sul quoziente.
+		Una possibile sezione di questo fibrato è data da
+		\begin{align*}
+			\Qq(S) := \Set{ \cat{w} = (w_{0}, w_{2}, w_{4}) \in \Lambda \otimes \C \, 
+			| \, \langle \cat{w}, \cat{w} \rangle = 0\,, \,
+			\langle \cat{w}, \overline{\cat{w}} \rangle > 0\,, \, w_{0} = 1 }\,,
+		\end{align*}
+		che ci descrive l'insieme delle condizioni di stabilità 
+		\emph{a meno dell'azione di $\GL_{2}^{+}(\R)$}. 
+		Questo insieme $\Qq(X)$ si identifica con il dominio tubolare 
+		$\Set{-B + i\omega \in \operatorname{NS}(S) \otimes \C \,|\, \omega^{2} > 0}$
+		tramite la mappa esponenziale. Detta $\Pp^{+}(S)$ la componente connessa
+		di $\Pp(S)$ che contiene le classi $e^{-B + i\omega}$, 
+		con $\omega$ ampio come nell'\textbf{Esempio}, questa ci dà una descrizione
+		esplicita di un pezzo di $Stab(S)$.
+		
+		\begin{thm}[\textbf{Bridgeland}]
+			Sia $\Delta := \Set{\delta \in H^{*}_{alg}(S;\Z) \, | \, \delta^{2} = -2}$ l'insieme
+			delle \emph{classi sferiche} e poniamo
+			\begin{equation*}
+				\Pp^{+}_{0}(S) := \Pp^{+} \setminus \bigcup_{\delta \in \Delta} \delta^{\perp}\,,
+				\quad Stab^{\dagger}(S) := \Zz^{-1}(\Pp^{+}_{0}(S))\,.
+			\end{equation*}
+			La mappa $\Zz : Stab^{\dagger}(S) \to \Pp^{+}_{0}(S)$ è un rivestimento.
+		\end{thm}
+		
+%		Le classi sferiche hanno un ruolo importante nella geometria delle K3
+%		e indotte dalle classi di \textbf{(-2)-curve}.
+%		La loro importanza, a livello derivato, è che inducono particolari
+%		autoequivalenze, dette \textbf{twist sferici}, la cui composizione
+%		può essere invisibile a livello coomologico (ma non a livello derivato).
+%		
+
+		In sintesi, questa linea di pensiero giustifica l'aspettativa che,
+		al variare di $\omega \in Amp(S)_{\R}$ e $B \in \operatorname{NS}(S)_{\R}$,
+		le funzioni della forma
+		\begin{equation*}
+			Z_{\omega, B} = \langle e^{-B + i \omega}, - \rangle
+		\end{equation*}
+		siano cariche centrali di una qualche condizione $\sigma_{\omega, B} \in Stab^{\dagger}(S)$.
+		In effetti sarà così, ma la cosa complicata da capire, a priori, 
+		è come costruire il cuore della condizione $\sigma_{\omega, B}$.
+		
+		
+		\section{Coppie di torsione}
+		
+			Gli appassionati di algebra non-commutativa e categorie triangolate
+			che ci sono a Padova, Verona, Praga e Murcia, conoscono
+			un metodo, chiamato \textbf{tilting}, 
+			per produrre $t$-strutture nuove da una già conosciuta.
+			Questo metodo prevede di sfruttare la relazione tra $t$-strutture 
+			e \textbf{teoria di torsione} che esistono per un cuore $\Aa$.
+			
+			\begin{df}
+				Sia $\Aa$ una categoria abeliana. Una \textbf{teoria di torsione} $(\Ff, \Tt)$
+				(o \textbf{coppia di torsione}) è una coppia di sottocategorie additive piene
+				$\Ff, \Tt \subset \Aa$ tali che $\Hom(\Tt,\Ff) = 0$ e,
+				per ogni oggetto $E \in \Aa$, esiste una (unica) sequenza esatta corta
+				\begin{equation*}
+					0 \longrightarrow T_{E} \longrightarrow E \longrightarrow F_{E} \longrightarrow 0\,,
+					\quad \text{ con } T_{E} \in \Tt\,, \, F_{E} \in \Ff\,.
+				\end{equation*}
+			\end{df}
+			
+			\begin{ex}
+				Data $X$ una varietà proiettiva liscia, 
+				la coppia $\Tt = \Set{\text{fasci su $X$ di torsione}}$
+				e $\Ff = \Set{\text{fasci su $X$ senza torsione}}$ definisce una teoria di torsione
+				in $\Coh(X)$.
+			\end{ex}
+			
+			
+			\begin{thm}[\textbf{Tilting}]
+				Sia $X$ una varietà proiettiva liscia. 
+				Dato $\Aa \subset \Db{X}$ il cuore di una $t$-struttura,
+				con coomologico $H_{\Aa}$,
+				e $(\Ff, \Tt)$ una teoria di torsione su $\Aa$, allora la
+				sottocategoria piena $\Aa^{\#}$, i cui oggetti sono i complessi $E \in \Db{X}$
+				tali che
+				\begin{equation}
+					H^{\Aa}_{0}(E) \in \Tt\,, 
+					\quad H_{\Aa}^{-1}(E) \in \Ff
+					\quad \text{ e }  H_{\Aa}^{p}(E) = 0 \text{ per ogni } p \notin \{0,-1\}\,,
+				\end{equation}
+				è il cuore di una $t$-struttura. 
+				Denoteremo il \textbf{cuore tiltato} $\Aa^{\#} = \langle \Ff[1], \Tt \rangle$.
+%				\begin{proof}[Idea]
+%					Infatti, ogni teoria di torsione definisce una $t$-struttura
+%					\begin{align*}
+%					\Dd^{\le 0} := \Set{ E \in \Db{\Aa} \, | \, \forall_{j > 0} \, H^{j}(E) = 0 
+%					\text{ e } H^{0}(E) \in \Tt}\,, \\
+%					\Dd^{\ge 0} := \Set{ E \in \Db{\Aa} \, | \, \forall_{j < -1} \, H^{j}(E) = 0 
+%					\text{ e } H^{-1}(E) \in \Ff}\,.
+%				\end{align*}
+%				\end{proof}
+			\end{thm}
+			
+			\begin{oss}
+				Essenzialmente, in $\Aa$ ogni oggetto $E$ siede in un triangolo esatto
+				$T \to E \to F$, con $(F,T) \in (\Ff, \Tt)$, e quindi rappresenta un elemento 
+				di $\Ext_{\Aa}^{1}(T,F)$. Quando tiltiamo, 
+				stiamo considerando estensioni nel senso opposto, cioè $E' \in \Db{X}$ che
+				siedono in mezzo a un triangolo della forma $F_{E'}[1] \to E'\to T_{E'}$,
+				con $F_{E'} \in \Ff$ e $T_{E'} \in \Tt$,
+				quindi rappresentano degli elementi in $\Ext^{1}_{\Aa}(T_{E'},F_{E'}[1])
+				= \Ext^{2}_{\Aa}(T_{E'},F_{E'})$.
+			\end{oss}
+			
+			Tornando al caso di $X = S$ una superficie (qualsiasi),
+			costruiamo una famiglia di teorie di torsione che dipendono da
+			$\omega \in Amp_{\R}$ e $B \in \operatorname{NS}(X) \otimes \R$.
+			Per prima cosa, twistando il carattere di Chern $\ch^{B} := e^{-B}\ch$,
+			possiamo definire una versione \emph{twistata} della classica \textbf{slope-stability}
+			considerando la pendenza
+			\begin{equation*}
+				\mu_{\omega,B}(E) := \frac{\omega \cdot \ch^{B}_{1}(E)}{\omega^{2} \rk(E)} =
+				\frac{\omega \cdot c_{1}(E)}{\omega^{2} \rk(E)} - \frac{\omega \cdot B}{\omega^{2}}\,;
+			\end{equation*}
+			siccome il secondo termine non dipende da $E$, è chiaro che la 
+			$\mu_{\omega,B}$-(semi)stabilità coincide con la classica $\mu_{\omega}$-(semi)stabilità.
+			L'utilità di $B$ risiede nel poter definire diverse teorie di torsione:
+			infatti, definiamo una coppia $(\Ff_{\omega,B}, \Tt_{\omega,B})$ `\emph{troncando}'
+			la filtrazione di HN rispetto all'equazione $\mu_{\omega,B} = 0$,
+			o più precisamente definiamo
+			\begin{align*}
+				\Tt_{\omega, B} :=& \Set{ E \in \Coh(X) \,| \, \forall_{q} \: \mu_{\omega}(\operatorname{HN}_{q}(E)) > \omega \cdot B } \\
+				\Ff_{\omega, B} :=& \Set{E \in \Coh(X) \,| \, \forall_{q} \: \mu_{\omega}(\operatorname{HN}_{q}(E)) \le \omega \cdot B}\,.
+			\end{align*}
+			Allora $(\Ff_{\omega,B}, \Tt_{\omega,B})$ è una teoria di torsione
+			per quanto sappiamo su $\mu_{\omega}$, e quindi possiamo tiltare 
+			$\Coh(X)$ rispetto a questa coppia per ottenere il cuore
+			\begin{equation}\label{Coh-wB}
+				\Coh^{\omega,B}(S) := \langle \Ff_{\omega,B}[1], \Tt_{\omega,B} \rangle\,.
+			\end{equation}
+			
+			Adesso che abbiamo un cuore e una possibile carica centrale,
+			vogliamo convincerci che la coppia
+			 $\sigma_{\omega,B} = (\Coh^{\omega,B}(S), Z_{\omega, B})$
+			sia una condizione di stabilità di Bridgeland,
+			usando il \textbf{\Cref{thm:equivalent-df-stab}}.
+			Si dimostra che, per una \textbf{classe razionale} 
+			$B \in \operatorname{NS}(S) \otimes \Q$,
+			la categoria $\Coh^{\omega,B}(S)$ è noetheriana;
+			quindi, alla luce del \textbf{\Cref{thm:discrete-Z}}, per costruire
+			una condizione di stabilità nel senso della \textbf{\Cref{df:stab}}
+			è sufficiente trovare una funzione
+			di stabilità $Z_{\omega,B}$ con $\Im Z_{\omega,B}$ discreto in $\R$.
+			Dall'introduzione, sappiamo che deve essere della forma 
+			$Z_{\omega,B}([E]) = \langle \cat{v}(\omega,B), \cat{v}(E) \rangle$
+			e un candidato appetibile è
+			\begin{equation*}
+				Z_{\omega,B}([E]) = \langle e^{-B+i\omega}, \cat{v}(E) \rangle
+				= - \int_{X} e^{i\omega} \smile \ch^{B}(E)\,,
+			\end{equation*}
+			che esplicitamente, per $\cat{v} = (r, c, a) \in \Lambda$ appare come 
+			\begin{equation}\label{ZwB-explicit}
+				Z_{\omega,B}(\cat{v}) = \left( - a + c \cdot B + r\frac{\omega^{2} - B^{2}}{2} \right) + i \omega \cdot (c - rB)\,.
+			\end{equation}
+			
+			\begin{prop}
+				Per ogni $\omega \in Amp_{\R}$ e $B \in \operatorname{NS}(S) \otimes \Q$,
+				la $Z_{\omega, B}$ è una funzione di stabilità su $\Coh^{\omega,B}(S)$.
+%				\begin{proof}
+%					Idea...
+%				\end{proof}
+			\end{prop}
+			
+			Per avere una condizione di stabilità di Bridgeland è necessario verificare, infine,
+			la \textbf{proprietà del supporto}: equivalentemente, 
+			è sufficiente trovare una forma quadratica 
+			definita positiva sugli oggetti semistabili, ma questa è data\footnote{Non è proprio questo il discriminante che va bene per tutti gli $\omega,B$,
+			 ma è quello che funziona per il piano $(\alpha, \beta)$ ed è già molto utile nelle applicazioni.} dal \textbf{discriminante twistato}
+				\begin{equation}
+					\Delta^{B}_{\omega}(E) := (\omega \cdot \ch_{1}^{B}(E))^{2} - 2 \omega^{2} \ch_{0}^{B}(E) \ch_{2}^{B}(E) \,,
+				\end{equation}
+			come conseguenza della \textbf{disuguaglianza di Bogomolov},
+			che afferma $\Delta^{B}_{\omega}(E) \ge 0$ 
+			per ogni $E$ fascio $\mu_{\omega}$-semistabile. 
+			Inaspettatamente, la disuguaglianza vale anche per oggetti $Z_{\omega, B}$-semistabili, 
+			dopo aver svelato il legame tra la stabilità di Bridgeland e la $\mu_{\omega}$-stabilità:
+			
+			\begin{lemma}[\textbf{Large Volume Limit}]\label{LVL}
+				Un oggetto $E \in \Coh^{\omega,B}(S)$ è $\sigma_{\alpha \cdot \omega, B}$-semistabile
+				per ogni $\alpha \gge 0$ se e solo se $E$ è lo shift
+				di un fascio $\mu_{\omega,B}$-semistabile. In altre parole: per $\alpha > 0$ tanto
+				grande, la Bridgeland stabilità coincide con la slope-stability twistata.
+				\begin{proof}[Idea]
+					La funzione $Z_{\omega, B}$ definisce la pendenza
+					\begin{equation}
+						\nu_{\omega,B}(E) = \frac{\ch_{2}^{B}(E)}{\omega \cdot \ch_{1}^{B}(E)}
+						- \frac{\omega^{2} \rk(E)}{2\omega \cdot \ch_{1}^{B}(E)}\,.
+					\end{equation}
+					Ora, per ogni $\alpha > 0$, un oggetto è $\nu_{\alpha \cdot \omega,B}$-(semi)stabile
+					se e solo se è $\frac{2}{\alpha}\nu_{\alpha \cdot \omega,B}$-(semi)stabile.
+					Ma allora prendere $\alpha \gge 0$ significa considerare il limite
+					\begin{align*}
+						\lim_{\alpha \to +\infty} \frac{2}{\alpha} \nu_{\alpha \omega,B}(E)
+						&= \lim_{\alpha \to +\infty} \frac{2 \ch_{2}^{B}(E)}{ \alpha^{2} \,\omega \cdot \ch_{1}^{B}(E)}
+						- \frac{2 \alpha^{2} \omega^{2} \rk(E)}{2 \alpha^{2} \, \omega \cdot \ch_{1}^{B}(E)} \\ &=
+						- \frac{\omega^{2} \rk(E)}{\omega \cdot \ch_{1}^{B}(E)} = - \frac{1}{\mu_{\omega, B}(E)}\,,
+					\end{align*}
+				quindi le disuguaglianze della semistabilità sono essenzialmente le stesse;
+				la parte difficile è che bisogna fare attenzione 
+				alla nozione di \emph{sottofascio} in $\Coh(S)$ e
+				$\Coh^{\alpha \omega, B}(S)$, in quanto sono diverse.
+				\end{proof}
+			\end{lemma}
+			
+			\begin{rmk}[per Arvid]
+				Non so perché si chiami Large Volume Limit.
+			\end{rmk}
+			
+			
+			Siccome $\Delta^{B}_{\omega}$ è una forma quadratica che testimonia 
+			la proprietà del supporto, segue che 
+			$\sigma_{\omega,B} := (\Coh^{\omega,B}(S), Z_{\omega, B})$
+			è una condizione di stabilità di Bridgeland su $\Db{S}$.
+			
+			Per poter concludere che la mappa
+			\begin{equation*}
+				\sigma : Amp(S)_{\R} \times \operatorname{NS}(S)_{\R} \longrightarrow Stab^{\dagger}(S)\,, \quad (\omega, B) \mapsto \sigma_{\omega,B}\,,
+			\end{equation*}
+			sia un embedding continuo, è necessario verificare che anche le
+			classi reali $B \in \operatorname{NS}(S)_{\R}$ danno condizioni di stabilità.
+			Per il \textbf{\Cref{thm:defo} di deformazione}, siamo sicuri che
+			anche dopo una piccola deformazione, $Z_{\omega, B}$ 
+			continua a dare una carica centrale per una condizione 
+			$\sigma_{\omega,B} = (\Aa, Z_{\omega,B}) \in Stab^{\dagger}(S)$;
+			la cosa sorprendente è che questa funzione di stabilità continua a essere
+			valida su un cuore $\Aa$ della forma $\Coh^{\omega,B}(S)$: infatti, queste
+			categorie ammettono la seguente caratterizzazione.
+			\begin{lemma}\label{lemma:heart-characterization}
+				Sia $\sigma = (\Aa, Z_{\omega, B})$ una condizione di stabilità 
+				che soddisfa la proprietà del supporto. 
+				Tutti i fasci grattacielo $\C(s)$ sono oggetti $\sigma$-stabili di fase $1$ 
+				(i.e. per ogni $s \in S$, $\mu_{\sigma}(\C(s)) = +\infty$) se e solo se
+				$\Aa = \Coh^{\omega,B}(S)$.
+			\end{lemma}
+			Dato che un fascio grattacielo ha vettore $\cat{v}(\C(s)) = (0,0,1)$,
+			la formula \eqref{ZwB-explicit} mostra che $Z_{\omega,B}(\C(s)) = -1$,
+			quindi il \textbf{\Cref{lemma:heart-characterization}} vale.
+			
+			

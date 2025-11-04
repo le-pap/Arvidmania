@@ -1,0 +1,327 @@
+
+	\lecture[Costruzione dello spazio delle condizioni di stabilità di Bridgeland.
+	Contestualizzazione dei problemi di rappresentabilità. Cenni di wall-crossing.]{2025-10-14}
+		
+		\section{Lo spazio delle condizioni di stabilità}
+		
+		Sia $X$ una varietà proiettiva liscia di dimensione $\dim X = n$,
+		$\Lambda$ un reticolo di rango finito fissato e $\nu : K_{0}(X) \to \Lambda$ un morfismo
+		surgettivo di gruppi. La scorsa volta abbiamo definito le 
+		\textbf{condizioni di stabilità di Bridgeland} rispetto a $\Lambda$ e $\nu$ 
+		in due modi equivalenti, vedi \textbf{\Cref{thm:equivalent-df-stab}}.
+%		vedi \textbf{\Cref{df:stab}} e \textbf{\Cref{df:slicing}}.
+		
+		\begin{oss}
+			Per una curva proiettiva liscia $C$ c'è sempre almeno una condizione di stabilità
+			$\sigma_{C} = (\Coh(C), Z)$, dove $Z([E]) := -\deg(E) + i \rk(E)$.
+			La categoria dei fasci $\Coh(C)$ è il cuore della $t$-struttura standard di $\Db{C}$
+			e $Z$ è una condizione di stabilità su $\Coh(C)$. Preso $\Lambda = K_{num}(C)$,
+			tensorizzando con $\R$ possiamo vedere che il carattere di Chern dà un isomorfismo
+			\begin{equation*}
+				\Lambda \otimes_{\Z} \R \longrightarrow H^{0}(C;\R) \oplus H^{2}(C; \R) \simeq \R^{2}\,,
+				\quad \ch([E]) = (\rk(E), \deg(E))\,.
+			\end{equation*}
+			Se dotiamo $\Lambda \otimes_{\Z} \R$ della norma euclidea, allora notiamo che 
+			per ogni $0 \ne E \in \Coh(C)$ vale
+			\begin{equation*}
+				\frac{\lvert Z(E) \rvert}{\lVert \nu(E) \rVert} = 1 \quad \implies \quad
+				\inf \Set{\frac{\lvert Z(E) \rvert}{\lVert \nu(E) \rVert} \, | \, 0 \ne E \in \Coh(C)} = 1
+			\end{equation*}
+			e quindi la proprietà del supporto in \eqref{supp-abeliana} è verificata, 
+			concludendo la dimostrazione che $\sigma_{C}$ è una condizione di stabilità di Bridgeland su $C$.
+		\end{oss}
+		
+		Quindi saremmo tentati di dire che le condizioni di stabilità di Bridgeland 
+		sono generalizzazioni della stabilità... Ma non è proprio così:
+		\emph{le condizioni di stabilità di Bridgeland 
+		sono generalizzazioni della stabilità sulle \textbf{curve}}.
+		
+		\begin{notation*}
+			Se $\sigma = (\Pp, Z)$ è una condizione di stabilità nel senso 
+			della \textbf{\Cref{df:slicing}}, per ogni $E \in \Dd$, 
+					esistono numeri reali $\phi_{1} > \dots > \phi_{m}$, detti \textbf{fasi},
+					univocamente determinati dalla filtrazione di HN in iii) 
+					della \textbf{\Cref{df:slicing}}; noi saremo interessati
+					principalmente alla fase massima e quella minima, che denotiamo 
+					rispettivamente come
+					\begin{equation*}
+						\phi^{+}_{\sigma} := \phi_{1}\,, \quad \phi^{-}_{\sigma} := \phi_{m}\,.
+					\end{equation*}
+		\end{notation*}
+		
+		\begin{notation*}
+			Se $\sigma = (\Pp, Z)$, allora andiamo a dotare $Z \in \Hom(\Lambda, \C)$
+			della \textbf{norma operatoriale} ereditata da $\Hom(\Lambda \otimes_{\Z} \R, \C)$,
+			cioè
+			\begin{equation*}
+				\lVert Z \rVert := \sup \Set{\frac{\lvert Z(\nu(E)) \rvert}{\lVert \nu(E) \rVert} \, | \, \phi \in \R \text{ e } 0 \ne E \in \Pp(\phi)}\,.
+			\end{equation*}
+			Notiamo che la formula nella definizione è la stessa che 
+			definisce la costante $C_{\sigma}$ in \eqref{df:support}. 
+%			garantita dalla proprietà di supporto
+%			\begin{equation}
+%				C_{\sigma} := \inf \Set{\frac{\lvert Z(\nu(E)) \rvert}{\lVert \nu(E) \rVert} \, | \, \phi \in \R \text{ e } 0 \ne E \in \Pp(\phi)} > 0\,.
+%			\end{equation}
+			Richiedere che $C_{\sigma} > 0$ è equivalente all'esistenza di 
+			una forma bilineare simmetrica 
+				\begin{equation*}
+					Q : (\Lambda \otimes_{\Z} \R) \times (\Lambda \otimes_{\Z} \R) \longrightarrow \R
+				\end{equation*}
+			tale che:
+			\begin{enumerate}
+				\item se $E$ è $\sigma$-semistabile, allora $Q(\nu(E), \nu(E)) \ge 0$;
+				\item se $\alpha \in \Lambda$ è tale che $Z(\alpha)=0$, allora $Q(\alpha, \alpha)<0$.
+			\end{enumerate}
+		\end{notation*}
+		
+		Data $X$ una varietà proiettiva liscia e $\Lambda$ un reticolo di rango finito
+		con $\nu : K_{0}(X) \to \Lambda$ surgettiva, poniamo
+		\begin{equation*}
+			Stab_{\Lambda, \nu}(X) := \Set{ \sigma = (\Pp, Z) \, | \, \sigma \text{ è una condizione di stabilità di Bridgeland } }\,.
+		\end{equation*}	
+		Per esperienza con il caso della stabilità classica,
+		si sospetta che $Stab$ non debba essere solo un insieme, 
+		ma in realtà abbia una
+		struttura in più.
+		Supponiamo (anche se non è così) che la stabilità di Bridgeland
+		generalizzi la $\mu$-stabilità vista nella prima lezione: 
+		data $X$ una superficie, per la $\mu$-stabilità
+		serve una \textbf{classe di K\"ahler} $\omega$, con cui si definisce
+		\begin{equation*}
+			\mu_{\omega}(E) := \frac{c_{1}(E) \cdot \omega^{n-1}}{\rk(E)}\,.
+		\end{equation*}
+		Ma allora possiamo identificare ``$Stab_{\mu}(X) = Kah(X)$'' con il cono di K\"ahler
+		della varietà, che è una varietà topologica! Quindi, se stiamo davvero generalizzando
+		questa idea, vorremmo che le condizioni di stabilità formino una varietà.
+		In realtà, la topologia su $Stab$ è anche indotta da una \textbf{distanza generalizzata}
+		\begin{equation*}
+			d_{\Lambda,\nu} : Stab_{\Lambda, \nu}(X) \times Stab_{\Lambda, \nu}(X) \longrightarrow
+			\R \cup \{ + \infty \}\,,
+		\end{equation*}
+		dove la distanza tra due condizioni $\sigma_{1}$ e $\sigma_{2}$ è data da
+		\begin{equation}\label{df:dist}
+			d_{\Lambda,\nu}(\sigma_{1}, \sigma_{2}) = 
+			\sup \Set{ \lvert \phi_{1}^{+}(E) - \phi_{2}^{+}(E) \rvert, \, 
+			\lvert \phi_{1}^{-}(E) - \phi_{2}^{-}(E) \rvert,\,
+			\lVert Z_{1}(E) - Z_{2}(E) \rVert}\,.
+		\end{equation}
+		
+		\begin{thm}[\textbf{di deformazione di Bridgeland}]\label{thm:defo}
+			Se $Stab_{\Lambda, \nu}(X)$ è non vuoto 
+			ed è dotata della topologia indotta da $d_{\Lambda,\nu}$,
+			allora la mappa
+			\begin{equation}\label{local-homeo}
+				\Zz : Stab_{\Lambda, \nu}(X) \longrightarrow \Hom(\Lambda \otimes \R, \C)\,,
+				\quad \sigma = (\Pp, Z) \longmapsto Z 
+			\end{equation}
+			è un omeomorfismo locale. In particolare, $Stab_{\Lambda, \nu}(X)$ è
+			una varietà complessa di dimensione $\rk(\Lambda)$.
+		\end{thm}
+		
+		Il fatto che lo spazio delle condizioni di stabilità di Bridgeland (su una qualsiasi
+		categoria triangolata) sia \textbf{non vuoto} è un problema non banale,
+		e ci sono articoli che studiano quando è vuoto o no; altre proprietà
+		topologiche di questo spazio non sono note in generale.
+		
+		\begin{oss}
+			Ci sono due azioni di gruppo su $Stab_{\Lambda, \nu}(X)$:
+			\begin{enumerate}[label=\roman*)]
+				\item il gruppo 
+				$\Aut_{\Lambda,\nu}(\Db{X}) := \Set{F : \Db{X} \to \Db{X} \, | \,
+					\nu \circ F^{K} = \nu }$ delle autoequivalenze che preservano
+					$\nu$, cioè tali che commuti il triangolo
+				\begin{equation*}
+					 \begin{tikzcd}
+						{K_{0}(X)} \ar[rr, "F^{K}"] \ar[dr, "\nu"'] & & {K_{0}(X)} \ar[dl, "\nu"] \\
+											&{\Lambda}& \,, 
+					\end{tikzcd}
+				\end{equation*}
+				agisce a sinistra tramite
+				\begin{align*}
+					\lambda : \Aut_{\Lambda,\nu}(\Db{X}) \times Stab_{\Lambda, \nu}(X) \longrightarrow
+					Stab_{\Lambda, \nu}(X)\,, \\
+					\quad \lambda(F, \sigma = (\Pp, Z)) = F(\sigma) := (F(\Pp), F(Z)) \,,
+				\end{align*}
+				dove $F(\Pp)$ è lo slicing dato da $F(\Pp)(\phi) := F(\Pp(\phi))$, 
+				per ogni $\phi \in \R$, mentre la carica centrale si ottiene per precomposizione
+				$F(Z) := Z \circ F^{K}$.
+				Si verifica facilmente che la filtrazione di HN esiste, 
+				in quanto la filtrazione in $F(\sigma)$ di un oggetto $E$ è
+				data dall'immagine attraverso $F$ della filtrazione in $\sigma$ di $F^{-1}(E)$;
+				
+				\item il rivestimento universale $\widetilde{\GL}_{2}^{+}(\R)$ di $\GL_{2}^{+}(\R)$
+				ha una descrizione esplicita come
+				\begin{equation}
+					 \widetilde{\GL}_{2}^{+}(\R) \simeq 
+					 \Set{ (T,f) \, | \substack{\, T \in \GL_{2}^{+}(\R), \, f:\R \to \R \text{ crescente tale che } \\ f(\phi +1) = f(\phi) + 1 
+					 \text{ e } T\vert_{S^{1}} = f\vert_{\R/\Z} } 
+					 }\,.
+				\end{equation}
+				Questo gruppo agisce a destra su $\sigma = (\Pp,Z) \in Stab_{\Lambda,\nu}(X)$ 
+				tramite la seguente formula: dato $a = (T,f) \in \widetilde{\GL}_{2}^{+}(\R)$,
+				definiamo $\sigma \cdot a = \sigma_{a} = (\Pp_{a},Z_{a})$ come la coppia
+				\begin{align*}
+					\Pp_{a} := \Set{\Pp(f(\phi)) \, | \, \phi \in \R }\,, \quad Z_{a} := T^{-1} \circ Z\,.
+				\end{align*}
+			\end{enumerate}
+		\end{oss}
+		
+		\begin{prop}
+			Se $X = C$ è una curva proiettiva liscia, allora $Stab_{\Lambda, \nu}(C)$
+			è noto:
+			\begin{itemize}
+				\item se $C = \PP^{1}_{\C}$, allora $Stab_{\Lambda, \nu}(\PP^{1}_{\C}) \simeq \C^{2}$,
+				dimostrato da \textbf{Okada} in \cite{OKADA};
+				\item se $C$ ha genere positivo, 
+				allora $Stab_{\Lambda, \nu}(C) = \sigma_{C} \cdot \widetilde{\GL}_{2}^{+}(\R)
+				\simeq \HH \times \C$.
+			\end{itemize}
+		\end{prop}
+		Quindi stiamo sì generalizzando le nozioni di stabilità sulle curve... ma mica tanto!
+		Se $\dim X \ge 2$, allora il problema di caratterizzare $Stab_{\Lambda, \nu}(X)$ 
+		è ancora aperto e si hanno solo risultati
+		parziali nel caso delle superfici K3, delle abeliane e poco altro.
+		
+		
+		
+		\subsection{Spazi di moduli}
+			
+			Data $X$ una varietà proiettiva liscia e $B$ uno schema localmente di tipo finito su $\C$.
+			\begin{df}
+				Un oggetto $E \in D(\cat{QCoh}(X \times B))$ è \textbf{$B$-perfetto} se,
+				per ogni $b \in B$, esiste un intorno aperto $U \subset B$  di $b$  tale che
+				$E\vert_{\operatorname{pr}^{-1}_{B}(U)}$ è isomorfo a un complesso finito
+				di fasci $U$-piatti.
+			\end{df}
+			
+			\begin{oss}
+				Quando $B = \Spec \C$, un oggetto perfetto è quasi-isomorfo
+				a un complesso limitato di fibrati vettoriali.			
+			\end{oss}
+			
+			Questa nozione permette di definire il funtore
+			\begin{equation*}
+				\xM : \underline{Sch} \longrightarrow \cat{Grp}\,, \quad 
+				B \longmapsto \Set{E \in D(\cat{QCoh}(X \times B)) \, | \, \substack{E 
+				\text{ è } B\text{-perfetto tale che } \\
+				\forall_{b \in B} \, \forall_{i<0}\, \Ee xt^{i}(E_{b},E_{b}) =0} }
+			\end{equation*}
+			
+			\begin{thm}[\textbf{Lieblich}]
+				$\xM$ è uno stack di Artin localmente di tipo finito,
+				localmente quasi separato e a diagonale separata.
+			\end{thm}
+			Per chi non ha idea di cosa sia uno stack, questo enunciato ha poco senso,
+			ma il nocciolo è che $\xM$ si comporta bene, quasi come uno schema.
+			Dentro $\xM$ possiamo andare a considerare il funtore che va a considerare
+			i complessi \textbf{semplici}
+			\begin{equation*}
+				\xM_{spl} : \underline{Sch} \longrightarrow \cat{Grp}\,, \quad 
+				B \longmapsto \Set{E \in \xM(B) \, | \, \forall_{b \in B} \, \End(E_{b}) \simeq \C }
+			\end{equation*}
+			che si verifica essere un sottostack aperto di $\xM$.
+			Se si mette una relazione d'equivalenza $\sim$ a $\xM$ visto come insieme, 
+			allora si \emph{fascifica lo stack} eliminandone gli automorfismi, 
+			e si ottiene così un funtore
+			\begin{equation*}
+				\underline{M_{spl}} : \underline{Sch} \longrightarrow \cat{Set}\,, \quad 
+				B \longmapsto \xM_{spl}(B)/\sim\,,
+			\end{equation*}
+			dove $E \sim E'$ se e solo se esiste $\Ll \in \Pic(B)$ 
+			tale che $E \simeq E'\otimes \operatorname{pr}_{B}^{*}\Ll$.
+			
+			\begin{thm}[\textbf{Inaba}]
+				Il funtore $\underline{M_{spl}}$ è rappresentabile
+				da uno spazio algebrico (non esattamente uno schema) 
+				localmente di tipo finito $M_{spl}$.
+			\end{thm}
+			
+			Questo risultato è la base tecnica per poter parlare di spazi di moduli su $X$.
+			Sia $\sigma = (\Pp,Z) \in Stab_{\Lambda, \nu}(X)$ e fissiamo $\alpha \in \Lambda$.
+			Vorremmo parametrizzare gli oggetti $\sigma$-semistabili di fase $\phi$,
+			e quindi che il nostro spazio dei moduli fosse
+			\begin{equation*}
+				\widehat{M}_{\sigma}(\alpha, \phi) := \Set{ E \in \Pp(\phi) \, | \, \nu(E) = \alpha}\,,
+			\end{equation*}
+			e analogamente denotiamo con $\widehat{M}_{\sigma}^{s}(\alpha, \phi)$ quello
+			dei fasci $\sigma$-stabili.
+			È lo spazio dei moduli che cerchiamo?
+			Più precisamente, stiamo considerando i funtori $\xM^{s}_{\sigma}(\alpha, \phi) \subset \xM_{\sigma}(\alpha, \phi) \subset \xM_{spl}$, con
+			\begin{equation*}
+				\xM_{\sigma}(\alpha, \phi)(B) := \Set{ E \in \xM_{spl}(B) \, | \, \forall_{b \in B} \, E_{b} \in \widehat{M}_{\sigma}(\alpha, \phi) }\,,
+			\end{equation*}
+			analogamente $\xM_{\sigma}^{s}(\alpha, \phi)(B)$ considera quelli $\sigma$-stabili,
+			e ci chiediamo se siano \textbf{aperti} di $\xM_{spl}$. 
+			In generale, la \textbf{risposta non si sa}: in casi particolari,
+			la risposta è affermativa grazie al lavoro di \textbf{Toda}.
+			Se invece andassimo a considerare i funtori a valori in $\cat{Set}$
+			\begin{equation*}
+				\underline{M}^{s}_{\sigma}(\alpha, \phi) \subset \underline{M}_{\sigma}(\alpha, \phi) \subset \underline{M}_{spl}\,,
+			\end{equation*}
+			ci chiediamo: sono rappresentabili? In caso affermativo, 
+			se sappiamo che gli stack associati sono aperti, allora abbiamo anche
+			delle inclusioni aperte di schemi
+			\begin{equation*}
+				{M}^{s}_{\sigma}(\alpha, \phi) \subset {M}_{\sigma}(\alpha, \phi) \subset {M}_{spl}\,.
+			\end{equation*}
+			
+			\begin{question*}
+				Cosa sono punti di questi spazi di moduli $\widehat{M}_{\sigma}(\alpha, \phi)$?
+				Parametrizzano classi di $S$-equivalenza?
+				\begin{proof}[Risposta parziale]
+					Negli esempi noti, la risposta è sempre sì:
+					\begin{itemize}
+						\item se $\dim X = 1$, allora abbiamo
+						che ${M}_{\sigma}(\alpha, \phi)$ (risp. ${M}^{s}_{\sigma}(\alpha, \phi)$)
+						è isomorfo allo spazio dei moduli di fasci 
+						$\mu$-semistabili (risp. $\mu$-stabili) su $C$,
+						quindi la risposta è affermativa;
+						\item se $\dim X = 2$, allora si hanno dei risultati sulla rappresentabilità
+						nei casi in cui $X$ sia $\PP^{2}, \PP^{1} \times \PP^{1}, Bl_{p}\PP^{2}$
+						e in alcuni casi in cui $X$ è una superficie K3, Enriques o abeliana.
+						In tutti questi casi, la risposta è affermativa.
+					\end{itemize}
+				\end{proof}
+			\end{question*}
+			
+			\subsection{Wall-crossing}
+				Dato $H$ un fibrato lineare ampio su $X$, 
+				se $E$ è un fascio $\mu_{H}$-stabile, per ogni $0 \ne F \subsetneq E$, 
+				possiamo riscrivere la disuguaglianza $\mu_{H}(F) < \mu_{H}(E)$ come
+				\begin{align}\label{mu-walls}
+					(\rk(E) c_{1}(F) - \rk(F) c_{1}(E)) \cdot H < 0\,. 
+				\end{align}
+				Quindi, per ogni sottofascio $F$ come sopra, possiamo definire il divisore su $X$
+				\begin{align*}
+					D_{E,F} := \rk(E) c_{1}(F) - \rk(F) c_{1}(E)\,,
+				\end{align*}
+				che per Hodge Index Theorem ha quadrato negativo; in particolare,
+				si può dimostrare che esiste $\alpha > 0$ tale che $-\alpha \le D_{E,F}^{2} < 0$
+				per ogni $F \subsetneq E$. Viceversa, 
+				se esistesse un divisore $D$ tale che $D \cdot H = 0$, potrebbe esserci la possibilità
+				che $D = D_{E,F}$ per un qualche fascio che destabilizza $E$: vado quindi a togliere
+				dal cono ampio queste polarizzazioni, cioè vado a considerare il complementare dei 
+				$D_{E,F}^{\perp}$ in $Amp(X)$, al variare di $F$. Questo arrangiamento
+				di iperpiani suddivide il cono ampio in \textbf{camere} in cui il segno del pairing
+				con i $D_{E,F}$ rimane costante: più precisamente, presa una camera 
+				$\Cc \subset Amp(X) \setminus \bigcup_{0 \ne F \subsetneq E} D_{E,F}^{\perp}$,
+				per ogni $H,H'\in \Cc$, allora
+				\begin{align*}
+					D_{E,F} \cdot H < 0 \quad \iff \quad D_{E,F} \cdot H' < 0\,.
+				\end{align*}
+				
+				Un'idea analoga vale anche per lo spazio delle condizioni di stabilità di Bridgeland:
+				infatti, ricordando che per una carica centrale $Z$
+				 la $\Im Z$ rappresenta il `\emph{rango}', 
+				 mentre la $-\Re Z$ fa le veci del `\emph{grado}',
+				 possiamo rimpiazzare l'equazione $D_{E,F} \cdot H =0$ con
+				 \begin{equation}
+				 	\Im Z(v_{0}) \Re Z(\nu(E)) - \Im Z(\nu(E)) \Re Z(v_{0}) = 0\,, \quad \text{con }
+				 	v_{0} \in \Lambda\,,
+				 \end{equation}
+				definendo in questo modo una sottovarietà reale di codimensione $1$ in $Stab_{\Lambda,\nu}(X)$. Si può dimostrare che l'insieme di queste sottovarietà, detti \textbf{muri numerici}, è localmente finita e divide $Stab_{\Lambda,\nu}(X)$ in camere, proprio come succedeva per il cono ampio.
+				In particolare, la nozione di stabilità rimane costante in ogni camera:
+				più precisamente, se $\Cc \subset Stab_{\Lambda,\nu}(X)$ è una camera e $\sigma, \sigma'\in \Cc$, allora
+				\begin{align*}
+					M_{\sigma}(X, \nu(E)) \simeq M_{\sigma'}(X, \nu(E))\,.
+				\end{align*}

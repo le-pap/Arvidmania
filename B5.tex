@@ -1,0 +1,502 @@
+	
+	\lecture[Applicazione della teoria di Bridgeland per lo studio del problema di Weak Brill-Noether.]{2025-10-04}
+		
+	\begin{warn*}
+			Continuiamo a camminare sui cocci di vetro perché anche questa 
+			lezione è stata tenuta da \textbf{Filippo Papallo} (cioè da me).
+	\end{warn*}		
+		
+		Nella lezione di oggi vedremo insieme un'applicazione delle 
+		condizioni di stabilità di Bridgeland
+		allo studio di un problema classico, quello di \emph{weak Brill-Noether}.
+		
+		\section{Wall-crossing per stabilità di Bridgeland}
+		
+			Sia $S$ una superficie complessa proiettiva 
+			e fissiamo $H$ un figrato lineare ampio su di essa.
+			La volta scorsa abbiamo visto che esiste un embedding continuo
+			\begin{equation*}
+				\sigma : \operatorname{NS}(S)_{\R} \times Amp(S)_{\R} \longrightarrow Stab^{\dagger}(S)\,, \quad (B, \omega) \mapsto \sigma_{\omega,B}\,,
+			\end{equation*}
+			che, in generale, non sarà surgettivo. Ma questo non è davvero un problema
+			per studiare gli spazi di moduli: infatti, 
+			abbiamo accennato alla divisione di $Stab^{\dagger}(S)$
+			in \emph{muri} e \emph{camere} e abbiamo accennato al fatto
+			che la nozione di stabilità rimane costante in ciascuna camera, 
+			analogamente a quanto accade
+			alla classica stabilità con la suddivisione del \emph{cono ampio}.
+			Quindi, possiamo accontentarci di studiare una fettina \textbf{bidimensionale}
+			di $Stab^{\dagger}(S)$, che da Macrì viene chiamata \textbf{piano $(\alpha,\beta)$},
+			ma io chiamerò \textbf{piano $(s,t)$}:
+				\begin{equation}
+					\sigma : \R \times (0,+\infty) \longrightarrow Stab^{\dagger}(S)\,,\quad
+					\sigma_{(s,t)} := \sigma_{tH, sH}\,.
+				\end{equation}
+			
+				Preso $E \in \Db{S}$, per ogni $\cat{w} \in K_{num}(S)$ i \textbf{muri numerici} 
+				per $E$	sono definiti dalle equazioni
+				\begin{equation}\label{formula:num-wall}
+					\Im Z_{t H, s H}(\cat{v}(E)) \Re Z_{tH, sH}(\cat{w})
+					= \Im  Z_{t H, sH}(\cat{w}) \Re Z_{tH, sH}(\cat{v}(E))\,,
+				\end{equation}
+				che, scritte esplicitamente, descrivono una quadrica in $s$ e $t$ facile da
+				studiare. A \textbf{Maciocia} è dovuta la caratterizzazione completa
+				della struttura dei muri per qualsiasi superficie $S$.
+				
+				\begin{thm}[\textbf{Struttura dei Muri per Superfici}]
+					Sia $\cat{v} \in K_{num}(S)$ fissato.
+					\begin{enumerate}[label=\roman*)]
+						\item Tutti i muri numerici per $\cat{v}$ sono semicerchi
+						con centro sull'asse $s$, oppure sono semirette verticali;
+						\item muri distinti non si intersecano;
+						\item se $\ch_{0}(\cat{v}) \ne 0$, allora il muro
+						verticale è unico ed è definito dall'equazione
+						\begin{equation}
+							s = \frac{H \cdot \ch_{1}(\cat{v})}{H^{2}\ch_{0}(\cat{v})}\,, \quad t > 0\,;
+						\end{equation}
+						In questo caso, tutti i muri semicircolari sono inscatolati, e giacciono da un solo lato del muro.
+						\item se $\ch_{0}(\cat{v}) = 0$, allora ci sono solo muri circolari
+						inscatolati.
+						\item se un muro numerico ha un punto in cui è un muro effettivo
+						(i.e. esiste un oggetto $E \in \Aa_{\sigma}$ che diventa strettamente semistabile), allora il muro numerico è un muro effettivo.
+					\end{enumerate}
+				\end{thm}
+				
+			Vale la pena sottolineare che non tutti i muri numerici ``dividono'' condizioni
+			di stabilità diverse: possono esistere muri \emph{superflui},
+			spesso chiamati \emph{fake walls}, e muri che, una volta attraversati,
+			trasformano gli spazi di moduli secondo fenomeni detti di \emph{wall-crossing}.
+			Stupefacentemente, in alcuni casi è possibile classificare esplicitamente la natura
+			di tutti i muri e le trasformazioni birazionali ad essi legate.
+			
+			\begin{df}
+				Fissato $\cat{v} \in K_{num}(S)$, sia $\Ww \subset Stab^{\dagger}(S)$
+				un muro per $\cat{v}$. Indichiamo con $\sigma_{0} \in \Ww$ una condizione sul muro,
+				mentre con $\sigma_{+}$ e $\sigma_{-}$ due condizioni che stanno in camere distinte,
+				separate da $\Ww$. Diremo che $\Ww$ è:
+				\begin{itemize}
+					\item un \textbf{fake wall} se in 
+					$M_{\sigma_{+}}(\cat{v})$ e $M_{\sigma_{-}}(\cat{v})$ non esistono curve
+					di oggetti S-equivalenti tra loro rispetto alla stabilità indotta 
+					da $\sigma_{0}$;
+					\item un \textbf{muro totalmente semistabile} 
+					se $M_{\sigma_{0}}(\cat{v}) = \emptyset$;
+					\item un \textbf{flopping wall} se esiste una \emph{flopping contration}
+					$M_{\sigma_{+}}(\cat{v}) \dashrightarrow M_{\sigma_{-}}(\cat{v})$;
+					\item un \textbf{muro divisoriale} se esiste una contrazione divisoriale
+					$\pi_{\pm} : M_{\sigma_{\pm}}(\cat{v}) \to \overline{M}_{\pm}$
+					verso una varietà proiettiva irriducibile e normale.
+				\end{itemize}
+			\end{df}
+			
+			Non mi soffermo sul significato delle definizioni per due motivi: il primo è che non 
+			conosco queste trasformazioni, note in geometria birazionale; il secondo è che
+			saremo interessati solamente ai \textbf{muri totalmente semistabili}.
+			
+			\begin{ex}\label{K3-walls}
+				Sia $S$ una superficie K3 proiettiva. 
+				Esistono molti risultati di classificazione degli spazi $M_{S,H}(\cat{v})$
+				in base al vettore di Mukai $\cat{v} = (r,c,a)$ fissato, e in particolare
+				\textbf{Bayer} e \textbf{Macrì} (tra gli altri) hanno portato
+				a conclusione lo studio degli spazi dei moduli di oggetti Bridgeland semistabili:
+				
+				\begin{prop}
+					Sia $\cat{v} = m \cat{v}_{0}$ con $m > 0$ e $\cat{v}_{0}$ una classe primitiva.
+					Supponiamo che $\sigma$ sia \textbf{$\cat{v}$-generica}, ovvero non giaccia
+					su alcun muro numerico per $\cat{v}$. Se $\cat{v}_{0}^{2} \ge -2$,
+					allora $M_{\sigma}(\cat{v}) \ne \emptyset$,  ha dimensione $\cat{v}^{2}+2$ 
+					e $M_{\sigma}^{s}(\cat{v}) \ne \emptyset$ 
+					(con l'eccezione $\cat{v}_{0}^{2} \le 0$ e $m > 1$). Inoltre,
+					se $\cat{v}_{0}^{2} > 0$, allora $M_{\sigma}(\cat{v})$ è
+					una varietà normale, proiettiva e irriducibile.
+				\end{prop}
+				
+				Ora che sappiamo quando i moduli esistono, concentriamoci sui muri.
+				Il \textbf{reticolo di Mukai} di $S$ è definito come
+				\begin{equation*}
+					H_{alg}^{*}(S; \Z) 
+					:= H^{0}(S; \Z) \oplus \operatorname{NS}(S) \oplus H^{4}(S; \Z) \,,
+				\end{equation*}
+				e il \textbf{vettore di Mukai}
+				\begin{equation*}
+					\cat{v} : K_{num}(S) \longrightarrow H_{alg}^{*}(S; \Z)\,, \quad
+					\cat{v}(E) := \ch(E) \smile \sqrt{\td(S)} 
+					= (\rk(E), c_{1}(E), \rk(E) + \ch_{2}(E))
+				\end{equation*}
+				induce un'isometria, dove il prodotto scalare è dato dal \textbf{pairing di Mukai}
+				\begin{equation*}
+					\langle (r,c,a), (r_{1},c_{1},a_{1}) \rangle := c \cdot c_{1}- ra_{1} - r_{1}a\,,
+				\end{equation*}
+				che dunque per $E,F \in \Coh(S)$ coincide con il prodotto di Eulero
+				\begin{equation*}
+					\langle \cat{v}(E), \cat{v}(F) \rangle 
+					= - \chi(E,F) = \sum_{p=0}^{2} (-1)^{p+1} \operatorname{ext}^{p}(E,F)\,.
+				\end{equation*}								
+				Nell'$(s,t)$-plane, la formula esplicita \eqref{ZwB-explicit} della carica centrale
+				diventa
+				\begin{equation*}
+				Z_{(s,t)}(\cat{v})  = \langle e^{sH + itH}, (r,c,a,) \rangle 
+				= \left( s(c \cdot H) - a - r H^{2} \frac{s^{2} - t^{2}}{2} \right) + i t H \cdot (c - rsH)\,,
+				\end{equation*}
+				pertanto, se $\cat{v}_{1} \in H^{*}_{alg}(S; \Z)$ è un altro vettore,
+				l'equazione \eqref{formula:num-wall} del muro per $\cat{v}$ definita da $\cat{v}_{1}$
+				si può riscrivere come:
+				\begin{equation}
+					 \frac{s^{2}+t^{2}}{2} [r_{1}(c \cdot H) - r (c_{1} \cdot H)] 
+					 - s(r_{1}a-ra_{1})
+					 = \frac{1}{H^{2}} [a_{1}(c \cdot H) - a (c_{1} \cdot H)]\,.
+				\end{equation}
+				Possiamo semplificare l'espressione come 
+				$\frac{\epsilon}{2}(s^{2}+t^{2}) - \gamma s = \frac{\delta}{H^{2}}$
+				ponendo
+				\begin{equation}\label{not:edg}
+					\epsilon := r_{1}(c \cdot H) - r (c_{1} \cdot H) \,, \quad
+					\delta := a_{1}(c \cdot H) - a (c_{1} \cdot H) \,, \quad
+					\gamma := r_{1}a-ra_{1} \,;
+				\end{equation}
+				si noti che $\epsilon = 0$ significa che $\cat{v}$ e $\cat{v}_{1}$ hanno la
+				stessa pendenza $\mu$ e, in tal caso, il muro identificato da $\cat{v}_{1}$
+				è verticale. Altrimenti, abbiamo una semicirconferenza centrata sull'asse $s$.
+				La seguente classificazione è dovuta a \textbf{Bayer} e \textbf{Macrì} \cite[\textbf{Theorem~{5.7}}]{BM-MMP}:
+				\begin{thm}
+					Supponiamo $\cat{v}^{2}>0$. Un muro numerico $\Ww \subset Stab^{\dagger}(S)$ dato dall'equazione \eqref{formula:num-wall} è totalmente semistabile se e solo se $\cat{w}$ soddisfa una delle due condizioni: 
+					\begin{itemize}
+						\item $\cat{w}^{2} = 0$ e $\langle \cat{v}, \cat{w} \rangle = 1$;
+						\item $\cat{w}^{2} = -2$, i.e. è una classe sferica effettiva, 
+						e $\langle \cat{v}, \cat{w} \rangle < 0$.
+					\end{itemize}
+				\end{thm}
+			\end{ex}
+			
+			\begin{ex}\label{Enriques-walls}
+				Sia $S$ una superficie di Enriques proiettiva. Ci concentreremo sul caso di una
+				generica Enriques \textbf{non-nodale}, i.e. $S$ non continene $(-2)$-curve;
+				in questo caso, il numero di Picard è $10$ e quindi il diamante di Hodge
+				appare così:
+				\begin{equation*}
+					\begin{tikzcd}[row sep = tiny, column sep = tiny]
+						& & 1 &  & \\
+						& 0 & & 0  & \\
+						0 & & 10 &  & 0 \\
+						& 0 & & 0  & \\
+						& & 1 &  & \,.
+					\end{tikzcd}
+				\end{equation*}
+				Per una tale $S$, consideriamo il reticolo
+				\begin{equation*}
+					\Lambda = H^{*}_{alg}(S; \Z) := \Set{ \left(r,c,\frac{a}{2} \right) \, | \, 
+					r, a \in \Z \text{ tali che } r \equiv_{2} a, \, c \in \operatorname{NS}(S)/\langle K_{X} \rangle }
+					\subset H^{*}(S; \Q)\,.
+				\end{equation*}
+				Ricordando che $\td(S) = (1,0,\frac{1}{2})$, notiamo che è ben definito
+				il vettore di Mukai
+				\begin{equation*}
+					\cat{v} : K_{num}(S) \longrightarrow H_{alg}^{*}(S; \Z)\,, \quad
+					\cat{v}(E) :=  
+					= (\rk(E), c_{1}(E), \frac{\rk(E)}{2} + \ch_{2}(E))\,,
+				\end{equation*}
+				compatibile con il pairing di Mukai
+				\begin{equation*}
+					\langle \left(r,c,\frac{a}{2}\right),\left(r_{1},c_{1},
+					\frac{a_{1}}{2}\right) \rangle := c \cdot c_{1}- \frac{ra_{1}}{2} - \frac{r_{1}a}{2}\,,
+				\end{equation*}
+				quindi è tutto formalmente simile al caso delle K3 e, in effetti, è compatibile:
+				detto $\pi : \widetilde{S} \to S$ il rivestimento universale $2 : 1$ dell'Enriques,
+				esso induce un embedding di reticoli:
+				\begin{equation*}
+					\pi^{*} : H_{alg}^{*}(S; \Z) \hookrightarrow H_{alg}^{*}(\widetilde{S}; \Z)\,,
+					\quad \text{ tale che } \langle \pi^{*} \cat{v}, \pi^{*} \cat{w} \rangle 
+					= 2 \langle \cat{v}, \cat{w} \rangle\,.
+				\end{equation*}
+				Fissato $\cat{v} \in  H_{alg}^{*}(S; \Z)$, usando
+				la notazione \eqref{not:edg}, l'equazione del muro individuato
+				da $\cat{v}_{1} = (r_{1}, c_{1}, \frac{a_{1}}{2})$ è
+					\begin{equation*}
+							\epsilon(s^{2}+t^{2}) - \gamma s = \frac{\delta}{H^{2}}\,.
+					\end{equation*}									
+				Lo studio degli spazi di moduli $M_{\sigma}(\cat{v})$ per le Enriques
+				è stato effettuato nel dettaglio da \textbf{Yoshioka}; non riporto qui
+				i criteri di esistenza, ma basti sapere che per $\cat{v}^{2} \ge 4$ e $\sigma$
+				condizione $\cat{v}$-generica, allora $M_{\sigma}(\cat{v})$ è non vuoto,
+				irriducibile e normale. La classificazione completa dei muri in $Stab^{\dagger}(S)$
+				è dovuta a \textbf{Nuer} e \textbf{Yoshioka} in \cite{NY-MMP}.
+				\begin{thm}\label{thm:K3-tss-walls}
+					Sia $S$ una generica Enriques non-nodale e $\cat{v} \in H^{*}_{alg}(S; \Z)$
+					tale che $\cat{v}^{2} \ge 4$. Allora un muro numerico 
+					$\Ww \subset Stab^{\dagger}(S)$ dato dall'equazione \eqref{formula:num-wall} 
+					è totalmente semistabile se e solo se 
+					$\cat{w}=(r_{1},c_{1},\frac{a_{1}}{2})$ soddisfa una delle seguenti
+					condizioni: 
+					\begin{itemize}
+						\item $\cat{w}^{2} = -1$ e $\langle \cat{v}, \cat{w} \rangle < 0$;
+						\item $\cat{w}^{2} = 0$, $\ell(\cat{w}):= \gcd(r,c,a) = 2$ 
+						e $\langle \cat{v}, \cat{w} \rangle = 1$.
+					\end{itemize}
+				\end{thm}
+			\end{ex}
+			
+			
+			
+	
+		
+		\section{La teoria di Brill-Noether}
+		
+			Come ogni problema in geometria, il primo passo per formularlo è per le curve.
+			Sia $C$ una curva complessa di genere $g$. Con Arvid abbiamo parlato
+			dell'esistenza degli spazi di moduli $M_{C}(r,d)$ di fibrati vettoriali
+			di rango $r$ e grado $d$, e in particolare nel \textbf{\Cref{thm:moduli-curve}}
+			abbiamo annunciato alcune sue proprietà. Il passo successivo è
+			quello di capirne meglio la geometria e alcuni sottoluoghi speciali,
+			andando a studire, ad esempio, il comportamento coomologico del generico
+			fibrato in $M_{C}(r,d)$. 
+			
+			Nel caso $r=1$, sappiamo che i fibrati lineari
+			di grado $d$ sono parametrizzati da $\Pic^{d}(C)$, che è una varietà abeliana,
+			e il \textbf{Teorema di Riemann-Roch} mostra che $\chi(\Ll) = d - g +1$,
+			quindi la coomologia del generico $\Ll \in \Pic^{d}(C)$ è essenzialmente determinato
+			dal grado:
+			\begin{prop}\label{prop:WBN-curve}
+				Sia $C$ curva di genere $g$ e $\Ll \in \Pic^{d}(C)$ generico, allora
+				\begin{equation*}
+					h^{0}(C,\Ll) = \max\{0,d-g+1\}\,, \quad h^{1}(C, \Ll) = \max\{0, g-d-1\}\,.
+				\end{equation*}
+				In particolare, un generico $\Ll$ con $\chi(\Ll) \ge 0$ ha $h^{1}(\Ll) = 0$.
+			\end{prop}
+			
+			\begin{df}\label{df:WBN}
+				Un fascio coerente $\Ff$ su una varietà proiettiva (complessa) $X$ soddisfa
+				la condizione di \textbf{weak Brill-Noether} (in breve \textbf{WBN}) 
+				se $\Ff$ ha \emph{al più} un gruppo di
+				coomologia non nullo. Chiamiamo $\Ff$ \textbf{non-speciale} se
+					$H^{i}(X, \Ff) = 0$ per ogni  $i > 0$,
+				e \textbf{speciale} altrimenti.
+			\end{df}
+			
+			La classica Teoria di Brill-Noether si concentra sullo studio dei luoghi
+			in $\Pic^{d}(C)$ di fibrati \emph{speciali}, 
+			quindi con un comportamento omologico inaspettato: solitamente, a $h > 0$ fissato,
+			si studiano i cosiddetti
+			\begin{align*}
+				W^{h}_{d} := \Set{ \Ll \in \Pic^{d}(C) \,|\, h^{0} \ge h + 1}\,.
+			\end{align*}
+			Per capirne la natura, è sufficiente il \textbf{numero di Brill-Noether}
+			\begin{equation}
+				\rho(g,h,d) := g - (r+1)(g-d+r)\,.
+			\end{equation}
+			
+			\begin{thm}
+				Se $C$ è una \emph{generica} curva di genere $g$, allora
+				\begin{enumerate}[label=\roman*)]
+					\item $W^{h}_{d} \ne 0$ se e solo se $\rho(g,h,d) \ge 0$;
+					\item Se $\rho(g,h,d) \ge 0$, allora $W^{h}_{d}$ è normale, Cohen-Macaulay
+					di dimensione $\rho(g,h,d)$, liscio al di fuori di $W^{h+1}_{d}$;
+					inoltre, se $\rho(g,h,d) > 0$, lo spazio $W^{h}_{d}$ è irriducibile.
+				\end{enumerate}
+			\end{thm}
+			
+			Ci sono anche generalizzazioni 
+			per fibrati vettoriali \textbf{stabili} di rango $r \ge 2$ sulle curve, 
+			e per studiarli confronta la pendenza $\mu$ con le quantità descritte sopra.
+			Non entreremo nei dettagli, ma ci concentreremo sul problema per le superfici.
+			Se $S$ è una superficie complessa, emergono le seguenti difficoltà:
+			\begin{itemize}
+				\item la coomologia di un fibrato $E$ su $S$ è concentrato in ben tre gradi, i.e.
+				$H^{p}(S, E) = 0$ per $p<0$ e $p>2$, mentre su una curva avevamo solo due possibili
+				coomologie non nulle; in particolare, \textbf{\Cref{prop:WBN-curve}}
+				mostra che tutte le curve soddisfano WBN, ma su $S$ possono esserci più coomologie non nulle, nonostante qualche vanishing (e.g. se $S$ è una K3, $h^{1}(\Oo_{X}) = 0$ ma $h^{0}(\Oo_{X}) = h^{2}(\Oo_{X}) = 1$);
+				\item a differenza del caso delle curve, 
+				lo stack dei fasci coerenti con invarianti fissati su $S$ è quasi sempre riducibile;
+				per ottenere proprietà migliori è necessario considerare i \textbf{fasci stabili}
+				rispetto a un fibrato ampio $H$. Nonostante tutto, esistono casi in cui
+				$M_{S,H}(\cat{v})$ sia ridotto o disconnesso, e quindi non ha senso parlare
+				di un `\emph{elemento generico}'.
+			\end{itemize}
+			
+			\begin{problem*}[\textbf{Weak Brill-Noether}]
+				Data una componente irriducibile di $M_{S,H}(\cat{v})$, calcolare la 
+				coomologia dell'elemento generico $E$ in tale componente.
+			\end{problem*}
+			
+			Esistono già risultati dettagliati nel caso di superfici razionali
+			e nel caso di alcune superfici $K$-triviali, come le superfici K3, 
+			abeliane e biellittiche; un resoconto dettagliato sull'argomento è \cite{CHN-WBN-survey}.
+			Oggi vedremo come approcciare il problema per le superfici K3,
+			usando la strategia di \textbf{Coskun, Nuer} e \textbf{Yoshioka};
+			la stessa strategia può essere usata per altre superfici $K$-triviali,
+			come ad esempio le Enriques.
+			
+	\section{Il problema di Weak Brill-Noether via Bridgeland}
+
+		Le superfici $K$-triviali $S$ hanno una ricca struttura derivata e
+		il \textbf{Teorema di ricostruzione di Bondal-Orlov} fallisce per queste varietà.
+		In particolare, esistono molte autoequivalenze di Fourier-Mukai
+		\begin{equation*}
+			\Phi^{\Ee} : \Db{S} \longrightarrow \Db{S}\,, \quad 
+			\Phi^{\Ee}(E) := (\operatorname{pr}_{2})_{*}(\operatorname{pr}_{1}^{*}(E) \otimes \Ee)\,,
+		\end{equation*}
+		con $\Ee \in \Db{S \times S}$, che permettono (sotto opportune ipotesi) 
+		di passare tra spazi di moduli diversi. In particolare, utilizziamo una particolare
+		trasformata di Fourier-Mukai per cambiare punto di vista al problema di WBN.
+		
+		Sia $S$ una superficie K3 proiettiva con $\Pic(S) \simeq \Z H$, con $H$ ampio.
+		Se $E$ è un generico fascio stabile con vettore $\cat{v}(E) = (r,dH,a)$, dove $d > 0$,
+		allora sappiamo già che 
+		\begin{equation*}
+			H^{2}(S, E) \simeq \Ext^{2}(\Oo_{S}, E) \simeq \Hom(E, \Oo_{S})^{\vee} = 0\,,
+		\end{equation*}
+		dove l'annullamento è dovuto al fatto che $\mu(E) > 0 = \mu(\Oo_{S})$.
+		Quindi il problema di WBN si riduce al calcolo dell'$h^{1}(E)$.
+		
+		\begin{lemma}\label{lemma:FM-WBN}
+			Sia $\Delta \subset S \times S$ la diagonale e indichiamo con $\Ii_{\Delta}$
+			l'ideale della diagonale. Sia $E \in \Coh(S)$ senza torsione in dimensione zero.
+			Se $\Phi^{\Ii_{\Delta}}(E)^{\vee}$ è un fascio (in grado zero),
+			allora $E$ soddisfa WBN non-speciale (e inoltre è genericamente globalmente generato).
+			\begin{proof}
+				Dalla successione esatta corta di fasci
+				\begin{equation*}
+					0 \longrightarrow \Ii_{\Delta} \longrightarrow \Oo_{S \times S}
+					\longrightarrow \Oo_{\Delta} \longrightarrow 0\,,
+				\end{equation*}
+				si ottiene un triangolo esatto di trasformate di Fourier-Mukai applicate a $E$,
+				la cui successione esatta lunga in coomologia è
+				\begin{equation*}
+        \begin{tikzcd}[row sep=small]
+            0 \ar[r] 
+            & \Hh^{0}(\Phi^{\Ii_{\Delta}}(E)) \ar[r]
+            & H^{0}(S,E) \otimes \Oo_{S} \ar[r, "ev_{E}"]
+            & E  \\
+            {} \ar[r] 
+            & \Hh^{1}(\Phi^{\Ii_{\Delta}}(E)) \ar[r, "\alpha_{1}"]
+            & H^{1}(S,E) \otimes \Oo_{S}\ar[r]
+            & 0   \\
+            {} \ar[r] 
+            & \Hh^{2}(\Phi^{\Ii_{\Delta}}(E)) \ar[r, "\alpha_{2}"]
+            & H^{2}(S,E) \otimes \Oo_{S}) \ar[r]
+            & 0\,. 
+        \end{tikzcd}
+    \end{equation*}
+    		Riscrivendo le coomologie come
+    		\begin{equation*}
+    			\Hh^{p}(\Phi^{\Ii_{\Delta}}(E)) = 
+    			\Hh^{p}(R\Hh om (\Phi^{\Ii_{\Delta}}(E)^{\vee}, \Oo_{S}))
+    			= \Ee xt^{p}(\Phi^{\Ii_{\Delta}}(E)^{\vee}, \Oo_{S})\,,
+    		\end{equation*}
+    		l'ipotesi che $\Phi^{\Ii_{\Delta}}(E)^{\vee}$ sia un fascio
+    		implica che il fascio $\Ee xt^{p}$ sia di torsione per ogni $p > 0$, 
+    		da cui $\alpha_{1} = \alpha_{2} = 0$ poiché i codomini sono fasci
+    		liberi da torsione; la tesi segue.
+			\end{proof}
+		\end{lemma}	
+		
+		Usando i criteri di Bondal e Orlov, si può anche dimostrare il seguente
+		\begin{lemma}\label{lemma:autoequiv}
+			Il funtore $\Phi : E \mapsto \Phi^{\Ii_{\Delta}}(E)^{\vee}$ induce
+			un'autoequivalenza di $\Db{S}$.
+		\end{lemma}
+		
+		Quindi, per studiare il problema di weak Brill-Noether per $E$, ci siamo 
+		ricondotti a studiare quando la trasformata $\Phi^{\Ii_{\Delta}}(E)^{\vee}$ è un fascio
+		(localmente libero). Per capirlo, useremo proprio le tecniche della teoria di Bridgeland!
+		Infatti, all'interno di $Stab^{\dagger}(S)$ esiste una camera molto speciale:
+		dato un qualsiasi punto $x \in S$, si verifica che 
+		il fascio $\Ii_{\Delta}\vert_{x \times S}^{\vee}$
+		è un oggetto $\sigma_{(s,t)}$-stabile, per ogni 
+		$0 < s \lle 1$ e $t > 0$ in una determinata regione.
+		Sia $\Ww$ il muro per $E$ determinato da 
+		$\cat{w} = \cat{v}(\Ii_{\Delta}\vert_{x \times S}^{\vee}[1])=(-1,0,0)$,
+		cioè la semicirconferenza
+		\begin{equation*}
+			\Ww_{0} : t^{2} + s \left( s - \frac{2a}{dH^{2}} \right) = 0\,.
+		\end{equation*}
+		Sia $\Cc_{0}$ la camera adiacente a $\Ww_{0}$ `\emph{da sopra}', 
+		in cui vale la disuguaglianza
+		$\mu_{Z_{(s,t)}}(\cat{w}) > \mu_{Z_{(s,t)}}(\cat{v}(E))$.
+		
+		\begin{prop}
+			Per ogni $(s,t) \in \Cc_{0}$, la trasformata $\Phi$ del \textbf{\Cref{lemma:autoequiv}}
+			induce un isomorfismo tra gli spazi di moduli
+			\begin{equation*}
+				\Phi : M_{\sigma_{(s,t)}}(r,dH,a) \overset{\sim}{\longrightarrow} M_{S,H}(a,dH,r)\,.
+			\end{equation*}
+		\end{prop}
+		
+		D'altra parte, a causa del \textbf{Large Volume Limit~\ref{LVL}} sappiamo che
+		per $t \gge 1$ cadiamo nella camera di Gieseker $\Gg$, i.e. esiste un isomorfismo
+		di spazi di moduli $M_{\sigma_{(s,t)}}(r,dH,a) \simeq  M_{S,H}(r,dH,a)$.
+		Mettendo tutto insieme, ricapitoliamo quindi: se esiste un percorso
+		in $Stab^{\dagger}(S)$ che parte da $\Gg$, arriva in $\Cc_{0}$
+		e \emph{non attraversa nessun muro totalmente semistabile}, allora
+		il generico elemento $E \in M_{S,H}(r,dH,a)$,
+		che è $\sigma_{(s,t)}$-semistabile per $(s,t) \in \Cc_{0}$,
+		viene trasformato da $\Phi$ in un \emph{fascio} $\mu$-semistabile 
+		$\Phi^{\Ii_{\Delta}}(E)^{\vee} \in M_{S,H}(a,dH,r)$ e quindi
+		deduciamo che $E$ non ha coomologie in gradi positivi
+		per via del \textbf{\Cref{lemma:FM-WBN}}. 
+		
+		Ora, come fare a capire se esistono muri totalmente semistabili?
+		Grazie alla classificazione presentata nell'\textbf{Esempio~\ref{K3-walls}},
+		il problema si riduce a studiare delle disequazioni molto elementari:
+		infatti, osservando che $\Ww_{0}$ passa dall'origine dell'$(s,t)$-plane,
+		per capire se esistono dei muri più in alto di questo, è sufficiente studiare
+		quando l'asse $s=0$ interseca muri di equazione \eqref{formula:num-wall}:
+		quindi, una condizione necessaria che si aggiunge a quelle del
+		\textbf{\Cref{thm:K3-tss-walls}} è che $\epsilon/\delta > 0$.
+		In realtà, queste condizioni sono anche sufficienti, e riassumiamo tutto
+		quanto detto nel seguente risultato:
+		\begin{thm}
+			Sia $S$ una generica K3 proiettiva, con $\Pic(S) \simeq \Z H$,
+			e fissiamo un vettore di Mukai $\cat{v} = (r,dH,a)$, 
+			con 
+				\begin{equation*}
+					r \ge 0\,, \quad  d > 0\,, \quad  r+a \ge 0 \quad  \text{e} \quad \cat{v}^{2} > 0\,.
+				\end{equation*}							
+			Se non esistono vettori $\cat{w} = (r_{1}, d_{1}H, a_{1}) \in H_{alg}^{*}(S; \Z)$
+			tali che
+			\begin{equation}\label{num-conditions}
+				\cat{w}^{2} \in \Set{0,-1}\,,
+				\quad \langle \cat{v}, \cat{w} \rangle < \cat{w}^{2} + 2\,,
+				\quad d \ge d_{1} > 0 \quad \text{e} \quad
+				\frac{ad_{1}-a_{1}d}{rd_{1}-r_{1}d} >0\,,
+			\end{equation}
+			allora $E$ soddisfa la proprietà di weak Brill-Noether (non-speciale).
+		\end{thm}
+		
+		\begin{rmk}
+			La condizione $d \ge d_{1} > 0$ in \eqref{num-conditions}
+			deriva dalla definizione dei cuori tiltati: infatti, supponiamo
+			che $\cat{w}$ sia il vettore di Mukai di un fascio $F$ destabilizzante
+			tale che $F[1] \in \Ff_{(s,t)}$, i.e.
+			 $\Im Z_{(s,t)}(\cat{w}) = (d_{1}-r_{1}s)tH^{2}\ge 0$.
+		\end{rmk}		
+		
+		\begin{thm}[\textbf{Coskun-Nuer-Yoshioka}]
+			Sia $S$ una generica K3 proiettiva, con $\Pic(S) \simeq \Z H$ e $H^{2} = 2h$. 
+			Consideriamo un vettore di Mukai $\cat{v} = (r,dH,a)$, 
+			con 
+				\begin{equation*}
+					r \ge 2\,, \quad  d > 0 \quad  \text{e} \quad \cat{v}^{2} \ge -2\,.
+				\end{equation*}							
+			Allora:
+			\begin{enumerate}
+				\item fissato $r \ge 2$, esiste un numero finito di tuple $(r,d,h,a) \in \Z^{4}$
+				per cui il vettore $\cat{v} = (r,dH,a)$ \textbf{non} soddisfi la 
+				proprietà di weak Brill-Noether;
+				\item se $h \ge r$, allora $\cat{v}$ soddisfa weak Brill-Noether;
+				\item se $a \le 1$, allora $\cat{v}$ soddisfa weak Brill-Noether.
+			\end{enumerate}
+		\end{thm}
+		
+		Questo criterio offre quindi un modo sistematico per capire quando un (generico) fascio
+		non ha coomologie superiori solamente studiandone il vettore di Mukai!
+		I teoremi enunciati sopra possono offrire anche
+		un modo per andare a individuare possibili controesempi al problema di WBN;
+		tuttavia, bisogna fare attenzione, poiché non è sempre detto che l'esistenza di un $\cat{w}$
+		che soddisfi le condizioni \eqref{num-conditions} implichi che il generico
+		elemento $E \in M_{S,H}(\cat{v})$ \emph{non} soddisfi WBN. In queste situazioni,
+		è necessario raffinare i criteri e studiare più nel dettaglio cosa accade 
+		a $E$ sul muro, ad esempio capendo la sua filtrazione di HN $E \in M_{\sigma_{0}}(\cat{v})$.
+		
+		
+		
+	
