@@ -1,9 +1,3 @@
-**/*.log
+*.pdf
 *.log
-
-*.bcf
-*.aux
-*.lol
-*.run.xml
 *.synctex.gz
-*.toc
