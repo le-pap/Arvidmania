@@ -1,0 +1,21 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\nonumberline Lista delle lezioni}{iv}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Spazi di moduli classici}{1}{chapter.1}%
+\contentsline {section}{\nonumberline Filtrazioni}{3}{section*.4}%
+\contentsline {subsection}{\nonumberline Harder-Narasimhan}{3}{subsection*.6}%
+\contentsline {chapter}{\numberline {2}Condizioni di stabilità di Bridgeland}{5}{chapter.2}%
+\contentsline {section}{\nonumberline Motivazioni}{5}{section*.8}%
+\contentsline {section}{\nonumberline Stabilità su curve}{7}{section*.10}%
+\contentsline {section}{\nonumberline Condizioni di stabilità di Bridgeland}{10}{section*.12}%
+\contentsline {subsection}{\nonumberline i) Stabilità di King}{10}{subsection*.14}%
+\contentsline {subsection}{\nonumberline ii) Stabilità di Bridgeland originale}{12}{subsection*.16}%
+\contentsline {section}{\nonumberline Lo spazio delle condizioni di stabilità}{15}{section*.18}%
+\contentsline {subsection}{\nonumberline Spazi di moduli}{17}{subsection*.20}%
+\contentsline {subsection}{\nonumberline Wall-crossing}{19}{subsection*.22}%
+\contentsline {section}{\nonumberline Condizioni di stabilità su superfici}{19}{section*.24}%
+\contentsline {section}{\nonumberline Coppie di torsione}{22}{section*.26}%
+\contentsline {section}{\nonumberline Wall-crossing per stabilità di Bridgeland}{24}{section*.28}%
+\contentsline {section}{\nonumberline La teoria di Brill-Noether}{28}{section*.30}%
+\contentsline {section}{\nonumberline Il problema di Weak Brill-Noether via Bridgeland}{29}{section*.32}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

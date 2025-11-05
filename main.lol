@@ -1,0 +1,21 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\addvspace {10\p@ }
+\contentsline {chapter}{\nonumberline Lezione~1 (17~\DTMmonthname {09},~2025)}{1}{chapter.1}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Introduzione alla teoria dei moduli.}\par 
+\contentsline {chapter}{\nonumberline Lezione~2 (24~\DTMmonthname {09},~2025)}{1}{chapter.1}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Moduli di oggetti (semi)stabili come soluzioni di un problema GIT.}\par 
+\contentsline {chapter}{\nonumberline Lezione~3 (9~\DTMmonthname {10},~2025)}{3}{dummy.1.6}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{.}\par 
+\addvspace {10\p@ }
+\contentsline {chapter}{\nonumberline Lezione~4 (30~\DTMmonthname {09},~2025)}{5}{chapter.2}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Inquadramento storico e motivazione che ha portato alla formulazione delle condizioni di stabilità su categorie triangolate da parte di T. Bridgeland.}\par 
+\contentsline {chapter}{\nonumberline Lezione~5 (7~\DTMmonthname {10},~2025)}{10}{dummy.2.10}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{.}\par 
+\contentsline {chapter}{\nonumberline Lezione~6 (14~\DTMmonthname {10},~2025)}{15}{equation.2.32.0.1}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Costruzione dello spazio delle condizioni di stabilità di Bridgeland. Contestualizzazione dei problemi di rappresentabilità. Cenni di wall-crossing.}\par 
+\contentsline {chapter}{\nonumberline Lezione~7 (21~\DTMmonthname {10},~2025)}{19}{equation.2.40.0.2}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Costruzione di condizioni di stabilità di Bridgeland per superfici, prendendo come esempio il caso K3. Tecnica di tilting per cuori di $t$-strutture per la costruzione di opportuni cuori per le condizioni di stabilità.}\par 
+\contentsline {chapter}{\nonumberline Lezione~8 (4~\DTMmonthname {10},~2025)}{24}{dummy.2.51}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Applicazione della teoria di Bridgeland per lo studio del problema di Weak Brill-Noether.}\par 
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
