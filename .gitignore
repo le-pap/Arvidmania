@@ -1,2 +1,9 @@
 **/*.log
 *.log
+
+*.bcf
+*.aux
+*.lol
+*.run.xml
+*.synctex.gz
+*.toc
