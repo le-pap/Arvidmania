@@ -2,16 +2,19 @@
 	\lecture[.]{2025-10-09}
 	
 
-	Sia $X$ uno schema proiettivo connesso (su un campo algebricamente chiuso $k$, di caratteristica $0$).
-	Fissiamo $H$ un fibrato lineare ampio e $P \in \Q[t]$ un polinomio.
+	Come sempre, sia $k$ un campo algebricamente chiuso $k$, di caratteristica $0$.
+	Consideriamo $X$ uno schema proiettivo connesso su $k$,
+	fissiamo $H$ un fibrato lineare ampio e $P \in \Q[t]$ un polinomio.
 	\begin{thm}
-		Esiste lo spazio dei moduli dei fasci $H$-semistabili $M_{P}(X,H)$, 
-		che è uno schema \textbf{proiettivo}.
+		Lo spazio dei moduli dei fasci $H$-semistabili $M_{P}(X,H)$ esiste ed
+		è uno schema \textbf{proiettivo}.
 	\end{thm}
 	
-	Questo risultato è generalissimo. È un po' debole perché sappiamo solo che lo spazio è
-	uno schema, ma siamo felici perché sappiamo essere proiettivo! Questo fatto deriva dalla costruzione
-	GIT. Inoltre il senso di `stabile' coincide, sia nel senso di Gieseker, sia nel senso GIT (condizione sulle orbite).
+	Questo risultato è generalissimo. La sua debolezza è che sappiamo solamente che $M_{P}(X,H)$ è
+	uno schema, ma comunque siamo felici di avere uno schema proiettivo! 
+	Questo fatto è una conseguenza della costruzione GIT. 
+	Inoltre, le nozioni di \textbf{stabilità} coincidono, 
+	sia nel senso di Gieseker, sia nel senso GIT (ovvero la condizione sulle orbite).
 	
 	Ma cerchiamo ora di capire cosa rappresentano i punti di questi schemi.
 	
@@ -19,73 +22,124 @@
 	
 		\subsection{Harder-Narasimhan}
 		
-		Per ogni fascio $F \in \Coh(X)$, dove $X$ è come sopra, esiste un'unica filtrazione
+		Sia $X$ come sopra. 
+		\begin{thm}[\textbf{Harder-Narasimhan}, 1975]
+		 	Per ogni fascio $F \in \Coh(X)$, esiste un'unica filtrazione
 		 	\begin{equation*}
 		 		0 = F_{0} \subsetneq F_{1} \subsetneq \dots \subsetneq F_{l-1} \subsetneq F_{l} = F
 		 	\end{equation*}
-		 	tale che, per ogni $0 < i \le l$, ogni fattore $E_{i}/E_{i-1}$ sia $\mu$-semistabile e 
-		 	si abbia pendenza decrescence $\mu(F_{i}/F_{i-1}) > \mu(F_{i+1}/F_{i})$.
-		 Lo stesso risultato vale se rimpiazziamo $\mu$-semistabili con $H$-semistabili
-		 e la pendenza con il polinomio di Hilbert ridotto.
+		 	tale che, per ogni $0 < i \le l$, ogni fattore $E_{i}/E_{i-1}$ sia $H$-semistabile e 
+		 	si abbia pendenza decrescente $p_{H}(F_{i}/F_{i-1}) > p_{H}(F_{i+1}/F_{i})$.
+		 \end{thm}
+		 Lo stesso risultato vale per la $\mu$-stabilità:
+		 nell'enunciato del teorema possiamo rimpiazzare `\emph{$H$-semistabili}' 
+		 con `\emph{$\mu$-semistabili}'
+		 e il polinomio di Hilbert ridotto $p_{H}$ con la pendenza $\mu$.
+		 Nel seguito useremo solo la stabilità di Gieseker, ma va ricordato che
+		 risultati analoghi valgono anche per la slope stability.
 		 
-		 Quindi per capire i fasci su uno schema proiettivo connesso $X$ è sufficiente
+		 Quindi, per capire i fasci su uno schema proiettivo connesso $X$ è sufficiente
 		 classificare i suoi fasci semistabili (in un qualsiasi senso).
-		 Ma possiamo decomporre ulteriormente i fasci semistabili in fattori stabili:
+		 Ma possiamo decomporre ulteriormente i fasci semistabili in \emph{fattori stabili}:
 		  \begin{thm}[\textbf{Filtrazione di Jordan-H\"older}]\label{JH-filtration}
-		 	Dato $F \in \cat{Coh}(X)$ un fascio $\mu$-semistabile, esiste una filtrazione (non unica!)
+		 	Dato $F \in \cat{Coh}(X)$ un fascio $H$-semistabile, esiste una filtrazione (non unica!)
 		 	\begin{equation*}
 		 		0 = F_{0} \subsetneq F_{1} \subsetneq \dots \subsetneq F_{l-1} \subsetneq F_{l} = F
 		 	\end{equation*}
 		 	tale che, per ogni $0 < i \le l$, ogni fattore $F_{i}/F_{i-1}$ sia $H$-stabile e 
-		 	tutti i termini hanno la stessa pendenza e 
-		 	$\mu(F) = \mu(F_{i}/F_{i-1}) = \mu(F_{i+1}/F_{i})$.
+		 	tutti i termini abbiano lo stesso polinomio 
+		 	$p_{H}(F) = p_{H}(F_{i}/F_{i-1}) = p_{H}(F_{i+1}/F_{i})$.
 		 \end{thm}
 		 
-		 Quindi è sufficiente classificare solo i fasci stabili? Non proprio, perché abbiamo
-		 appena detto che questa filtrazione non è unica... Quindi dobbiamo considerarla
-		 a meno di una certa relazione di equivalenza.
-		 Si dimostra che, se
+		 Quindi è sufficiente classificare solo i \textbf{fasci stabili}? Non proprio, perché abbiamo
+		 appena detto che questa filtrazione \textbf{non} è unica... Quindi dobbiamo considerarla
+		 a meno di una certa relazione di equivalenza:
+		 si dimostra che, se
 		\begin{equation*}
 		 		0 = F'_{0} \subsetneq F'_{1} \subsetneq \dots \subsetneq F'_{s-1} \subsetneq F'_{s} = F
 		 	\end{equation*}
-		 	è un'altra filtrazione di JH, allora $l=s$ e, per ogni $1 \le i \le l$, 
+		 	è un'altra filtrazione di JH per $F$, allora $l=s$ e, per ogni $1 \le i \le l$, 
 		 	esiste un unico $1 \le j \le l$ tale che
 		 	\begin{equation}
 		 		F_{i}/F_{i-1} \simeq F'_{j}/F'_{j-1}\,.
 		 	\end{equation}
-		 	Quindi a essere unico è il \textbf{graduato di Jordan-H\"older} associato a $F$!
+		 	Quindi a essere unico è il \textbf{graduato di Jordan-H\"older} associato a $F$,
+		 	cioè il fascio di moduli graduati
+		 	\begin{equation*}
+		 		gr_{JH}(F) =  \bigoplus_{i=1}^{l} gr^{i}_{JH}(F) := \bigoplus_{i=1}^{l} F_{i}/F_{i-1}\,.
+		 	\end{equation*}
 		 	
 		 	\begin{df}
 		 		Due fasci $H$-semistabili $F$ e $F'$ sono \textbf{S-equivalenti} se e solo se
-		 		$gr_{JH}(F) \simeq gr_{JH}(F')$.
+		 		$$gr_{JH}(F) \simeq gr_{JH}(F')\,.$$
 		 	\end{df}
-		 	Si deduce  che i punti chiusi di $M_{P}(X,H)$ parametrizzano le classi di S-equivalenza
+		 	Si deduce  che i punti chiusi di $M_{P}(X,H)$ parametrizzano le \textbf{classi di S-equivalenza}
 		 	dei fasci $H$-semistabili di polinomio di Hilbert fissato $P$, mentre
 		 	$M^{S}_{P}(X,H)$ rappresenta le classi di S-equivalenza di fasci stabili,
-		 	quindi le classi di \textbf{isomorfismo} di fasci stabili di polinomio fissato $P$.
-		 	Quindi possiamo concludere che $M^{S}_{P}(X,H)$ è uno schema che rappresenta
-		 	il funtore dei fasci stabili? Purtroppo no...
+		 	che però coincidono con le classi di \textbf{isomorfismo} di fasci stabili 
+		 	di polinomio fissato $P$.
 		 	
-		 	Cerchiamo di capire cosa impedisce la rappresentabilità del funtore $\xM$...
-		 	\begin{prop}
-		 		Esiste una Ses.....
-		 	\end{prop}
+		 	Allora adesso possiamo concludere che $M^{S}_{P}(X,H)$ è uno schema che rappresenta
+		 	il funtore dei fasci stabili? Purtroppo no...		 	
+		 	Cerchiamo di capire cosa impedisce la rappresentabilità del funtore $\xM_{H}(X,P)$.
+		 	\begin{prop*}
+		 		Per ogni $F \in \Coh(X)$, esiste una successione esatta corta
+				\begin{equation*}
+					0 \longrightarrow E \longrightarrow F \longrightarrow G \longrightarrow 0
+				\end{equation*}						 		
+		 		 con $E,G$ fasci $H$-stabili su $X$ e $p_{H}(E) = p_{H}(G)$, 
+		 		 e esiste $\Ff \in \Coh(X \times \AA^{1})$
+		 		 una famiglia di fasci $\AA^{1}$-piatta tale che 
+		 		 \begin{equation*}
+		 		 	\Ff\vert_{0} \simeq E \oplus G\,, \quad \Ff\vert_{t} \simeq F\,, \text{ per ogni } t \ne 0\,.
+		 		 \end{equation*}
+		 	\end{prop*}
 		 	
-		 	Tuttavia ci sono dei casi in cui possiamo concludere che $\xM^{s}$ è rappresentabile.
+		 	\begin{cor*}
+		 		Il funtore $\xM_{H}(X,P)$ non è rappresentabile.
+		 		\begin{proof}
+		 			Supponiamo che $\xM_{H}(X,P)$ sia rappresentato da uno schema $M$.
+		 			L'inclusione $\iota: \AA^{1} \setminus \{0\} \subset \AA^{1}$
+		 			induce una funzione $\xM_{H}(X,P)(\AA^{1} \setminus \{0\}) \to \xM_{H}(X,P)(\AA^{1})$,
+		 			che per rappresentabilità corrisponde alla precomposizione con l'incusione
+		 			\begin{equation*}
+		 				- \circ \iota : \Hom_{\Sch}\left(\AA^{1} \setminus \{0\},M \right) \longrightarrow \Hom_{\Sch}\left(\AA^{1},M \right)\,.
+		 			\end{equation*}
+		 			Ora, notiamo che l'immagine di
+		 			$\Ff\vert_{\AA^{1}\setminus \{0\}} \in \xM_{H}(X,P)(\AA^{1} \setminus \{0\})$
+		 			attraverso questa funzione è $\Ff \in \xM_{H}(X,P)(\AA^{1})$.
+		 			Tuttavia, $\Ff\vert_{\AA^{1}\setminus \{0\}}$ è la famiglia che vale costantemente $F$
+		 			sull'aperto $\AA^{1}\setminus \{0\}$, quindi per continuità si estende alla famiglia
+		 			costante $\underline{F}$ su tutta la retta $\AA^{1}$, ma questo contraddice
+		 			il fatto che l'estensione sia $\Ff$, che non è costante.
+		 		\end{proof}
+		 	\end{cor*}
+		 	
+		 	Tuttavia ci sono dei casi in cui possiamo concludere che 
+		 	il funtore dei fasci stabili $\xM^{s}_{H}(X,P)$ è rappresentabile.
 		 	Per enunciarlo, abbiamo bisogno di parlare di un altro fatto.
-		 	
 		 	Solitamente, leggendo gli articoli, in generale non si fissa $P \in \Q[t]$,
 		 	ma è consuetudine fissare degli \textbf{invarianti numerici}.
-		 	Adesso assumiamo che $X$ sia uno schema proiettivo \textbf{liscio}
-		 	(forse nel caso singolare ce la caviamo con in complessi perfetti...).
+		 	Adesso assumiamo che $X$ sia uno schema proiettivo \textbf{liscio}\footnote{Per il caso singolare dobbiamo capire quale sia il setting giusto; forse ce la possiamo cavare con il gruppo di Grothendieck dei \textbf{complessi perfetti}.}.
 		 	In questo caso, possiamo considerare il \textbf{gruppo di Grothendieck numerico} di $X$
 		 	\begin{equation}
 		 		K_{num}(X) := K_{0}(X)/T\,,
 		 	\end{equation}
-		 	con il paring $\chi$. Dato $F \in \Coh(X)$, associamo $c(F) \in K_{num}(X)$.
+		 	ottenuto quozientando il gruppo di Grothendieck $K_{0}(X) = K(\Coh(X))$
+		 	per il sottogruppo
+		 	\begin{equation*}
+		 		T := \Set{[E] \in K_{0}(X) \,|\, \forall_{a \in K_{0}(X)}\, \chi([E],a) = 0 }\,;
+		 	\end{equation*}
+		 	in questo modo, la caratteristica di Eulero $\chi$ definisce un pairing su $K_{num}(X)$. 
+		 	Dato $E \in \Coh(X)$, gli associamo $c(E) \in K_{num}(X)$.
 		 	Osserviamo che, per definizione di $P_{H}(F)$, questo dipende dalla polarizzazione
 		 	$X$ e dal carattere di Chern: quindi fasci con stesso $\ch$ danno lo stesso polinomio.
-		 	Ora
+		 	Notiamo che, se $[E] \in T$, allora per ogni fascio $G \in \Coh(X)$
+		 	Hirzebruch-Riemann-Roch ci dà
+			\begin{equation*}
+				\chi(E,G) = -\int_{X} \ch(E)\ch(G)^{\vee} 
+			\end{equation*}			 	
+				 	
 		 	\begin{equation}
-		 		\ch : K_{num}()
+		 		\ch : K_{num}(X)
 		 	\end{equation}

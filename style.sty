@@ -55,21 +55,6 @@
 
 
 
-%%%% bibliography %%%%
-\usepackage[backend=biber,style=alphabetic]{biblatex}
-\setcounter{biburlnumpenalty}{7000}
-\setcounter{biburllcpenalty}{7000}
-\setcounter{biburlucpenalty}{8000}
-\addbibresource{res.bib}
-\DeclareSourcemap{
-	\maps[datatype=bibtex]{
-		\map[overwrite=true]{
-			\step[fieldsource=fjournal]
-			\step[fieldset=journal, origfieldval]
-		}
-	}
-}
-
 
 
 

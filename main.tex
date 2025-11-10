@@ -68,6 +68,24 @@
 
 
 
+%%%% bibliography %%%%
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+%\setcounter{biburlnumpenalty}{7000}
+%\setcounter{biburllcpenalty}{7000}
+%\setcounter{biburlucpenalty}{8000}
+\addbibresource{res.bib}
+\DeclareSourcemap{
+	\maps[datatype=bibtex]{
+		\map[overwrite=true]{
+			\step[fieldsource=fjournal]
+			\step[fieldset=journal, origfieldval]
+		}
+	}
+}
+
+
+
+
 
 
 
@@ -105,15 +123,21 @@ Ultimo aggiornamento: \today
 	\chapter{Spazi di moduli classici}
 
     	\input{MODULI/M1}
+    	
     	\input{MODULI/M2}
+    	
     	\input{MODULI/M3}
     	
     \chapter{Condizioni di stabilità di Bridgeland}
     
     	\input{BRIDGELAND/B1}
+    	
     	\input{BRIDGELAND/B2}
+    	
     	\input{BRIDGELAND/B3}
+
     	\input{BRIDGELAND/B4}
+
     	\input{BRIDGELAND/B5}
 
 
@@ -125,6 +149,6 @@ Ultimo aggiornamento: \today
 
 
 \backmatter\KOMAoption{chapterprefix}{false}
-\printbibliography[heading=bibintoc, title={Bibliografia}]
+%\printbibliography[heading=bibintoc, title={Bibliografia}]
 
 \end{document}

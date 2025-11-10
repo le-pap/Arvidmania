@@ -1,0 +1,391 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{BM-MMP}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0432ee943f938a79a75d4aae75ea9d00}{%
+           family={Bayer},
+           familyi={B\bibinitperiod},
+           given={Arend},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a2ad7cab51b78198328f866f02d5f4a2}{%
+           family={Macrı̀},
+           familyi={M\bibinitperiod},
+           given={Emanuele},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{a26a196cfe9ca622f62e0becfe82f6ff}
+      \strng{fullhash}{a26a196cfe9ca622f62e0becfe82f6ff}
+      \strng{bibnamehash}{a26a196cfe9ca622f62e0becfe82f6ff}
+      \strng{authorbibnamehash}{a26a196cfe9ca622f62e0becfe82f6ff}
+      \strng{authornamehash}{a26a196cfe9ca622f62e0becfe82f6ff}
+      \strng{authorfullhash}{a26a196cfe9ca622f62e0becfe82f6ff}
+      \field{labelalpha}{BM14}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inventiones Mathematicae}
+      \field{number}{3}
+      \field{title}{{MMP} for moduli of sheaves on {{\(K3\)}}s via wall-crossing: nef and movable cones, {Lagrangian} fibrations}
+      \field{volume}{198}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1007/s00222-014-0501-8
+      \endverb
+    \endentry
+    \entry{B}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6ba75807a1e850f48d587aa1a6ed2dac}{%
+           family={Bridgeland},
+           familyi={B\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{fullhash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{bibnamehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{authorbibnamehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{authornamehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{authorfullhash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \field{extraname}{1}
+      \field{labelalpha}{Bri07}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0003-486X}
+      \field{journaltitle}{Annals of Mathematics. Second Series}
+      \field{number}{2}
+      \field{title}{Stability conditions on triangulated categories}
+      \field{volume}{166}
+      \field{year}{2007}
+      \field{pages}{317\bibrangedash 345}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.4007/annals.2007.166.317
+      \endverb
+    \endentry
+    \entry{B-stab-k3}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6ba75807a1e850f48d587aa1a6ed2dac}{%
+           family={Bridgeland},
+           familyi={B\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{fullhash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{bibnamehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{authorbibnamehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{authornamehash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \strng{authorfullhash}{6ba75807a1e850f48d587aa1a6ed2dac}
+      \field{extraname}{2}
+      \field{labelalpha}{Bri08}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0012-7094}
+      \field{journaltitle}{Duke Mathematical Journal}
+      \field{number}{2}
+      \field{title}{Stability conditions on {{\(K3\)}} surfaces}
+      \field{volume}{141}
+      \field{year}{2008}
+      \field{pages}{241\bibrangedash 291}
+      \range{pages}{51}
+      \verb{doi}
+      \verb 10.1215/S0012-7094-08-14122-5
+      \endverb
+    \endentry
+    \entry{CHN-WBN-survey}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=55e67c1306227f2c8f9f182c0c0fd84e}{%
+           family={Coskun},
+           familyi={C\bibinitperiod},
+           given={Izzet},
+           giveni={I\bibinitperiod}}}%
+        {{hash=deb2c77e67de42d7ecb4a8673bf1cb87}{%
+           family={Huizenga},
+           familyi={H\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2dbaf95a0a01fd260ce649a716bb119d}{%
+           family={Nuer},
+           familyi={N\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Providence, RI: American Mathematical Society (AMS)}%
+      }
+      \strng{namehash}{a962b9b69629d8632a904c3a821f2b40}
+      \strng{fullhash}{a962b9b69629d8632a904c3a821f2b40}
+      \strng{bibnamehash}{a962b9b69629d8632a904c3a821f2b40}
+      \strng{authorbibnamehash}{a962b9b69629d8632a904c3a821f2b40}
+      \strng{authornamehash}{a962b9b69629d8632a904c3a821f2b40}
+      \strng{authorfullhash}{a962b9b69629d8632a904c3a821f2b40}
+      \field{labelalpha}{CHN24}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Moduli spaces and vector bundles -- new trends. VBAC 2022 conference in honor of Peter Newstead's 80th birthday, University of Warwick, Coventry, United kingdom, July 25--29, 2022}
+      \field{title}{The {Brill}-{Noether} theory of the moduli spaces of sheaves on surfaces}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1090/conm/803/16096
+      \endverb
+    \endentry
+    \entry{CNY-K3}{article}{}
+      \name{author}{3}{}{%
+        {{hash=55e67c1306227f2c8f9f182c0c0fd84e}{%
+           family={Coskun},
+           familyi={C\bibinitperiod},
+           given={Izzet},
+           giveni={I\bibinitperiod}}}%
+        {{hash=2dbaf95a0a01fd260ce649a716bb119d}{%
+           family={Nuer},
+           familyi={N\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
+        {{hash=01ce46b0bff4a5a0bdd6bec94ae889f0}{%
+           family={Yoshioka},
+           familyi={Y\bibinitperiod},
+           given={Kōta},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{db742768b128c1b816e9f5930355e1c6}
+      \strng{fullhash}{db742768b128c1b816e9f5930355e1c6}
+      \strng{bibnamehash}{db742768b128c1b816e9f5930355e1c6}
+      \strng{authorbibnamehash}{db742768b128c1b816e9f5930355e1c6}
+      \strng{authornamehash}{db742768b128c1b816e9f5930355e1c6}
+      \strng{authorfullhash}{db742768b128c1b816e9f5930355e1c6}
+      \field{labelalpha}{CNY23}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Mathematics}
+      \field{note}{Id/No 109102}
+      \field{title}{The cohomology of the general stable sheaf on a {{\(K3\)}} surface}
+      \field{volume}{426}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.1016/j.aim.2023.109102
+      \endverb
+    \endentry
+    \entry{D-Dbranes}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=0f2db3278f121a9a7533e911cf947c2c}{%
+           family={Douglas},
+           familyi={D\bibinitperiod},
+           given={Michael\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Beijing: Higher Education Press; Singapore: World Scientific/distributor}%
+      }
+      \strng{namehash}{0f2db3278f121a9a7533e911cf947c2c}
+      \strng{fullhash}{0f2db3278f121a9a7533e911cf947c2c}
+      \strng{bibnamehash}{0f2db3278f121a9a7533e911cf947c2c}
+      \strng{authorbibnamehash}{0f2db3278f121a9a7533e911cf947c2c}
+      \strng{authornamehash}{0f2db3278f121a9a7533e911cf947c2c}
+      \strng{authorfullhash}{0f2db3278f121a9a7533e911cf947c2c}
+      \field{labelalpha}{Dou02}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the international congress of mathematicians, ICM 2002, Beijing, China, August 20--28, 2002. Vol. III: Invited lectures}
+      \field{isbn}{7-04-008690-5}
+      \field{title}{Dirichlet branes, homological mirror symmetry, and stability}
+      \field{year}{2002}
+      \field{pages}{395\bibrangedash 408}
+      \range{pages}{14}
+    \endentry
+    \entry{HL-geom-moduli}{book}{}
+      \name{author}{2}{}{%
+        {{hash=62ef5d71962e55d1e2757e1aeb5755c8}{%
+           family={Huybrechts},
+           familyi={H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=263bad0b67c0c6d67f31bc3021ff4a29}{%
+           family={Lehn},
+           familyi={L\bibinitperiod},
+           given={Manfred},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge: Cambridge University Press}%
+      }
+      \strng{namehash}{28c532d0b25194bf7b2bec27721ae28c}
+      \strng{fullhash}{28c532d0b25194bf7b2bec27721ae28c}
+      \strng{bibnamehash}{28c532d0b25194bf7b2bec27721ae28c}
+      \strng{authorbibnamehash}{28c532d0b25194bf7b2bec27721ae28c}
+      \strng{authornamehash}{28c532d0b25194bf7b2bec27721ae28c}
+      \strng{authorfullhash}{28c532d0b25194bf7b2bec27721ae28c}
+      \field{labelalpha}{HL10}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd ed.}
+      \field{isbn}{978-0-521-13420-0}
+      \field{title}{The geometry of moduli spaces of sheaves}
+      \field{year}{2010}
+      \true{nocite}
+    \endentry
+    \entry{K-hms}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=cf27d9e4bd394efedf47095891bb2927}{%
+           family={Kontsevich},
+           familyi={K\bibinitperiod},
+           given={Maxim},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Basel: Birkhäuser}%
+      }
+      \strng{namehash}{cf27d9e4bd394efedf47095891bb2927}
+      \strng{fullhash}{cf27d9e4bd394efedf47095891bb2927}
+      \strng{bibnamehash}{cf27d9e4bd394efedf47095891bb2927}
+      \strng{authorbibnamehash}{cf27d9e4bd394efedf47095891bb2927}
+      \strng{authornamehash}{cf27d9e4bd394efedf47095891bb2927}
+      \strng{authorfullhash}{cf27d9e4bd394efedf47095891bb2927}
+      \field{labelalpha}{Kon95}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the international congress of mathematicians, ICM 94, August 3-11, 1994, Zürich, Switzerland. Vol. I}
+      \field{isbn}{3-7643-5153-5}
+      \field{title}{Homological algebra of mirror symmetry}
+      \field{year}{1995}
+      \field{pages}{120\bibrangedash 139}
+      \range{pages}{20}
+    \endentry
+    \entry{MS-lectures-bridgeland}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=a2ad7cab51b78198328f866f02d5f4a2}{%
+           family={Macrı̀},
+           familyi={M\bibinitperiod},
+           given={Emanuele},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5310ed7c560b04f911ad287893518297}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cham: Springer}%
+      }
+      \strng{namehash}{3282db34111f09aa85757828d083ccc5}
+      \strng{fullhash}{3282db34111f09aa85757828d083ccc5}
+      \strng{bibnamehash}{3282db34111f09aa85757828d083ccc5}
+      \strng{authorbibnamehash}{3282db34111f09aa85757828d083ccc5}
+      \strng{authornamehash}{3282db34111f09aa85757828d083ccc5}
+      \strng{authorfullhash}{3282db34111f09aa85757828d083ccc5}
+      \field{labelalpha}{MS17}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Moduli of curves. CIMAT Guanajuato, Mexico 2016. Lecture notes of a CIMPA-ICTP school, Guanajuato, Mexico, February 22 -- March 4, 2016}
+      \field{isbn}{978-3-319-59485-9; 978-3-319-59486-6}
+      \field{title}{Lectures on {Bridgeland} stability}
+      \field{year}{2017}
+      \true{nocite}
+      \field{pages}{139\bibrangedash 211}
+      \range{pages}{73}
+      \verb{doi}
+      \verb 10.1007/978-3-319-59486-6_5
+      \endverb
+    \endentry
+    \entry{NY-MMP}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2dbaf95a0a01fd260ce649a716bb119d}{%
+           family={Nuer},
+           familyi={N\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
+        {{hash=01ce46b0bff4a5a0bdd6bec94ae889f0}{%
+           family={Yoshioka},
+           familyi={Y\bibinitperiod},
+           given={Kōta},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{8508f37fbcf5325b244037beb3c75f4b}
+      \strng{fullhash}{8508f37fbcf5325b244037beb3c75f4b}
+      \strng{bibnamehash}{8508f37fbcf5325b244037beb3c75f4b}
+      \strng{authorbibnamehash}{8508f37fbcf5325b244037beb3c75f4b}
+      \strng{authornamehash}{8508f37fbcf5325b244037beb3c75f4b}
+      \strng{authorfullhash}{8508f37fbcf5325b244037beb3c75f4b}
+      \field{labelalpha}{NY20}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Mathematics}
+      \field{note}{Id/No 107283}
+      \field{title}{{MMP} via wall-crossing for moduli spaces of stable sheaves on an {Enriques} surface}
+      \field{volume}{372}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1016/j.aim.2020.107283
+      \endverb
+    \endentry
+    \entry{OKADA}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f4944b16ae146ba1dd6bbac6f3b7df28}{%
+           family={Okada},
+           familyi={O\bibinitperiod},
+           given={So},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f4944b16ae146ba1dd6bbac6f3b7df28}
+      \strng{fullhash}{f4944b16ae146ba1dd6bbac6f3b7df28}
+      \strng{bibnamehash}{f4944b16ae146ba1dd6bbac6f3b7df28}
+      \strng{authorbibnamehash}{f4944b16ae146ba1dd6bbac6f3b7df28}
+      \strng{authornamehash}{f4944b16ae146ba1dd6bbac6f3b7df28}
+      \strng{authorfullhash}{f4944b16ae146ba1dd6bbac6f3b7df28}
+      \field{labelalpha}{Oka06}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1056-3911}
+      \field{journaltitle}{Journal of Algebraic Geometry}
+      \field{number}{3}
+      \field{title}{Stability manifold of {{\({{\mathbb}} {P}^1\)}}}
+      \field{volume}{15}
+      \field{year}{2006}
+      \verb{doi}
+      \verb 10.1090/S1056-3911-06-00432-2
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
