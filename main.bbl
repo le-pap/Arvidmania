@@ -189,7 +189,6 @@
       \field{title}{The cohomology of the general stable sheaf on a {{\(K3\)}} surface}
       \field{volume}{426}
       \field{year}{2023}
-      \true{nocite}
       \verb{doi}
       \verb 10.1016/j.aim.2023.109102
       \endverb
@@ -255,6 +254,39 @@
       \field{title}{The geometry of moduli spaces of sheaves}
       \field{year}{2010}
       \true{nocite}
+    \endentry
+    \entry{Sasha-reply}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=86dfd07ef85d7a016ccfc1221186a537}{%
+           family={(https://mathoverflow.net/users/4428/sasha)},
+           familyi={(\bibinitperiod},
+           given={Sasha},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{86dfd07ef85d7a016ccfc1221186a537}
+      \strng{fullhash}{86dfd07ef85d7a016ccfc1221186a537}
+      \strng{bibnamehash}{86dfd07ef85d7a016ccfc1221186a537}
+      \strng{authorbibnamehash}{86dfd07ef85d7a016ccfc1221186a537}
+      \strng{authornamehash}{86dfd07ef85d7a016ccfc1221186a537}
+      \strng{authorfullhash}{86dfd07ef85d7a016ccfc1221186a537}
+      \field{labelalpha}{htt}
+      \field{sortinit}{h}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{MathOverflow}
+      \field{note}{URL:https://mathoverflow.net/q/405157 (version: 2021-09-30)}
+      \field{title}{Why does the Chern character descend to the numerical Grothendieck group for surfaces?}
+      \true{nocite}
+      \verb{eprint}
+      \verb https://mathoverflow.net/q/405157
+      \endverb
+      \verb{urlraw}
+      \verb https://mathoverflow.net/q/405157
+      \endverb
+      \verb{url}
+      \verb https://mathoverflow.net/q/405157
+      \endverb
     \endentry
     \entry{K-hms}{incollection}{}
       \name{author}{1}{}{%
@@ -378,7 +410,7 @@
       \field{issn}{1056-3911}
       \field{journaltitle}{Journal of Algebraic Geometry}
       \field{number}{3}
-      \field{title}{Stability manifold of {{\({{\mathbb}} {P}^1\)}}}
+      \field{title}{Stability manifold of the projective line}
       \field{volume}{15}
       \field{year}{2006}
       \verb{doi}

@@ -1,0 +1,359 @@
+
+	\lecture[.]{2025-11-12}
+		
+		\section{Forme differenziali}
+		
+		Sia $X$ varietà quasi-proiettiva. Definiamo
+		\begin{equation}
+			\Phi^{r}[X] := \Set{\phi : X \to \bigsqcup_{x \in X} \bigwedge^{r} T^{*}_{X,x}
+			\, | \, \forall_{x \in x} \, \phi(x) \in \bigwedge^{r} T^{*}_{X,x}}\,.
+		\end{equation}
+		
+		\begin{df}
+			Una $r$-forma differenziale $\phi \in \Phi^{r}[X]$ si dice \textbf{regolare}
+			se, per ogni $x \in X$, esiste un aperto affine $U \subset X$ tale che $\phi\vert_{U}$
+			appartiene al $k[U]$-sottomodulo di $\Phi^{r}[X]$
+			generato da elementi della forma
+			\begin{equation}
+				df_{1} \wedge \dots \wedge df_{r}\,, \quad \text{con } f_{j} \in k[U]\,,
+			\end{equation}
+			e indichiamo l'insieme delle $r$-forme regolari con $\Omega^{r}(X)$.
+			Se $\omega \in \Omega^{r}(X)$, allora in un aperto affine $U$ si scrive come
+			\begin{equation}
+				\omega = \sum_{i_{1}, \dots, i_{r}} g_{i_{1}, \dots, i_{r}} df_{i_{1}} \wedge \dots \wedge df_{i_{r}}\,,
+			\end{equation}
+			con $g_{*}, f_{j} \in k[U]$.
+		\end{df}
+		
+		\begin{thm}
+			Sia $p \in X$ un punto liscio. Allora esiste un aperto affine $U \subset X$ tale che
+			$\Omega^{1}(U)$ è un $k[U]$-modulo libero di rango $\dim \Oo_{X,x} =: n$.
+		\end{thm}
+		
+		\begin{thm}
+			Sia $p \in X$ un punto liscio. Allora esiste un aperto affine $U \subset X$ tale che
+			$\Omega^{r}(U)$ è un $k[U]$-modulo libero di rango $\binom{n}{r}$ e una base
+			per il modulo è data da
+			\begin{equation}
+				\Set{du_{i_{1}} \wedge \dots \wedge du_{i_{r}} \, | \, 1 \le i_{1} < \dots < i_{r} \le r}\,,
+			\end{equation}
+			dove gli $u_{j}$ sono presi da una base di $k[U]$ fissata.
+		\end{thm}
+		
+		In analogia a quanto accade per le funzioni razionali, 
+		introduciamo le forme differenziali \emph{razionali},
+		che andremo a identificare con una relazione d'equivalenza.
+		Consideriamo le coppie $(\omega, U)$, con $\omega \in \Omega^{r}(X)$ e $U \subset X$ un aperto.
+		Diciamo che $(\omega, U) \sim (\omega', U')$ se $\omega\vert_{U \cap U'} = \omega'\vert_{U \cap U'}$.
+		\begin{df}
+			Una classe di equivalenza rispetto a $\sim$ è detta \textbf{$r$-forma differenziale razionale} su $X$.
+		\end{df}
+		
+		Denotiamo con $\Mm^{r}(X)$ l'insieme delle $r$-forme razionali su $X$.
+		È facile vedere che $\Mm^{r}(X)$ è un $k(X)$-spazio vettoriale di dimensione $\binom{n}{r}$,
+		in analogia a quanto accade per le forme regolari. Inoltre, $\Mm^{r}(X)$ è un inveriante birazionale.
+		
+		\begin{df}
+			Una $r$-forma razionale $\omega$ che ha un rappresentante della forma $(\omega,U)$
+			si dice \textbf{regolare su $U$}.
+		\end{df}
+		
+		\begin{oss}
+			L'insieme dei punti su cui una $r$-forma razionale $\omega$ \textbf{non} è regolare
+			forma un chiuso in $X$.
+		\end{oss}
+		
+		\begin{ex}
+			Su $\AA^{n}$, denotiamo con $z_{1}, \dots, z^{n}$ le coordinate.
+			Ogni $\omega \in \Mm^{n}(X)$ si scrive unicamente come
+			\begin{equation}
+				\omega = \phi(z) \, dz_{1} \wedge \dots \wedge dz_{n}\,,
+			\end{equation}
+			dove $\phi(z) \in k(z_{1}, \dots z_{n})$ è una funzione razionale su $\AA^{n}$,
+			che si scrive come $\phi = f/g$, per qualche $f,g \in k[z_{1}, \dots, z_{n}]$.
+			L'insieme su cui $\omega$ non è regolare è l'ipersuperficie $\VV(g)$.
+		\end{ex}
+		
+		\begin{lemma}
+			$\Omega^{n}(\PP^{n}) = 0$.
+			\begin{proof}
+				Siano $[x_{0} : \dots : x_{n}]$ coordinate omogenee. Considero due carte affini
+				\begin{equation}
+					(y_{1}, \dots, y_{n}) = \left( \frac{x_{1}}{x_{0}}, \dots, \frac{x_{n}}{x_{0}} \right)
+					\quad \text{e} \quad 
+					(z_{0}, \dots, z_{n-1}) = \left( \frac{x_{0}}{x_{n}}, \dots, \frac{x_{n-1}}{x_{n}} \right) \,.
+				\end{equation}
+				Notiamo che sull'intersezione vale
+				\begin{equation}
+					y_{1} = \frac{z_{1}}{z_{0}}\,, \dots \,, y_{n-1} = \frac{z_{n-1}}{z_{0}}\,,
+					y_{n} = \frac{1}{z_{0}}\,,
+				\end{equation}
+				quindi possiamo calcolare
+				\begin{equation}
+					dy_{1} \wedge \dots \wedge dy_{n} 
+					= d \left( \frac{z_{1}}{z_{0}} \right) \wedge \dots \wedge d \left( \frac{1}{z_{0}}
+					 \right)
+					 = \dots = \frac{(-1)^{n}}{z_{0}^{n+1}} \, dz_{0} \wedge \dots \wedge dz_{n-1}\,.
+				\end{equation} 
+				Poiché  ogni $n$-forma regolare sulla prima carta affine $\AA^{n}_{y}$ è della forma
+				$f(x) dy_{1} \wedge \dots \wedge dy_{n}$, su $\AA^{n}_{z}$ si scrive
+				\begin{equation}
+					\omega\vert_{\AA^{n}_{z}} = 
+					\frac{(-1)^{n}}{z_{0}^{n+1}} 
+					f \left(\frac{z_{1}}{z_{0}}, \dots , \frac{z_{n-1}}{z_{0}},
+					\frac{1}{z_{0}} \right) \, dz_{0} \wedge \dots \wedge dz_{n-1}\,,
+				\end{equation}
+				che però non è regolare in $\{z_{0} = 0\}$.
+			\end{proof}
+		\end{lemma}
+		
+		\begin{df}
+			Sia $X$ una varietà liscia $n$-dimensionale. Un divisore $K_{X} \in CaDiv(X)$
+			si dice \textbf{canonico} se $K_{X} = \div \omega$, 
+			con $\omega \in \Mm^{n}(X) \setminus \{0\}$.
+			Chiamiamo \textbf{il divisore canonico} un rappresentante 
+			della classe di equivalenza di $K_{X}$.
+		\end{df}
+		
+		\begin{df}
+			Il fascio $\Omega^{1}_{X}$ delle $1$-forme differenziali regolari su $X$ è il
+			fascio che a ogni aperto $U \subset X$ associa il $k[U]$-modulo $\Omega^{1}(U)$.
+			Il fascio delle $r$-forme regolari su $X$ verrà denotato con 
+			$\Omega_{X}^{r} := \bigwedge^{r} \Omega_{X}^{1}$, e per $r=n$ otteniamo
+			il \textbf{fascio canonico} $\omega_{X} := \Omega_{X}^{n}$.
+		\end{df}
+		
+		\begin{oss}
+			Vale $\omega_{X} \simeq \Oo(K_{X})$.
+			Infatti, sia $\omega$ tale che $K_{X} = \div \omega$ e definiamo il morfismo di fasci
+			$\phi : \Oo(K_{X}) \to \omega_{X}$ come la mappa
+			che sull'aperto $U \subset X$ è data da
+			\begin{equation}
+				\Oo(K_{X})(U) \longrightarrow \Omega^{n}_{X}(U)\,,
+				\quad f \longmapsto f \omega\vert_{U}\,.
+			\end{equation}
+			Allora $\phi$ è ben definita: infatti
+			\begin{equation}
+				\div(f \omega\vert_{U}) = \div f + \div \omega_{X} = \div f + K_{X}\vert_{U} \ge 0\,, 
+			\end{equation}
+			poiché $f \in \Oo_{X}(K_{X})(U)$. Quindi deduciamo che $f \omega\vert_{U}$ è regolare.
+			L'iniettività segue dal fatto che $f \omega\vert_{U} =0$ se e solo se $f=0$,
+			dato che (si dimostra che) $\{ \omega= 0\}$ è un chiuso.
+			Per la surgettività, si sfrutta che $\Oo_{X}(K_{X})$ è un fascio invertibile:
+			infatti, sia $\eta \in \omega_{X}$ e consideriamo $\{U_{\alpha}\}_{\alpha}$ un
+			ricoprimento banalizzante di $U$, i.e. per ogni $\alpha$ vale
+			\begin{equation}
+				\eta\vert_{U_{\alpha}} = f_{\alpha} \omega\vert_{U_{\alpha}}\,,
+				 \quad f_{\alpha} \in k(X)\,.
+			\end{equation}
+			Se $U_{\alpha} \cap U_{\beta} \ne \emptyset$, allora
+			$\eta\vert_{U_{\alpha} \cap U_{\beta}} =  f_{\alpha} \omega =  f_{\beta} \omega$,
+			e poiché $\omega \ne 0$ su questa intersezione, $f_{\alpha} = f_{\beta}$;
+			da questo deduciamo che possiamo incollare le $f_{\alpha}$ a un elemento $f \in k(X)$.
+			...
+		\end{oss}
+		
+		\begin{ex}
+			Sia $X = \PP^{n}$. La $n$-forma razionale
+			\begin{equation}
+				dx_{1} \wedge \dots \wedge dx_{n} 
+			\end{equation}			 
+			è regolare sull'aperto $\DD(x_{0}) = \{ x_{0} \ne 0 \}$.
+			Nell'intersezione $U_{0} \cap U_{1}$ abbiamo le coordinate
+			\begin{equation}
+				\left( x_{0}, 1, x_{2}, \dots, x_{n} \right) = 
+				\left( 1, \frac{1}{x_{0}}, \frac{x_{2}}{x_{0}}, \dots, \frac{x_{n}}{x_{0}} \right)\,,
+			\end{equation}
+			da cui deduciamo
+			\begin{equation}
+				dx_{1} \wedge \dots \wedge dx_{n} 
+				= \dots = \frac{(-1)^{n}}{x_{0}^{n+1}} dx_{0} \wedge dx_{2} \wedge \dots \wedge dx_{n} 
+			\end{equation}
+		...
+		\end{ex}
+		
+		\begin{ex}
+			Sia $X \subset \PP^{n}$ una ipersuperficie di grado $d$, 
+			definita dall'equazione polinomiale $P(x)=0$.
+			Consideriamo la $(n-1)$-forma definita su $U_{0} \cap X$ da
+			\begin{equation}
+				\omega_{i} := (-1)^{i} \frac{dx_{1} \wedge \dots \wedge \widehat{dx_{i}} \wedge \dots\wedge dx_{n} }{\frac{\partial P}{\partial x_{i}}(1, x_{1}, \dots, x_{n})}\,.
+			\end{equation}
+			Considero $0 \le i \le n$ tale che $\partial P/\partial x_{i} \ne 0$
+			e usiamo la liscezza di $P$. Se esiste un altro indice $j$ in cui la derivata lungo $x_{j}$
+			non si annulla, allora posso definire $\omega_{j}$ e si verifica con un conto
+			che $\omega_{j} = \omega_{i}$.
+			
+			Sia $X$ liscia e $U = \bigcup_{i} U_{i}$, 
+			dove $U_{i}$ sono aperti in cui $\partial P/\partial x_{i} \ne 0$.
+			Allora possiamo incollare le forme $\omega_{i}$ in modo da definire 
+			$\omega \in \Omega^{n-1}(U_{0})$. Sull'aperto $U_{0} \cap U_{1}$ possiamo scrivere
+			\begin{equation}
+				\frac{d \left(\frac{1}{x_{0}} \right) \wedge \left(\frac{x_{3}}{x_{0}} \right)
+				\wedge \dots \wedge  d\left(\frac{x_{n}}{x_{0}}\right) }{\frac{\partial P}{\partial x_{2}}\left( 1, \frac{1}{x_{0}}, \frac{x_{2}}{x_{0}}, \dots, \frac{x_{n}}{x_{0}} \right)}
+				= \frac{(-1)^{n-d}}{x^{n-(d-1)}}\frac{dx_{0} \wedge dx_{3} \wedge \dots \wedge dx_{n} }{\frac{\partial P}{\partial x_{2}}(x_{0},1, x_{2}, \dots, x_{n})}
+			\end{equation}
+			e quindi vediamo che $K_{X} = -(n+1-d) H_{0} \cap X$.
+		\end{ex}
+		
+		\begin{oss}
+			Se $d=n+1$, allora $K_{X} \sim \Oo_{X}$ e quindi l'ipersuperficie è Calabi-Yau.
+			Se $d<n+1$, allora $K_{X}$ è anti-ampio e quindi $X$ è Fano;
+			viceversa, se $d>n+1$ il canonico $K_{X}$ è ampio, quindi $X$ è di tipo generale.
+		\end{oss}
+		
+		\begin{ex}[\textbf{Blow-up}]
+			Sia $X$ una varietà liscia $n$-dimensionale. Sia $Y \subset X$ liscia di codimensione $r$
+			e consideriamo il blow-up
+			\begin{equation}
+				\pi : \widetilde{X} := \operatorname{Bl}_{Y} X \longrightarrow X
+			\end{equation}
+			con divisore eccezionale $E = \pi^{-1}(Y)$. Allora
+			\begin{equation}
+				K_{\widetilde{X}} = \pi^{*}K_{X} + (r-1) E\,.
+			\end{equation}
+			Per dimostrarlo, ragioniamo localmente con le forme differenziali.
+			Essendo $X,Y$ lisce, scegliamo coordinate locali $x_{1}, \dots, x_{n}$ su $X$,
+			in modo tale che $Y = \Set{x_{1} = \dots = x_{r} = 0}$.
+			Quindi, le coordinate del blow-up sono
+			\begin{equation}
+				\widetilde{X} = \operatorname{Bl}_{Y} X
+				= \Set{ \big( (x_{1}, \dots, x_{n}), [u_{1}: \dots: u_{n}] \big) \in X \times \PP^{r-1}\,
+				| \, \forall_{1 \le i < j \le r} \, x_{i}x_{j} = x_{j}x_{i} }\,.
+			\end{equation}
+			Localmente, $\widetilde{X}$ è coperto da carte affini $U_{j} = {u_{j} \ne 0}$;
+			in $U_{1}$ e coordinate sono
+			\begin{equation}
+				x_{1}\,, \quad x_{2} = u_{2} x_{1}\,, \dots\,, x_{r} = u_{r} x_{1}\,, x_{r+1}\,, \dots\,, x_{n}\,, \quad  \text{con } u_{j} = \frac{x_{j}}{x_{1}}\,, 
+			\end{equation}
+			e quindi il blow-up e localmente
+			\begin{equation}
+				\pi(x_{1}, u_{2}, \dots, u_{r}, x_{r+1}, \dots, x_{n}) = 
+				(x_{1}, u_{2}x_{1}, \dots, u_{r}x_{1}, x_{r+1}, \dots, x_{n})\,.
+			\end{equation}
+			Considero la $n$-forma regolare $\omega = dx_{1} \wedge \dots \wedge dx_{n}$ su $X$.
+			Tirandola indietro tramite il pull-back, si ottiene
+			\begin{align*}
+				\pi^{*} \left(  dx_{1} \wedge \dots \wedge dx_{n} \right)
+				&=  dx_{1} \wedge d(u_{2}x_{1}) \wedge \dots \wedge d(u_{r}x_{1}) \wedge dx_{r+1} \wedge \dots\wedge dx_{n} \\
+				&= x_{1}^{r-1}  dx_{1} \wedge du_{2} \wedge \dots \wedge du_{r} \wedge dx_{r+1} \wedge \dots\wedge dx_{n}
+			\end{align*}
+			...
+		\end{ex}
+		
+		
+		\section{La successione esponenziale}
+		
+			Sia $X$ una varietà proiettiva liscia; la consideriamo adesso come una varietà complessa,
+			con la topologia euclidea.
+			Sia $\Oo_{an}$ il fascio delle funzioni olomorfe su $X$ e $\Oo_{an}^{*}$
+			il sottofascio delle funzioni olomorfe mai nulle.
+			Abbiamo il seguente morfismo surgettivo di fasci di gruppi abeliani
+			\begin{equation}
+			\exp : \Oo_{an} \longrightarrow \Oo_{an}^{*}\,, \quad
+			f \longmapsto e^{f}\,.
+			\end{equation}
+			Il nucleo è il fascio
+			\begin{equation}
+			\Kk er \exp = \Set{ f \in \Oo_{an} \, | \, \forall_{p \in X} f(p) \in 2\pi i \Z} 
+			\simeq \Z_{an}\,,
+			\end{equation}
+			quindi abbiamo una successione esatta corta di fasci di gruppi abeliani 
+			\begin{equation}\label{ses-exp}
+				0 \longrightarrow \Z_{an} \longrightarrow \Oo_{an} \overset{\exp}{\longrightarrow}
+				\Oo_{an}^{*} \longrightarrow 0\,,
+			\end{equation}
+			che chiameremo \textbf{successione esponenziale}.
+			
+			\begin{rmk}
+				La coomologia del fascio costante $H^{*}(X, \Z_{an})$ è
+				isomorfa alla coomologia singolare $H^{*}(X; \Z)$ di $X$ con topologia euclidea.
+			\end{rmk}
+			
+			\begin{rmk}
+				Il fascio $\Oo_{an}$ è coerente nella topologia complessa,
+				e per un fatto molto profondo (i.e. il teorema \textbf{GAGA} di Serre),
+				esiste un isomorfismo $H^{*}(X; \Oo_{an}) \simeq H^{*}(X, \Oo_{X})$.
+				In questo modo, possiamo identificare $\Pic(X) \simeq H^{1}(X, \Oo_{an}^{*}$.	
+			\end{rmk}
+				
+			Quindi, la successione \eqref{ses-exp} induce la successione esatta lunga in coomologia
+			\begin{equation}
+				0 \longrightarrow \Z \longrightarrow \C \overset{\exp}{\longrightarrow}
+				\C^{*} \longrightarrow  H^{1}(X;\Z) \longrightarrow \dots
+			\end{equation}
+			Siccome $X$ è una varietà priettiva liscia, complessa e compatta, allora
+			i gruppi di coomologia singolare $H^{i}(X; \Z)$ sono finitamente generati,
+			dunque abbiamo il teorema di struttura per $\Z$-moduli che ci permette di decomporre
+			\begin{equation}
+				H^{i}(X;\Z) = \Z^{b_{i}(X)} \oplus T_{i}\,,
+			\end{equation}
+			dove $ T_{i} $è sottogruppo di torsione finito e $b_{i}(X)$ è l'$i$-esimo numero di Betti.
+			
+			\begin{oss}
+				$T_{1} = 0$ poiché la mappa $\gamma$ è iniettiva, quindi
+				$H^{1}(X; \Z) \subset H^{1}(X, \Oo_{X}) \simeq \C^{N}$ e quest'ultimo non ha torsione.
+			\end{oss}
+			
+			\begin{df}
+				Se $\Ll \in \Pic(X)$ la \textbf{prima classe di Chern} di $\Ll$ è
+				$c_{1}(\Ll) \in H^{2}(X; \Z)$. Se $D$ è un divisore di Cartier, 
+				scriveremo $c_{1}(D) = c_{1}(\Oo_{X}(D)$.
+			\end{df}
+			
+			Si noti che il primo carattere di Chern è la ``\emph{giusta generalizzazione}'''
+del \textbf{grado} di una curva; tuttavia, a differenza della funzione $\deg$,
+in generale la $c_{1}$ \textbf{non} è surgettiva.
+
+			\begin{df}
+				Il \textbf{gruppo di Neron-Severi} di $X$ è l'immagine del primo carattere di Chern:
+				$$NS(X) := \im c_{1} \subset 
+				H^{2}(X; \Z)\,.$$
+			\end{df}
+			
+			\begin{rmk}
+				Il $NS(X)$ è un gruppo abeliano finitamente generato.
+				Il suo rango $\rho_{X}$, detto \textbf{numero di Picard} di $X$, è un
+				invariante numerico di $X$; inoltre, $\rho_{X}$ è \textbf{invariante birazionale}. 
+				Si noti, per definizione, che $\rho_{X} \le b_{2}(X)$.
+				Ad esempio, se $X=C$ è una curva, allora $NS(X) \simeq H^{2}(X;\Z) \simeq \Z$,
+				quindi $\rho_{X} = b_{2}(X) = 1$.
+				Il Neron-Severi misura la ``\emph{parte discreta}'' di $X$.
+			\end{rmk}
+			
+			\begin{df}
+				Il nucleo della prima classe di Chern verrà chiamato \textbf{varietà di Picard}
+				\begin{equation}
+					\Pic^{0}(X) := \ker c_{1} \subset \Pic(X)\,.
+				\end{equation}
+			\end{df}
+			
+			Dalla successione esponenziale \eqref{ses-exp}, si vede che
+			\begin{equation}
+				Pic^{0}(X) \simeq H^{1}(X, \Oo_{X})/\ker \beta \simeq H^{1}(X, \Oo_{X}) / H^{1}(X;\Z)\,,
+			\end{equation}
+			quindi notiamo che è un \textbf{toro complesso} di dimensione $h^{1}(\Oo_{X})$,
+			per questo diciamo che misura la ``\emph{parte continua}'' di $X$.
+			Ovviamente abbiamo la successione esatta corta di gruppi abeliani
+			\begin{equation}\label{ses-pic}
+				0 \longrightarrow \Pic^{0}(X) \longrightarrow \Pic(X)
+				\overset{\exp}{\longrightarrow} NS(X) \longrightarrow 0\,.
+			\end{equation}
+			
+			\subsection{Il caso delle curve}
+			
+				Sia $X=C$ una curva proiettiva liscia. Per la classificazione delle
+				superfici topologiche, sappiamo che $C$ è omeomorfa a una sfera con $g$ manici,
+				quindi
+				\begin{equation}
+					H^{0}(X; \Z) \simeq H^{2}(X; \Z)  \simeq \Z\,, \quad
+					H^{1}(X; \Z) \simeq \Z^{2g}\,.
+				\end{equation}
+				A meno di scegliere il segno dell'isomorfismo $H^{2}(X; \Z) \simeq \Z$,
+				allora $c_{1} = \deg$ e possiamo descrivere la varietà di Picard
+				esplicitamente, poiché
+				\begin{equation}
+					\Pic^{0}(X) \simeq H^{1}(X, \Oo_{X})/H^{1}(X; \Z) 
+					\simeq \C^{h^{1}(\Oo_{X})}/{\Z^{2g}} \simeq \C^{g}/{\Z^{2g}}\,,
+				\end{equation}
+				quindi è una varietà abeliana $g$-dimensionale.

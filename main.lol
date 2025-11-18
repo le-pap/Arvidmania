@@ -18,4 +18,7 @@
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Costruzione di condizioni di stabilità di Bridgeland per superfici, prendendo come esempio il caso K3. Tecnica di tilting per cuori di $t$-strutture per la costruzione di opportuni cuori per le condizioni di stabilità.}\par 
 \contentsline {chapter}{\nonumberline Lezione~8 (4~\DTMmonthname {10},~2025)}{25}{dummy.2.51}%
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Applicazione della teoria di Bridgeland per lo studio del problema di Weak Brill-Noether.}\par 
+\addvspace {10\p@ }
+\contentsline {chapter}{\nonumberline Lezione~9 (12~\DTMmonthname {11},~2025)}{33}{chapter.3}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{.}\par 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[90] biber-darwin:340> INFO - === Thu Nov  6, 2025, 01:10:06
-[122] Biber.pm:418> INFO - Reading 'main.bcf'
-[234] Biber.pm:969> INFO - Using all citekeys in bib section 0
-[252] Biber.pm:4383> INFO - Processing section 0
-[273] Biber.pm:4574> INFO - Looking for bibtex file 'res.bib' for section 0
-[274] bibtex.pm:1713> INFO - LaTeX decoding ...
-[295] bibtex.pm:1518> INFO - Found BibTeX data source 'res.bib'
-[455] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
-[455] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[455] Biber.pm:4203> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'it-IT'
-[455] Biber.pm:4209> INFO - No sort tailoring available for locale 'it-IT'
-[468] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[474] bbl.pm:757> INFO - Output to main.bbl
-[475] Biber.pm:130> WARN - ISBN '978-3-319-59485-9; 978-3-319-59486-6' in entry 'MS-lectures-bridgeland' is invalid - run biber with '--validate_datamodel' for details.
-[475] Biber.pm:132> INFO - WARNINGS: 1
+[88] biber-darwin:340> INFO - === Wed Nov 12, 2025, 09:18:16
+[113] Biber.pm:418> INFO - Reading 'main.bcf'
+[214] Biber.pm:969> INFO - Using all citekeys in bib section 0
+[231] Biber.pm:4383> INFO - Processing section 0
+[246] Biber.pm:4574> INFO - Looking for bibtex file 'res.bib' for section 0
+[248] bibtex.pm:1713> INFO - LaTeX decoding ...
+[269] bibtex.pm:1518> INFO - Found BibTeX data source 'res.bib'
+[416] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[416] UCollate.pm:68> INFO - Overriding locale 'it-IT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[416] Biber.pm:4203> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'it-IT'
+[416] Biber.pm:4209> INFO - No sort tailoring available for locale 'it-IT'
+[437] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[443] bbl.pm:757> INFO - Output to main.bbl
+[444] Biber.pm:130> WARN - ISBN '978-3-319-59485-9; 978-3-319-59486-6' in entry 'MS-lectures-bridgeland' is invalid - run biber with '--validate_datamodel' for details.
+[444] Biber.pm:132> INFO - WARNINGS: 1
