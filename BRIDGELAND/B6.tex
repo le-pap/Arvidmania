@@ -1,0 +1,204 @@
+	
+	\lecture[.]{2025-11-20}
+	
+		\section{Dettagli e applicazioni}
+		
+		\begin{warn*}
+			L'incontro di oggi è presentato da \textbf{Alessandro Frassineti}.
+		\end{warn*}		
+		
+		Lo scopo di oggi è di presentare alcuni ragionamenti sulla teoria di Bridgeland
+		e l'elaborazione di alcuni dettagli che Alessandro ha svolto per poter capire
+		bene le condizioni di stabilità; faremo molti conti, utili a capire questi argomenti.
+		
+		Come le scorse volte, denotiamo con $\omega, B \in NS(X)_{\R}$ due classi reali,
+		con $\omega$ ampio. Fissato un fibrato lineare ampio $H$, considereremo $\omega = \alpha H$,
+		con $\alpha$ reale positivo. Grazie a queste due classi, possiamo definire le seguenti
+		quantità:
+		\begin{align}
+			\ch_{0}^{B} = \ch_{0} \dots
+		\end{align}
+		
+		\section{Dettagli scritti bene}
+		
+		La scorsa volta abbiamo utilizzato l'$(\alpha,\beta)$-plane per studiare varie nozioni
+		di stabilità per fasci e complessi di fasci. Oggi vogliamo capire come
+		i muri in $Stab(X)$ cambiano la proprietà del supporto rispetto al
+		discriminante $\overline{\Delta}_{\omega}^{B}$.
+		
+		\begin{lemma}\label{lemma:raggi-estremali}
+			Sia $Q$ una forma quadratica su uno spazio vettoriale reale $V$
+			e $Z : V \to \C$ mappa $\R$-lineare tale che $\ker Z$ sia semidefinito negativo.
+			Sia $\rho$ un raggio in $\C$ che parte dall'origine e poniamo
+			\begin{equation}
+				\Cc^{+}_{\rho} = Z^{-1}(\rho) \cap \Set{Q \ge 0}\,.
+			\end{equation}
+			\begin{enumerate}
+				\item Se $\omega_{1}, \omega_{2} \in \Cc^{+}_{\rho}$, allora $Q(\omega_{1},\omega_{2}) \ge 0$.
+				\begin{proof}
+					Dato che  esiste $\lambda > 0$ tale che $Z(\omega_{1} - \lambda \omega_{2}) = 0$,
+					allora
+					\begin{equation}
+						Q(\omega_{1} - \lambda \omega_{2}) \le 0 = Q(\omega_{1}) + \lambda^{2} Q(\omega_{2}) - 2 \lambda Q(\omega_{1}, \omega_{2})\,,
+					\end{equation}
+					da cui la tesi.
+				\end{proof}
+				
+				\item $\Cc^{+}_{\rho}$ è un cono convesso.
+				\item Se $\omega_{1}, \omega_{2} \in \Cc^{+}_{\rho}$, allora
+				$0 \le Q(\omega_{1}) + Q(\omega_{2}) \le  Q(\omega_{1} + \omega_{2})$;
+				inoltre, se $Q(\omega_{1}) = Q(\omega_{2})$, allora è tutto zero.
+				\begin{proof}
+					...
+				\end{proof}
+				
+				\item Se $\ker Z$ è definito negativo, allora ogni $\omega \in \Cc^{+}_{\rho}$
+				tale che $Q(\omega) = 0$ è in un raggio estremale del cono.
+				\begin{proof}
+					...
+				\end{proof}
+			\end{enumerate}
+		\end{lemma}
+		
+		\begin{cor}
+			Sia $Q$ una forma quadratica sul reticolo $\Lambda$, 
+			con $v : K_{0}(X) \twoheadrightarrow \Lambda$ $E \in \Db{X}$. 
+			Sia $E \in \Db{X}$ e $\sigma \in Stab(X)$.
+			Se $E$ è $\sigma$-stabile e $Q(E) = 0$, allora $E$ è $\sigma'$-stabile
+			per ogni altra condizione $\sigma'$ nella stessa componente connessa contenente $\sigma$.
+			\begin{proof}
+				Sappiamo già che $E$ è $\sigma'$-stabile per ogni condizione $\sigma'$ nella
+				stessa camera di $\sigma$, quindi cerchiamo di capire
+				se consideriamo $\sigma'$ su un muro $\Ww$ per $v(E)$ che destabilizza $E$.
+				Sappiamo che $\ker Z_{\sigma'}$ è definito negativo perché vale la proprietà del supporto,
+				quindi per il \textbf{\Cref{lemma:raggi-estremali}}, sappiamo
+				che $v(E)$ è un raggio estremale di $\Cc^{+}_{\rho} \subset \Lambda_{\R}$.
+				L'oggetto $E$ è strettamente semistabile 
+				e ammette la $\sigma'$-filtrazione di JH con fattori
+				$E_{1}, \dots, E_{n}$; siccome tutti i fattori hanno la stessa fase,
+				in particolare le loro cariche centrali giacciono sullo stesso raggio in $\C$,
+				e quindi $v(E_{j}) \in \Cc^{+}_{\rho}$, per ogni $j$.
+				In particolare, per additività $v(E) = v(E_{1}) + \dots + v(E_{n})$,
+				ma essendo $v(E)$ estremale, non può essere combinazione lineare di altri vettori.
+				In altri termini: ogni $v(E_{j})$ è multiplo di $v(E)$,
+				ma questo significa che hanno stessa $Z$-pendenza 
+				$\nu_{\omega,B}(E) = \nu_{\omega,B}(E_{j})$ anche fuori dal muro.
+				Per il \textbf{\Cref{thm:defo}}, se ci spostiamo poco dal muro $\Ww$,
+				allora gli $E_{j}$ continuano a essere oggetti nei cuori delle condizioni di stabilità,
+				e quindi troviamo un sottoggetto che destabilizza $E$, contraddicendo
+				l'ipotesi di $\sigma$-stabilità.
+			\end{proof}			  
+		\end{cor}
+		
+		\begin{lemma}
+			Siano $B \in NS(X)^{\R}, \omega = \alpha H$ e $E \in \Coh^{\alpha H , B}(X)$ un oggetto
+			$(\alpha H, B)$-sesmistabile per ogni $\alpha \gge 0$.
+			Allora vale una delle seguenti:
+			\begin{enumerate}[label=\roman*)]
+				\item $\Hh^{-1}(E) = 0$ e $\Hh^{0}(E)$ è libero da torsione e $\mu_{\alpha H,B}$-semistabile;
+				\item $\Hh^{-1}(E) = 0$ e $\Hh^{0}(E)$ è di torsione;
+				\item $\Hh^{-1}(E)$ è libero da torsione e $\mu_{\alpha H,B}$-semistabile,
+				mentre $\Hh^{0}(E)$ è un fascio di torsione, supportato in dimensione $0$.
+			\end{enumerate}
+		\end{lemma}
+		
+		\begin{prop}[\textbf{Large Volume Limit}]
+			Poniamo $B = \beta H + B_{0}$ in $NS(X)_{\R}$.
+			Sia $v \in K_{num}(X)$ tale che $\ch_{0}(v) > 0$ e $H \cdot \ch_{1}^{B}(v) > 0$.
+			Allora esiste $\alpha_{0} > 0$ tale che, per ogni $\alpha > \alpha_{0}$
+			si abbia
+			\begin{equation*}
+				\Set{E \in \Coh^{\beta}(X) \, | \, \substack{v(E) = v\,, \\
+				E \text{ è } \sigma_{\alpha,\beta}\text{-sst.}}}
+				= \Set{E \in \Coh(X) \, | \,  \substack{v(E) = v\,, \\
+				E \text{ è } (H,B_{0}-\frac{1}{2}K_{X})\text{-\textbf{Gieseker} sst.}}}\,.
+			\end{equation*}
+			L'uguaglianza vale anche sugli stabili.			 
+		\end{prop}
+		
+		\begin{cor}
+			Sia $E$ fibrato vettoriale $\mu_{\omega,B}$-stabile
+			tale che $\overline{\Delta}_{\omega}^{B}(E) = 0$.
+			Allora $E$ è $\sigma_{\omega,B}$-stabile.
+			\begin{proof}
+				Siccome $E$ è un fibrato vettoriale, allora non può avere torsione,
+				il che implica $\ch_{0}(E) > 0$ e $H \cdot \ch_{1}^{B} = \Im Z_{\omega, B}(E) > 0$.
+				Per il \textbf{Large Volume Limit}, $E$ o $E[1]$ è
+				$\sigma_{\alpha H,B}$-stabile per $\alpha \gge 0$,
+				ma allora per il \textbf{Corollario} precedente è stabile anche rispetto
+				alla condizione $\sigma_{\omega, B}$.
+			\end{proof}
+		\end{cor}
+		
+		\begin{rmk}
+			Sia $X$ una superficie liscia e $B = \beta H$. Sia $L = \Oo_{X}(mH)$.
+			Allora
+			\begin{align*}
+				\overline{\Delta}_{H}^{B}(L)
+				&= \left( H \cdot (mH - B) \right)^{2} - 2H^{2}\left( \frac{m^{2}H^{2}}{2}- mH \cdot B + \frac{B^{2}}{2} \right) \\
+				&= (mH^{2} - B \cdot H)^{2} - m^{2}(H^{2})^{2} + 2m (B \cdot H) H^{2}
+				- B^{2}H^{2}  \\
+				&= (B \cdot H)^{2} - B^{2} H^{2} = 0\,.
+			\end{align*}
+			Quindi, a meno di shift, $L$ è $\sigma_{\alpha,\beta}$-stabile su tutto il piano 
+			$(\alpha,\beta)$. Per capire quale shift di $L$ è stabile, mi basta capire
+			da che parte del muro $\beta = m$ giace $\sigma$: infatti,
+			se $\beta< m$, allora $\Oo_{X}(mH)$ è $\sigma$-stabile, 
+			poiché $\mu_{\alpha H}(L)>\beta$, quindi
+			so di essere in $\Tt_{\omega,B}$; viceversa, se
+			$\beta \ge m$, allora $\Oo_{X}(mH)[1]$ è $\sigma$-stabile.
+			
+			\textcolor{red}{DISEGNO!}
+		\end{rmk}
+		
+		\section{Applicazioni}
+		
+		L'obiettivo finale di oggi è quello di 
+		dimostrare il \textbf{Kodaira Vanishing} con queste tecniche e, 
+		tempo permettendo, studiare gli schemi di Hilbert.
+		
+		\begin{prop}
+			Sia $X$ una superficie. Per ogni $p > 0$ e per ogni fibrato ampio $H$ si ha
+			\begin{equation}
+				H^{p}(\Oo_{X}(H + K_{X})) = 0\,.
+			\end{equation}
+			\begin{proof}
+					Per \textbf{Dualità di Serre} sappiamo che
+					\begin{equation}
+						H^{2}(H+K_{X}) = H^{0}(-H) = 0\,.
+					\end{equation}
+					Quindi studiamo
+					\begin{equation}
+						H^{1}(H+K_{X}) = H^{1}(-H) = \Hom(\Oo_{X}, \Oo_{X}(-H)[1])\,.
+					\end{equation}
+					
+					Per il precedente \textbf{Remark}, siccome $\Oo_{X}$ ha pendenza $0$
+					e $\Oo_{X}(-H)$ ha pendenza $-1$, quindi nella fascia $-1 < \beta < 0$
+					sia $\Oo_{X}$, sia $\Oo_{X}(-H)[1]$ sono $\sigma_{\alpha,\beta}$-stabili.
+					
+					Adesso vogliamo trovare $(\alpha, \beta)$ tali che
+					\begin{equation}
+						\nu_{\alpha, \beta}(\Oo_{X}) > \nu_{\alpha, \beta}(\Oo_{X}(-H)[1]) 
+						= \nu_{\alpha, \beta}(\Oo_{X}(-H))\,,
+					\end{equation}
+					in modo da dedurre l'annullamento della prima coomologia e concludere.
+					
+					Un conto mostra che
+					\begin{equation}
+						\nu_{\alpha, \beta}(\Oo_{X}) = \frac{\alpha^{2} - \beta^{2}}{2\alpha \beta}\,,
+						\quad \nu_{\alpha,\beta}(\Oo_{X}(-H)) = 
+						\frac{\alpha^{2} - (\beta + 1)^{2}}{2\alpha (\beta + 1)}\,.
+					\end{equation}
+					quindi risolvendo la disequazione
+					\begin{equation}
+						\frac{\alpha^{2} - \beta^{2}}{2\alpha \beta} >
+						\frac{\alpha^{2} - (\beta + 1)^{2}}{2\alpha (\beta + 1)}
+					\end{equation}
+					otteniamo il semicerchio $\alpha^{2} + (\beta + 1)^{2} < \frac{1}{4}$.
+					Quindi, ad esempio, la condizione $(\frac{1}{10}, -\frac{1}{2})$ ci dà
+					il vanishing desiderato!
+					
+					\textcolor{red}{DISEGNO!}
+			\end{proof}
+		\end{prop}
+		

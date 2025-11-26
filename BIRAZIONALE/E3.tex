@@ -1,0 +1,300 @@
+
+%	\lecture[.]{2025-11-19}
+		
+		\section{Invarianza birazionale dei numeri di Hodge esterni}
+		
+		Sia $X$ una varietà proiettiva con $\codim_{X} \operatorname{Sing}(X) \ge 2$,
+		sia $Y$ proiettiva e $f:X \to Y$ una mappa razionale tale 
+		che $\codim_{X} (X \setminus \operatorname{dom} f) \ge 2$.
+		Allora il dominio di $f$ corrisponde al luogo dei punti su cui $f$ è regolare.
+		
+		\begin{proof}
+			Come primo caso, supponiamo che $X$ sia liscia e $Y \subset \PP^{N}$.
+			Dato che $X$ è liscia, per ogni $x \in X$ l'anello locale $\Oo_{X,x}$ è un UFD.
+			In un intorno di $x \in X$, possiamo scrivere
+			\begin{equation}
+				f = (f_{0} : \dots : f_{N})\,, \quad \text{ con } f_{j} = \frac{g_{j}}{h_{j}} \in k(X)\,,
+			\end{equation}
+			dove $g_{j}, h_{j} \in \Oo_{X,x}$ sono primi tra loro, per ogni $j = 0, \dots, N$.
+			A meno di moltiplicare per il denominatore comune, possiamo supporre $f_{j} \in \Oo_{X,x}$,
+			quindi
+			\begin{equation}
+				(X \setminus \operatorname{dom} f) \cap U \subset \VV(f_{0}, \dots, f_{N})\,.
+			\end{equation}
+			Si noti che l'insieme algebrico sulla destra non può contenere divisori,
+			altrimenti se esistesse un divisore primo per $x$, detto $D \in   \VV(f_{0}, \dots, f_{N})$,
+			allora l'equazione locale di $D$ in $x$ dividerebbe tutti gli $f_{j}$,
+			contraddicendo l'ipotesi di primarietà fatta in precedenza.
+			
+			In generale, se $\codim_{X} \operatorname{Sing}(X) \ge 2$, allora possiamo usare che
+			\begin{equation}
+				(X \setminus \operatorname{dom} f) \cap U \subset  \operatorname{Sing}(X)
+				\cup \overline{(X_{reg} \setminus \operatorname{dom} f)}\,,
+			\end{equation}
+			e vedere che gli insiemi sulla destra non contengono divisori, da cui si conclude che
+			$\codim_{X} (X \setminus \operatorname{dom} f) \ge 2$.
+		\end{proof}
+		
+		\begin{cor}
+			Siano $X$ e $Y$ due curve proiettive lisce. Allora $X \simeq Y$ se e solo se
+			$X$ e $Y$ sono birazionalmente equivalenti.
+		\end{cor}
+		
+		\begin{rmk}
+			Se $f : X \dashrightarrow Y$ mappa birazionale,
+			esistono due aperti $U \subset X$ e $V \subset Y$ tali che $f : U \simeq V$.
+			In generale, può accadere che $U \subsetneq \operatorname{dom} f$.
+		\end{rmk}
+		
+		\begin{ex}[\textbf{Mappa di Cremona standard}]
+			Consideriamo la mappa
+			\begin{equation}
+				f : \PP^{2} \dashrightarrow \PP^{2}\,, \quad 
+				f\left([x_{0}: x_{1}: x_{2}] \right) := \left[ x_{1}x_{2} : x_{0}x_{2} : x_{0}x_{1} \right] = \left[ \frac{1}{x_{0}} : \frac{1}{x_{1}}  : \frac{1}{x_{2}}\right] \,.  
+			\end{equation}
+			Il dominio di $f$ è dato da $\PP^{2} \setminus \Set{[1:0:0], [0:1:0], [0:0:1]}$
+			e un aperto su cui $f$ è isomorfismo è dato da
+			\begin{equation}
+			 	U = \Set{[x_{0}: x_{1}: x_{2}] \in \PP^{2} \, | \, x_{0}x_{1}x_{2} \ne 0}\,.
+			\end{equation}
+			Quando parleremo di risoluzione delle indeterminazioni, vedremo che
+			\begin{equation}
+				\begin{tikzcd}
+					& \operatorname{Bl}_{p_{1},p_{2},p_{3}}(\PP^{2})
+					 \ar[dl, "\operatorname{bl}"'] \ar[dr] & \\
+					\PP^{2} \ar[rr, dashed, "f"] & & \PP^{2}
+				\end{tikzcd}
+			\end{equation}
+		\end{ex}
+		
+		\begin{oss}
+			Data $X$ proiettiva liscia, $\omega$ una $p$-forma razionale su $X$, allora il chiuso in cui $\omega$ non è regolare è un divisore, cioè ha codimensione $1$. Infatti, basta verificarlo su un 
+			aperto in coordinate locali $x_{1}, \dots, x_{n}$, dove possiamo scrivere
+			\begin{equation}
+				\omega = \sum_{i_{1}< \dots < i_{n}} f_{i_{1}, \dots, i_{n}} \, dx_{i_{1}} \wedge \dots \wedge dx_{i_{n}}\,,
+			\end{equation}
+			e notiamo che $\omega$ è regolare esattamente dove le funzioni $f_{*}$ sono regolari.
+			Invece, il luogo in cui $\omega$ non è regolare è localmente 
+			l'unione dei divisori dei poli delle $f_{*}$.
+		\end{oss}
+		
+		\begin{cor}
+			Se $U \subset X$ è un aperto tale che $X \setminus U$ 
+			abbia codimensione almeno $2$, allora la restrizione
+			\begin{equation}
+				r : H^{0}(X, \Omega^{p}_{X}) \longrightarrow H^{0}(U, \Omega^{p}_{U})\,,
+				\quad \omega \longmapsto \omega\vert_{U}\,,
+			\end{equation}
+			è un isomorfismo.
+			\begin{proof}
+				La mappa è ben definita, è un omomorfismo di gruppi ed è iniettiva:
+				se $\omega$ è una forma tale che $\omega\vert_{U} = 0$, su $U$ un aperto denso,
+				allora è nulla anche su $X$. La surgettività...
+			\end{proof}
+		\end{cor}
+		
+		\begin{prop}
+			Sia $X$ una varietà proiettiva liscia\footnote{Ma funziona più in generale, ad esempio per varietà normali.}. I numeri di Hodge $h^{0,p}$ sono invarianti birazionali, dove ricordiamo che
+			\begin{equation}
+				h^{0,p} := \dim H^{p}(X, \Oo_{X}) = \dim H^{0}(X, \Omega_{X}^{p}) =: h^{p,0}\,. 
+			\end{equation}
+			\begin{proof}
+				Siano $X$ e $Y$ varietà birazionali; dimostriamo che esiste un isomorfismo
+				\begin{equation}
+					H^{0}(X, \Omega_{X}^{p}) \simeq H^{0}(Y, \Omega_{Y}^{p})\,.
+				\end{equation}
+				Prendiamo $f : \dashrightarrow Y$ e $g : Y \dashrightarrow X$ inverse birazionali,
+				con $U \subset X$ e $V \subset Y$ aperti su cui $f$ e $g$ sono isomorfismi.
+				Allora abbiamo il diagramma commutativo
+				\begin{equation}
+					\begin{tikzcd}
+				{H^{0}(Y, \Omega_{Y}^{p})} \arrow[r, "f^{*}"] \arrow[rd, "r_{Y}"', "\simeq"] 
+				& {H^{0}(\operatorname{dom}(f), \Omega_{\operatorname{dom}(f)}^{p})} 
+				& {H^{0}(X, \Omega_{X}^{p})} \arrow[l, "r_{X}", "\simeq"'] \arrow[ld, "g^{*}"] \\
+                & {H^{0}(\operatorname{dom}(g), \Omega_{\operatorname{dom}(g)}^{p})} & \,.                                                             
+				\end{tikzcd}
+				\end{equation}
+				Notiamo che le restrizioni $r_{X}$ e $r_{Y}$ sono isomorfismi 
+				per le osservazioni precedenti, quindi consideriamo 
+				$\alpha := r_{X}^{-1} \circ f^{*}$ e $\beta := r_{Y}^{-1} \circ g^{*}$.
+				Dimostriamo che sono omomorfismi mutuamente inversi: 
+				per vedere che $\beta \circ \alpha = \id$, 
+				consideriamo $\omega \in H^{0}(Y, \Omega_{Y}^{p})$.
+				
+				...
+			\end{proof}
+		\end{prop}
+		
+		È importante tenere a mente che gli altri numeri di Hodge \textbf{non} sono invarianti birazionali.
+		
+		\begin{ex}
+			Consideriamo il blow-up $\operatorname{Bl}_{p} \PP^{2}$ 
+			del piano proiettivo in un punto $p \in \PP^{2}$. 
+			Questo è birazionale a $\PP^{2}$, ma possiamo vedere dal diamante di Hodge che
+			\begin{equation}
+				h^{1,1} = b_{2}(\PP^{2}) = 1\,, 
+				\quad h^{1,1} = b_{2}(\operatorname{Bl}_{p} \PP^{2}) = 2\,.
+			\end{equation}
+		\end{ex}
+		
+		
+		
+		
+		
+	\section{Intersezione tra divisori e curve}
+	
+		Per $X$ una curva proiettiva liscia, abbiamo la funzione \textbf{grado}
+		\begin{equation}
+			\deg : \Pic(X) \longrightarrow \Z\,, \quad \sum_{i} m_{i} D_{i} \longmapsto \sum_{i} m_{i}\,.
+		\end{equation}
+		Vogliamo qualcosa di simile per una varietà $X$ di dimensione qualsiasi.
+		Dato $D$ un divisore di Cartier su $X$ e $C$ una curva irriducibile in $X$,
+		vogliamo definire un \textbf{prodotto d'intersezione}
+		\begin{equation}
+			D \cdot C \in \Z\,.
+		\end{equation}
+		Dato che $D$ è Cartier, $\Oo_{X}(D) \in \Pic(X)$. Ora:
+		\begin{itemize}
+			\item se $C$ è \textbf{liscia}, allora $\Oo_{X}(D)\vert_{C} \in \Pic(C)$ e quindi
+			ha un grado ben definito, per cui poniamo $D \cdot C := \deg \Oo_{X}(D)\vert_{C}$.
+			Osserviamo che, se $C \nsubseteq \operatorname{supp} D$, allora $D\vert_{C}$ è un
+			divisore su $C$ e $\deg D\vert_{C} = D \cdot C$, 
+			usando il fatto che $\Oo_{C}(D\vert_{C}) = \Oo(D)\vert_{C}$;
+			
+			\item se $C$ è \textbf{singolare}, prendo la normalizzazione della curva 
+			$\widetilde{\nu}:C^{\nu} \overset{\nu}{\to} C \hookrightarrow X$
+			e poniamo $D \cdot C = \deg_{C^{\nu}}(\widetilde{\nu}^{*} \Oo_{X}(D))$.
+		\end{itemize}
+		
+		\begin{oss}
+			Ricapitolando, per un divisore di Cartier $D$ e una curva irriducibile $X$ abbiamo i casi:
+			\begin{enumerate}
+				\item ...
+			\end{enumerate}
+		\end{oss}
+		
+		Denoteremo con $Z_{1}(X)$ il gruppo abeliano degli $1$-cicli su $X$,
+		i cui elementi sono della forma $\sum_{i} m_{i} C_{i}$, con $m_{i} \in \Z$ e $C_{i}$
+		curva irriducibile su $X$. Abbiamo un'applicazione bilineare
+		\begin{equation}
+			\operatorname{CaDiv}(X) \times Z_{1}(X) \longrightarrow \Z\,,
+			\quad \left( D, \sum_{i} m_{i} C_{i} \right) \longmapsto  \sum_{i} m_{i} (D \cdot C_{i})\,.
+		\end{equation}
+		
+		\begin{df}
+			Due divisori di Cartier $D_{1}$ e $D_{2}$ su $X$ sono \textbf{numericamente equivalenti}
+			se, per ogni $C \subset X$ curva irriducibile, vale $D_{1} \cdot C = D_{2} \cdot C$.
+			Scriviamo allora $D_{1} \equiv D_{2}$. 
+		\end{df}
+		
+		Se $D_{1} \sim D_{2}$ allora $D_{1} \equiv D_{2}$, ma il viceversa è falso.
+		
+		\begin{ex}
+			Sia $E$ la curva ellittica in $\PP^{2}$ definita dall'equazione omogenea
+			$y^{2}z = x^{3} -xz^{2}$. Siano $O = [0:1:0], P=[0:0:1]$ e $Q=[1:0:1]$,
+			allora $D_{1} = P - O$ e $D_{2} = Q-O$ sono due divisori con $\deg D_{1} = \deg D_{2} = 0$,
+			quindi $D_{1} \equiv D_{2}$. Tuttavia, su una curva ellittica abbiamo la 
+			\textbf{mappa di Abel-Jacobi}, cioè l'isomorfismo\footnote{In generale, se $g(C) > 1$ la mappa è definita, ma vale solo l'iniettività.}
+			\begin{equation}
+				a : E \overset{\sim}{\longrightarrow} \Pic^{0}(E)\,, \quad p \longmapsto \Oo_{E}(p-O) \,.
+			\end{equation}
+			Quindi, dato che $P \ne Q$, per iniettività di $a$ segue che $a(Q) \ne a(P)$,
+			da cui deduciamo che $P-O \nsim Q-O$, quindi i due divisori non sono linearmente equivalenti.
+		\end{ex}
+		
+		\begin{prop}
+			Sia $X$ una varietà proiettiva liscia. Allora $D \equiv 0$ se e solo se
+			$c_{1}(D)$ è di torsione in $H^{2}(X;\Z)$.
+			\begin{proof}[Idea della dimostrazione]
+				È un risultato profondo, 
+				per cui bisogna combinare i risultati giusti della Teoria di Hodge:
+				per il \textbf{Teorema $(1,1)$ di Lefschetz}, 
+				sappiamo che $c_{1}(D) \in H^{1,1}(X) \cap H^{2}(X;\Z)$.
+				Usando la \textbf{dualità di Poincaré} e il \textbf{Teorema dell'indice di Hodge},
+				segue che $c_{1}(D) = 0$ in $H^{2}(X;\R)$, da cui segue che $c_{1}(D)$ è di
+				torsione quando si torna a coefficienti interi.
+				
+				Per l'implicazione opposta, consideriamo $D_{1}, D_{2}$ sono divisori su $X$
+				tali che esista $m \in \N$  per cui $mc_{1}(D_{1}) = mc_{1}(D_{2})$.
+				Per ogni $C \subset X$ curva liscia, consideriamo il diagramma commutativo
+				\begin{equation}
+					\begin{tikzcd}
+						\Pic(X) \ar[r, "c_{1}"] \ar[d,"-\vert_{C}"'] 
+						& H^{2}(X;\Z) \ar[d] \\
+						\Pic(C) \ar[r, "\deg"] & H^{2}(C;\Z) \simeq \Z\,,
+					\end{tikzcd}
+				\end{equation}
+				grazie al quale si nota che $D_{1} \cdot C = \deg_{C}(\Oo_{X}(D_{j})\vert_{C})
+				= c_{1}(D_{j})\vert_{C}$.
+				Adesso, sapendo che
+				\begin{equation}
+					m \left( c_{1}(D_{1}) \vert_{C} \right) 
+					= \left(m \, c_{1}(D_{1}) \vert_{C} \right)
+					=  \left( m \, c_{1}(D_{2}) \vert_{C} \right) 
+					= m \left( c_{1}(D_{2}) \vert_{C} \right)\,,
+				\end{equation}
+				ed essendo un'equazione in $\Z$, allora 
+				$c_{1}(D_{1}) \vert_{C} = c_{1}(D_{2}) \vert_{C}$,
+				ma essendo su una curva $C$ questo equivale a $D_{1} \cdot C = D_{2} \cdot C$.
+			\end{proof}
+		\end{prop}
+		
+		Come conseguenza, notiamo che tutto ciò che sta in $\Pic^{0}(X)$ è numericamente banale:
+		\begin{equation}
+			\Oo_{X}(D) \in \Pic^{0}(X) \quad \implies \quad D \equiv 0\,.
+		\end{equation}
+		Infatti, dalla successione esponenziale deduciamo che, se $\Pic^{0}(X) = 0$
+		e $H^{2}(X;\Z)$ è senza torsione, allora l'equivalenza numerica coincide con l'equivalenza lineare. In particolare, se $X$ è \textbf{razionale}, allora $\sim$ coincide con $\equiv$:
+		infatti, se $X$ è birazionale a $\PP^{n}$, per il \textbf{Vanishing di Kodaira} sappiamo che
+		\begin{equation}
+			h^{i}(\PP^{n}, \Oo_{\PP^{n}}) = 0\,, \quad \text{ se } i>0\,,
+		\end{equation}
+		quindi dall'invarianza birazionale dei $h^{0,p}$ si deduce che
+		\begin{equation}
+			h^{1}(X, \Oo_{X}) = 0 = h^{2}(X, \Oo_{X})\,,
+		\end{equation}
+		da cui abbiamo $\Pic^{0}(X) = 0$. Quindi la successione esponenziale mostra che
+		\begin{equation}
+			\Pic(X) \simeq NS(X) \simeq H^{2}(X;\Z)\,,
+		\end{equation}
+		che è un modulo libero, allora \textcolor{red}{???}
+		
+		\begin{df}
+			Definiamo il reticolo
+			\begin{equation}
+				N^{1}(X)_{\Z} := \operatorname{Div}(X)/\equiv  \, = \, \Pic(X) / \equiv \,
+				\simeq  \, NS(X)/torsione  \, \simeq  \, \Z^{\rho(X)}
+			\end{equation}
+			e poniamo $N^{1}(X) := N^{1}(X)_{\Z} \otimes \R = \R^{\rho(X)}$
+			lo spazio dei divisori a coefficienti reali, modulo l'equivalenza numerica.
+		\end{df}	
+		
+		Il prodotto d'intersezione $\operatorname{Div}(X) \times Z_{1}(X) \to \Z$
+		passa al quoziente per l'equivalenza lineare, definendo un'applicazione bilineare non degenere
+		\begin{equation}
+			N^{1}(X) \times N_{1}(X) \longrightarrow \R\,,
+		\end{equation}
+		dove $N_{1}(X) := (Z_{1}/\equiv) \otimes \R$. 
+		Si dimostra che $N_{1}(X)$ e $N^{1}(X)$ sono in dualità.
+		
+		\begin{ex}
+			Sia $X = \PP^{n}$, $C \subset \PP^{n}$ una curva irriducibile e $H \subset \PP^{n}$ un iperpiano che non contiene $C$. In questo caso
+			\begin{equation}
+				C \cdot H = \deg H\vert_{C} = \lvert H \cap C \rvert\,.
+			\end{equation}
+			Dato che il primo carattere di Chern induce un isomorfismo
+			\begin{equation}
+				\Pic(\PP^{n}) \simeq \Z H \overset{\sim}{\longrightarrow} H^{2}(\PP^{n}; \Z)\,,
+				quad \Oo(D) \longmapsto \deg D\,,
+			\end{equation}
+			e quindi l'equivalenza numerica coincide con quella lineare.
+			Poiché per ogni divisore $D$ si ha $D \sim (\deg D)H$, vediamo che
+			\begin{equation}
+				D \cdot C = (\deg D) (\deg C)\,;
+			\end{equation}
+			posta $\ell \subset \PP^{n}$ una retta, 
+			indichiamo $[\ell]$ la sua classe di equivalenza numerica, e quindi abbiamo
+			\begin{equation}
+				N^{1}(\PP^{n}) = \R[H]\,, \quad N_{1}(\PP^{n}) = \R[\ell]\,.
+			\end{equation}
+		\end{ex}

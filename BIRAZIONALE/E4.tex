@@ -1,0 +1,317 @@
+
+	\lecture[.]{2025-11-26}
+	
+		\section{Varietà unirigate e razionalmente connesse}
+		
+			Sia $X$ una varietà proiettiva su $\C$.
+			
+			\begin{df}
+				Una curva irriducibile $C \subset X$ si dice \textbf{razionale}
+				se la sua normalizzazione $C^{\nu} \simeq \PP^{1}$. 
+			\end{df}
+			
+			Per quanto abbiamo visto nelle scorse lezioni,
+			possiamo dire equivalentemente che una curva $C$ è razionale 
+			se e solo se è birazionale a $\PP^{1}$: infatti, 
+			se $C \dashrightarrow \PP^{1}$ è una mappa birazionale,
+			componendo con la normalizzazione si ottiene $C^{\nu} \dashrightarrow \PP^{1}$
+			mappa birazionale, che per le curve lisce è equivalente alla nozione di isomorfismo.
+			
+			\begin{oss}
+				Un curva razionale $C$ è l'immagine di un morfismo non costante
+				\begin{equation*}
+					\begin{tikzcd}
+						\PP^{1} \ar[rr] \ar[dr, "\nu"'] & & X \\
+						& C \ar[ur, hook] & \,.
+					\end{tikzcd}
+				\end{equation*}
+			\end{oss}
+			
+			\begin{df}
+				Una varietà $X$ si dice \textbf{unirigata} se, per ogni $x \in X$,
+				esiste una curva razionale $C$ che passa per $x$.
+			\end{df}
+			
+			\begin{ex}
+				Lo spazio proiettivo $X = \PP^{n}$ è una varietà unirigata.
+			\end{ex}
+			
+			\begin{oss}
+				Essere unirigata è un invariante birazionale.
+			\end{oss}
+			
+			\begin{cor}\label{cor:razionale-unirigata}
+				Se $X$ è razionale, allora $X$ è unirigata.
+			\end{cor}
+			
+			\begin{ex}
+				Il viceversa del \textbf{\Cref{cor:razionale-unirigata}} è falso:
+				infatti, presa $C$ una curva proiettiva liscia di genere $g \ge 1$,
+				allora $X = \PP^{1} \times C$ è unirigata, infatti basta considerare le curve
+				della forma $C = \PP^{1} \times \{ pt. \}$, ma non può essere
+				razionale per via dei suoi numeri di Hodge esterni: infatti,
+				per dualità di Serre
+				\begin{equation*}
+					g = h^{1}(\Oo_{C}) =  h^{0}(\Omega_{C}^{1}) > 0\,,
+				\end{equation*}	
+				quindi esiste una $1$-forma regolare $\omega \ne 0$ su $C$;
+				da questa otteniamo una $1$-forma regolare $\operatorname{pr}_{C}^{*}\omega \in H^{0}(X,\Omega_{X})$,
+				da cui concludiamo che $h^{0,1}(X) \ne 0 = h^{0,1}(\PP^{2})$.
+			\end{ex}
+			
+			Sia $f : \PP^{1} \to X$ un morfismo non costante. Per il \textbf{Teorema di Grothendieck}
+			sappiamo che
+			\begin{equation*}
+				f^{*}\Tt_{X} \simeq \Oo(a_{1}) \oplus \dots \oplus \Oo(a_{n})\,,
+				\quad \text{con } a_{1} \ge a_{2} \ge \dots \ge a_{n} \text{ interi}\,,
+			\end{equation*}
+			e dato che $\Tt_{\PP^{1}} = \Oo(2)$, possiamo dedurre che $a_{1} \ge 2$:
+			infatti
+			\begin{equation*}
+				\Hom(\Oo(2), \Oo(a_{1}) \oplus \dots \oplus \Oo(a_{n}))
+				= \bigoplus_{i=1}^{n} \Hom(\Oo(2), \Oo(a_{i})) 
+				\simeq \bigoplus_{i=1}^{n} H^{0}(\PP^{1}, \Oo(a_{i}-2))\,;
+			\end{equation*}
+			affinché la mappa sia non nulla, abbiamo quindi bisogno che esista almeno un $a_{i} \ge 2$.
+			
+			\begin{df}
+				Sia $r > 0$ intero. Una curva razionale $f : \PP^{1} \to X$ è \textbf{$r$-free}
+				se $f^{*}\Tt_{X} \otimes \Oo(-r)$ è globalmente generato.
+				Per $r=0$, chiamiamo $f$ \textbf{free}, per $r=1$ chiamiamo $f$ \textbf{very free}.
+			\end{df}
+			
+			L'idea è che, più è grande $r$, più il fascio è globalmente generato e quindi aumenta la
+			positività del fascio, quindi in altri termini aumentano le sezioni globali e questo dà molta
+			più libertà di deformare la curva razionale, persino fissando dei punti sulla curva!
+			
+			
+			\begin{prop}
+				Sia $X$ varietà proiettiva liscia su $\C$. Allora $X$ è unirigata se e solo se
+				ammette una curva razionale free.
+			\end{prop}
+			
+			\begin{ex}
+				Se $X$ ha $K_{X}$ nef, allora non esistono curve razionali free: infatti,
+				se per assurdo esistesse $f:\PP^{1} \to X$ free, allora
+				\begin{equation*}
+					f^{*} K_{X} = -\det(f^{*}\Tt_{X}) = \Oo(-a_{1} -a_{2} - \dots -a_{n})\,.
+				\end{equation*}
+				Per aggiunzione allora possiamo calcolare
+				\begin{equation*}
+					K_{X} \cdot f_{*}C = f^{*}K_{X} \cdot C = -a_{1}-\dots-a_{n}\,;
+				\end{equation*}
+				sapendo che $f^{*}\Tt_{X}$ è globalmente generato, allora ogni $a_{i} \ge 0$,
+				e inoltre $a_{1} \ge 2$ per l'osservazione precedente, quindi
+				$K_{X} \cdot f_{*}C < 0$, contraddicendo l'ipotesi di nefness.
+			\end{ex}
+			
+			\begin{ex}
+				Ogni curva razionale di $\PP^{n}$ è very free. Infatti, 
+				$\det (\Tt_{\PP^{n}}) = \Oo(n+1)$ è ampio
+				e, dato che una curva razionale è data da un morfismo finito $f : \PP^{1} \to \PP^{n}$,
+				allora $\det(f^{*}\Tt_{\PP^{n}})$ è ancora ampio, da cui si può dedurre che
+				\begin{equation*}
+					f^{*} \Tt_{\PP^{n}} = \Oo(a_{1}) \oplus \dots \oplus \Oo(a_{n})\,,
+					\quad \text{con ogni } a_{i}>0\,,
+				\end{equation*}
+				da cui deduciamo che $f^{*}\Tt_{\PP^{n}} \otimes \Oo(-1)$ è globalmente generato.
+				\footnote{Per i dettagli sul collegamento tra line bundles e positività,
+				si guardi il Lazarsfeld, ``\emph{costruzione di Lutowski}''.}
+			\end{ex}
+			
+			\begin{df}
+				Sia $X$ varietza proiettiva su $\C$. Diciamo che $X$ è \textbf{razionalmente connessa}
+				se, per ogni coppia di punti $x_{1},x_{2} \in X$, esiste una curva razionale per $x_{1}$ 
+				e $x_{2}$.
+			\end{df}
+			
+			\begin{thm}
+				Una varietà $X$ è razionalmente connessa 
+				se e solo se $X$ contiene una curva razionale very free.
+			\end{thm}
+			
+			\begin{rmk}
+				L'idea della dimostrazione, come quella per l'unirazionalità,
+				è quella di considerare l'insieme delle curve razionali che passano per due punti
+				e mostrare che questo insieme contiene un aperto non vuoto.
+				In breve, basta mostrare il risultato per una curva generica in un aperto denso;
+				questo mostra anche che essere razionalmente connessi è un \emph{invariante birazionale}.
+			\end{rmk}			
+			
+			\begin{thm}
+				Se $X$ è una varietà razionale, allora è anche razionalmente connessa.
+			\end{thm}
+			
+			\begin{prop}\label{prop:RC}
+				Sia $X$ varietà proiettiva liscia su $\C$. Se $X$ è razionalmente connessa, allora:
+				\begin{enumerate}[label=\roman*)]
+					\item per ogni $m,p > 0$ interi, allora $H^{0}\left(X, (\Omega_{X}^{p})^{\otimes m}\right) = 0$;
+					\item $X$ non ha rivestimenti connessi étale finiti non banali;
+					\item $X$ è semplicemente connessa.
+				\end{enumerate}
+				\begin{proof}
+					Sia $X$ razionalmente connessa.
+					\begin{enumerate}[label=\roman*)]
+					\item Per ipotesi, esiste $f : \PP^{1} \to X$ curva very free per un punto generale di $X$. Allora, $f^{*}\Omega_{X}^{p} = (f^{*}\Tt_{X})^{\vee}$ è somme diretta di fibrati lineari di grado negativo: segue che $H^{0}(\PP^{1}, f^{*}\Omega_{X}^{p}) = 0$. Se $\omega \in H^{0}(X, \Omega^{p}_{X})$,
+					allora  $f^{*}\omega \in H^{0}(\PP^{1}, f^{*}\Omega^{p}_{X}) = 0$,
+					quindi $f^{*}\omega=0$. Questo implica che la restrizione di $\omega$ 
+					sulla curva $f(\PP^{1})$ è identicamente nulla; dato che $\omega$ si annulla su
+					tutte le curve very free che coprono $X$, allora $\omega = 0$.
+					
+					\item Per dualità, sappiamo che $H^{0}(X, \Omega_{X}^{p}) = H^{p}(X,\Oo_{X})$,
+					quindi per il punto $i)$ sappiamo che $\chi(\Oo_{X}) = h^{0}(\Oo_{X}) = 1$.
+					Se $\pi : Y \to X$ è un rivestimento étale finito, allora si può vedere che
+					le curve very free si sollevano, 
+					e in particolare che $Y$ è a sua volta razionalmente connessa.
+					Ma allora $\chi(\Oo_{Y}) = 1$, da cui deduciamo che
+					\begin{equation*}
+						1 = \chi(\Oo_{Y}) = \deg \pi \cdot \chi(\Oo_{X}) = \deg \pi\,,
+					\end{equation*}
+					ma allora $\pi$ è un isomorfismo.
+					
+					\item Omessa.
+ 					\end{enumerate}
+				\end{proof}
+			\end{prop}
+			
+			
+			\begin{conj*}
+				Se $H^{0}\left(X, (\Omega_{X})^{\otimes m}\right) = 0$ per ogni $m > 0$,
+				allora $X$ è razionalmente connessa. Si sa che la congettura è vera
+				per $\dim X \le 3$.
+			\end{conj*}
+			
+			\begin{cor}
+				Se $X$ è razionalmente connessa, allora l'equivalenza lineare 
+				e l'equivalenza numerica coincidono.
+				\begin{proof}
+					Proviamo che, se $D \equiv D'$, allora $D \sim D'$ 
+					(l'altra implicazione è sempre vera). 
+					Dalla scorsa lezione sappiamo che $c_{1}(D-D')$ è di torsione 
+					in $H^{2}(X; \Z)$, ma se $X$ è razionalmente connessa,
+					la parte $ii)$ della \textbf{\Cref{prop:RC}} sappiamo che 
+					il secondo gruppo di coomologia è senza torsione, quindi
+					$D-D'\in \ker c_{1}$. Per la parte $i)$ della \textbf{\Cref{prop:RC}}
+					sappiamo che $c_{1}$ è iniettiva, da cui $D \sim D'$.
+				\end{proof}
+			\end{cor}
+			
+			\begin{thm}[\textbf{Kóllar, Miyaka, Mori}]\label{thm:Fano-RC}
+				Ogni varietà di Fano liscia è razionalmente connessa.
+			\end{thm}
+			
+			\begin{cor}
+				Se $X$ è di Fano, allora $D \sim D$ se e solo se $D \equiv D'$.
+			\end{cor}
+				
+				
+		\section{Cono relativo di curve}
+		
+			Sia $N_{1}(X) = Z_{1}(X)/\equiv$ lo spazio degli $1$-cicli su $X$,
+			 modulo l'equivalenza numerica, e scriviamp $NE(X)$ per il cono convesso generato
+			 dalle classi di curve effettive. La sua chiusura è il \textbf{cono di Mori}
+			 \begin{equation}
+			 	\overline{NE}(X) = \overline{\Set{\sum a_{i} [C_{i}] \,|\, a_{i} \ge 0, \, C_{i} \subset X \text{ curva irriducibile } }} \subset N_{1}(X)\,.
+			 \end{equation}
+			 Sia $f : X \to Y$ un morfismo tra varietà proiettive normali.
+			 Questa induce un omomorfismo $f_{*} : Z_{1}(X) \to Z_{1}(Y)$ nella seguente maniera:
+			 data $C \subset X$ una curva irriducibile, se $C$ viene contratta da $f$, 
+			 i.e. $f(C) = \{ pt. \}$, allora $f_{*}(C) = 0$; se $f_{*}(C) \subset Y$ è una curva,
+			 allora $f_{*}C = m f(C)$, dove $m = \deg f\vert_{C} \in \Z$. Allora
+			 il \textbf{pushforward} si ottiene estendendo $f_{*}$ per linearità su tutto $Z_{1}(X)$.
+			 Inoltre, il pushforward passa al quoziente per l'equivalenza lineare, quindi
+			 induce le mappe lineari
+			 \begin{align*}
+			 	f_{*} : N_{1}(X) \longrightarrow N_{1}(Y)\,, 
+			 	\quad f^{*} : N^{1}(Y) \longleftrightarrow N^{1}(X)\,,
+			 \end{align*}
+			 dove il pullback sulle classi dei divisori di Cartier è dato da $f^{*}[D] := [f^{*}(D)]$.
+			 Queste mappe sono legate dalla seguente formula:
+			 
+			 \begin{prop}[\textbf{Formula di proiezione}]\label{formula:proiezione}
+			 	Sia $f: X \to Y$ un morfismo di varietà proiettive normali.
+			 	Data $C \subset X$ curva e $D$ un divisore di Cartier su $Y$, allora vale
+			 	\begin{equation}\label{PF}
+			 		f^{*}D \cdot C = D \cdot f_{*}C\,.
+			 	\end{equation}
+			 \end{prop}
+			 
+			 \begin{oss}
+			 	Se $f$ è un morfismo suriettivo, allora $f^{*}$ è iniettiva e $f_{*}$ è surgettiva.
+			 	Infatti, per ogni curva $C \subset Y$, esiste una curva $C'\subset X$
+			 	tale che $f(C') = C$ e quindi sappiamo che esiste $m>0$ tale che $f_{*}([C']) = m[C]$.
+			 	Dalla surgettività di $f_{*}$ segue che $\dim \ker f_{*} = \rho_{X}-
+			 	\rho_{X}$; dalla formula di proiezione si deduce che $\ker f^{*} \perp \im f_{*}$,
+			 	ma avendo $\im f_{*} = N_{1}(Y)$, concludiamo che $\ker f^{*} = 0$.
+			 \end{oss}
+			 
+			 \begin{df}
+			 	Sia $f : X \to Y$ un morfismo tra varietà proiettive normali.
+			 	Il \textbf{cono relativo di $f$} è il sottocono $NE(f)$ di $NE(X)$
+			 	generato dalle classi di equivalenza numerica di curve contratte da $f$,
+			 	cioè
+			 	\begin{align*}
+				 	NE(f) := \ker f_{*} \cap \overline{NE}(X)\,.
+				\end{align*}			 	 
+			 \end{df}
+			 
+			 \begin{oss}
+			 	Dalla formula di proiezione, una curva irriducibile $C$ su $X$ è contratta da $f$ se
+			 	e solo se $f_{*}[C] = 0$. Equivlentemente, se $A$ è un divisore ampio su $Y$,
+			 	allora $C$ è contratta da $f$ se e solo se $f^{*}A \cdot C = 0$.
+			 	La morale è che la proprietà di \textbf{essere contratta} è una
+			 	proprietà \emph{numerica} delle curve.
+			 \end{oss}	
+			 
+			 \begin{df}
+			 	Un sottocono $F$ di un cono $\Cc$ è una \textbf{faccia estremale} se,
+			 	per ogni $a, b \in \Cc$, se $a+b \in F$, allora sia $a$, sia $b$ appartengono a $F$.
+			 	Una faccia è un \textbf{raggio estremale di $\Cc$} 
+			 	se genera uno spazio vettoriale $1$-dimensionale.
+			 \end{df}
+			 
+			 \begin{df}
+			 	Un morfismo surgettivo $f:X \to Y$ tra varietà proiettive normali
+			 	viene detto \textbf{contrazione} se le fibre di $f$ sono connesse.
+			 \end{df}
+			 
+			 \begin{lemma}[\textbf{Lemma di rigidità}]\label{lemma:rigid}
+			 	Se $f:X \to Y$ una contrazione tra varietà proiettive normali,
+			 	allora $NE(f)$ è una faccia estremale di $\overline{NE}(X)$.
+			 	Se $Y'$ è una varietà normale e $f':X \to Y'$ 
+			 	è un morfismo tale che $NE(f) \subset NE(f')$,
+			 	allora esiste un'unico morfismo $g:Y \to Y'$ che fa commutare il triangolo
+			 	\begin{equation*}
+			 		\begin{tikzcd}
+			 			X \ar[rr,"f'"] \ar[dr,"f"'] && Y' \\
+			 			& Y \ar[ur, "g"'] & \,.
+			 		\end{tikzcd}
+			 	\end{equation*}
+			 	In altri termini, il cono relativo determina $f$ (a meno di isomorfismi $g$).
+			 \end{lemma}
+			 
+			 \begin{ex}
+			 	Vedremo un esempio sulla decomposizione di conic bundles più avanti.
+			 \end{ex}
+			 
+			 \begin{ex}
+			 	Il blow-up $f:\operatorname{Bl}_{p}\PP^{2} \to \PP^{2}$ è una contrazione
+			 	che contrae il divisore eccezionale $E$. Dunque il cono relativo è 
+			 	$NE(f) = \R_{\ge 0} [E]$. Sappiamo che $\rho_{\operatorname{Bl}_{p}\PP^{2}} = 2$,
+			 	e infatti il gruppo di Picard è $\Pic(\operatorname{Bl}_{p}\PP^{2}) = \Z H \oplus \Z E$,
+			 	dove $H := f^{*}\ell$, con $\ell$ retta in $\PP^{2}$.
+			 	Detta $\widetilde{\ell} \subset \operatorname{Bl}_{p}\PP^{2}$ 
+			 	la trasformata stretta di una retta in $\PP^{2}$ 
+			 	passante per $p$, notiamo che l'anticanonico $-K_{\operatorname{Bl}_{p}\PP^{2}} = 3H-E$
+			 	dà
+			 	\begin{equation}
+			 		-K_{X} \cdot \widetilde{ell} > 0\,.
+			 	\end{equation}
+			 	La prossima volta vedremo il \textbf{Teorema delle contrazioni},
+			 	che ci garantisce l'esistenza di una contrazione $\widetilde{f}$ che
+			 	contrae le rette $\widetilde{\ell}$, dando così origine a
+			 	\begin{equation*}
+			 		\widetilde{f} : \operatorname{Bl}_{p}\PP^{2} \longrightarrow \PP^{1}\,,
+			 	\end{equation*}
+			 	il cui cono relativo è $NS(\widetilde{f}) = \R_{\ge 0}[\widetilde{\ell}]$.
+			 \end{ex}
