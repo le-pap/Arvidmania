@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber main"] 1764946857 "main.bcf" "main.bbl" "main" 1764946875
-  "main.bcf" 1764946875 108410 9102459207e88bb3cdc01e6d18c79a79 "pdflatex"
-  "res.bib" 1764317200 4143 22b399a9e4e74672c452668135643fd3 ""
+["biber main"] 1764947730 "main.bcf" "main.bbl" "main" 1764947746
+  "main.bcf" 1764947745 108500 329f87cd5ea7c8189088a6a08c8325a3 "pdflatex"
+  "res.bib" 1764947681 4314 22d6aebec1fdd8e252b79fc1846d992c ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1764946868 "main.tex" "main.pdf" "main" 1764946875
+["pdflatex"] 1764947739 "main.tex" "main.pdf" "main" 1764947746
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -346,10 +346,10 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1676992302 2826441 41a0a4f85b64046dbeb45dba58f72504 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "BIRAZIONALE/E2.tex" 1762945443 16121 a40b2da05d0d2ff74f7790438993aac4 ""
-  "BIRAZIONALE/E3.tex" 1764940039 13757 64b2a5aa82407ba6ea2f72d16c4405d3 ""
-  "BIRAZIONALE/E4.tex" 1764317449 14088 c1bbf055d1c47319e60a184bc86df20a ""
-  "BIRAZIONALE/E5.tex" 1764946075 10721 951487271003f316af9fd2afd14c469a ""
+  "BIRAZIONALE/E2.tex" 1764947557 16206 270a69a587fedbfc4d8053213ee3d4e2 ""
+  "BIRAZIONALE/E3.tex" 1764947462 13863 3cbfd404e0f97a70b5be99df7ea81f51 ""
+  "BIRAZIONALE/E4.tex" 1764947387 14213 8a9a1b3cac0e37cca5adb6304af6c5f9 ""
+  "BIRAZIONALE/E5.tex" 1764947720 10881 6245468e45e48680ba8df840f5a5e9e7 ""
   "BRIDGELAND/B1.tex" 1762162219 16898 3d33d1d75feb4ca10a64f3f513279a8e ""
   "BRIDGELAND/B2.tex" 1762295303 15812 1ec2b09d8ec6dc4b1e5561286658fc23 ""
   "BRIDGELAND/B3.tex" 1761056628 16444 3152689816f60ea0d80f63a3e27a4939 ""
@@ -359,12 +359,12 @@
   "MODULI/M1.tex" 1762773333 107 823d87267cc35b847cde2f71183eefc1 ""
   "MODULI/M2.tex" 1762773232 7032 2d172479f16d1fc4c33cd3a79255be7a ""
   "MODULI/M3.tex" 1762783981 7357 fb50055c8dd68fe38df42b28f5754914 ""
-  "main.aux" 1764946875 29506 c66e408c834577633c161d1dc59b7d3c "pdflatex"
-  "main.bbl" 1764946860 16668 1b4c7ff8432ee362db566158b8a2724b "biber main"
-  "main.lol" 1764946875 3170 2b530980c694a56267882cf9d40b62fd "pdflatex"
-  "main.run.xml" 1764946875 2304 c379522ce77bfbfe18f193a50681b39a "pdflatex"
-  "main.tex" 1764946850 4584 b109f0f733dc21b0acc292727d707ae2 ""
-  "main.toc" 1764946875 2846 ac3c300098b458eecc3e312471a2bf78 "pdflatex"
+  "main.aux" 1764947745 30387 e2370a8f6309c4e78304414f7d32b447 "pdflatex"
+  "main.bbl" 1764947733 17607 a9e370768cab4e50fd0e13d2adc92df5 "biber main"
+  "main.lol" 1764947745 3840 be2a0f39cbebfb15722a047c5c7b7f32 "pdflatex"
+  "main.run.xml" 1764947745 2304 c379522ce77bfbfe18f193a50681b39a "pdflatex"
+  "main.tex" 1764947590 4617 d51b997770b224f2961d67975814aa95 ""
+  "main.toc" 1764947745 2846 ac3c300098b458eecc3e312471a2bf78 "pdflatex"
   "shortcuts.sty" 1762950886 8157 01eee6fab4394dfb39233ae8ea49defa ""
   "style.sty" 1764150060 11427 356643742f771257048d8ff37e79ec5b ""
   (generated)

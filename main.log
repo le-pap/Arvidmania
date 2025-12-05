@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.21)  5 DEC 2025 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.21)  5 DEC 2025 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1629,14 +1629,14 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 11
 ]
 Package tocbasic Info: character protrusion at lol deactivated on input line 11
 7.
- (./main.lol)
+ (./main.lol [4
+
+
+])
 \tf@lol=\write6
 \openout6 = `main.lol'.
 
- [4
-
-
-]
+ [5]
 chapter 1.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/20.74'.
@@ -1645,12 +1645,12 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 (./MODULI/M1.tex
-Package marginnote Info: Margin note 5.1 is on absolute page 5 on input line 2.
+Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 2.
 
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
 ) (./MODULI/M2.tex
-Package marginnote Info: Margin note 5.2 is on absolute page 5 on input line 2.
+Package marginnote Info: Margin note 6.2 is on absolute page 6 on input line 2.
 
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
@@ -1680,15 +1680,18 @@ ML/lmm/m/it/10 G$ \T1/lmr/m/n/10 (-20) ta-le che $\OMS/lmsy/m/n/10 F \OT1/lmr/m
 
 
 
-] [2]) (./MODULI/M3.tex
-Package marginnote Info: Margin note 7.1 is on absolute page 7 on input line 2.
+]
+Package marginnote Info: Using workaround for absolute page number on input lin
+e 54.
+ [2]) (./MODULI/M3.tex
+Package marginnote Info: Margin note 9.1 is on absolute page 9 on input line 2.
 
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
  [3] [4]) [5]
 chapter 2.
 (./BRIDGELAND/B1.tex
-Package marginnote Info: Margin note 10.1 is on absolute page 10 on input line 
+Package marginnote Info: Margin note 12.1 is on absolute page 12 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
@@ -1703,18 +1706,18 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
 (./BRIDGELAND/B2.tex
-Package marginnote Info: Margin note 15.1 is on absolute page 15 on input line 
+Package marginnote Info: Margin note 17.1 is on absolute page 17 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
  [11] [12] [13] [14] [15]) (./BRIDGELAND/B3.tex
-Package marginnote Info: Margin note 20.1 is on absolute page 20 on input line 
+Package marginnote Info: Margin note 22.1 is on absolute page 22 on input line 
 3.
 Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
  [16]
 [17] [18] [19]) (./BRIDGELAND/B4.tex
-Package marginnote Info: Margin note 24.1 is on absolute page 24 on input line 
+Package marginnote Info: Margin note 26.1 is on absolute page 26 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
@@ -1726,42 +1729,47 @@ lmm/m/it/10 X$ \T1/lmr/m/n/10 (-20) una va-rie-tà pro-iet-ti-va li-scia, la cop
  []
 
 [23] [24]) (./BRIDGELAND/B5.tex
-Package marginnote Info: Margin note 29.1 is on absolute page 29 on input line 
+Package marginnote Info: Margin note 31.1 is on absolute page 31 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
  [25] [26] [27] [28] [29] [30] [31])
 (./BRIDGELAND/B6.tex
-Package marginnote Info: Margin note 36.1 is on absolute page 36 on input line 
+Package marginnote Info: Margin note 38.1 is on absolute page 38 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
  [32] [33] [34]) [35]
 chapter 3.
 (./BIRAZIONALE/E2.tex
-Package marginnote Info: Margin note 40.1 is on absolute page 40 on input line 
+Package marginnote Info: Margin note 42.1 is on absolute page 42 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
  [36
 
 
-] [37] [38] [39] [40]) (./BIRAZIONALE/E3.tex [41]
+] [37] [38] [39] [40]) (./BIRAZIONALE/E3.tex
+Package marginnote Info: Margin note 47.1 is on absolute page 47 on input line 
+2.
+Package marginnote Info: right page because not two side mode on input line 2.
+Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
+ [41]
 [42] [43] [44]) (./BIRAZIONALE/E4.tex
-Package marginnote Info: Margin note 49.1 is on absolute page 49 on input line 
+Package marginnote Info: Margin note 51.1 is on absolute page 51 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
- [45] [46] [47] [48] [49])
+ [45] [46] [47] [48])
 (./BIRAZIONALE/E5.tex
-Package marginnote Info: Margin note 54.1 is on absolute page 54 on input line 
+Package marginnote Info: Margin note 55.1 is on absolute page 55 on input line 
 2.
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 2.
- [50] [51] [52]) [53]
+ [49] [50] [51] [52]) [53]
 chapter without number
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-64.
+66.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1781,10 +1789,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48289 strings out of 478268
- 998931 string characters out of 5846347
- 1838553 words of memory out of 5000000
- 64804 multiletter control sequences out of 15000+600000
+ 48295 strings out of 478268
+ 999062 string characters out of 5846347
+ 1838604 words of memory out of 5000000
+ 64808 multiletter control sequences out of 15000+600000
  623956 words of font info for 335 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  140i,20n,134p,10599b,1753s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1825,10 +1833,10 @@ s/type1/public/amsfonts/symbols/msbm5.pfb></usr/local/texlive/2022/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2022/texmf-dis
 t/fonts/type1/public/old-arrows/oasy10.pfb></usr/local/texlive/2022/texmf-dist/
 fonts/type1/public/old-arrows/oasy7.pfb>
-Output written on main.pdf (59 pages, 812108 bytes).
+Output written on main.pdf (60 pages, 812667 bytes).
 PDF statistics:
- 1161 PDF objects out of 1200 (max. 8388607)
- 1017 compressed objects within 11 object streams
- 449 named destinations out of 1000 (max. 500000)
+ 1169 PDF objects out of 1200 (max. 8388607)
+ 1024 compressed objects within 11 object streams
+ 451 named destinations out of 1000 (max. 500000)
  72461 words of extra memory for PDF output out of 74296 (max. 10000000)
 

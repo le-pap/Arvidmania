@@ -22,10 +22,12 @@
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{.}\par 
 \addvspace {10\p@ }
 \contentsline {chapter}{\nonumberline Lezione~10 (12~\DTMmonthname {11},~2025)}{36}{chapter.3}%
-\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{.}\par 
-\contentsline {chapter}{\nonumberline Lezione~11 (26~\DTMmonthname {11},~2025)}{45}{equation.3.35.0.4}%
-\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{.}\par 
-\contentsline {chapter}{\nonumberline Lezione~12 (5~\DTMmonthname {12},~2025)}{50}{equation.3.63.0.1}%
-\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{.}\par 
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Strumenti di base: la successione esponenziale, forme differenziali razionali. Esempi.}\par 
+\contentsline {chapter}{\nonumberline Lezione~11 (19~\DTMmonthname {11},~2025)}{41}{equation.3.22.0.5}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Invarianza birazionale dei numeri di Hodge. Introduzione alla teoria dell'intersezione tra curve e divisori.}\par 
+\contentsline {chapter}{\nonumberline Lezione~12 (26~\DTMmonthname {11},~2025)}{45}{equation.3.35.0.4}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Definizione di varietà unirigata e razionalmente connessa, caratterizzazione di tali proprietà. Primi esempi di contrazioni.}\par 
+\contentsline {chapter}{\nonumberline Lezione~13 (5~\DTMmonthname {12},~2025)}{49}{equation.3.63.0.1}%
+\vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Divisori semi-ampi e teorema delle contrazioni associato a tali divisori. Studio delle superfici di Del Pezzo in base ai raggi estremali del loro cono di Mori.}\par 
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
