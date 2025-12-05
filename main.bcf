@@ -2351,8 +2351,27 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">B-stab-k3</bcf:citekey>
+    <bcf:citekey order="2">K-hms</bcf:citekey>
+    <bcf:citekey order="3">D-Dbranes</bcf:citekey>
+    <bcf:citekey order="4">B</bcf:citekey>
+    <bcf:citekey order="5">B-stab-k3</bcf:citekey>
+    <bcf:citekey order="6">OKADA</bcf:citekey>
+    <bcf:citekey order="7">B-stab-k3</bcf:citekey>
+    <bcf:citekey order="8">B-stab-k3</bcf:citekey>
+    <bcf:citekey order="9">CNY-K3</bcf:citekey>
+    <bcf:citekey order="10">BM-MMP</bcf:citekey>
+    <bcf:citekey order="11">NY-MMP</bcf:citekey>
+    <bcf:citekey order="12">CHN-WBN-survey</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
-    <bcf:citekey order="2">B-stab-k3</bcf:citekey>
+    <bcf:citekey order="13">B-stab-k3</bcf:citekey>
+    <bcf:citekey order="14">K-hms</bcf:citekey>
+    <bcf:citekey order="15">D-Dbranes</bcf:citekey>
+    <bcf:citekey order="16">B</bcf:citekey>
+    <bcf:citekey order="17">OKADA</bcf:citekey>
+    <bcf:citekey order="18">CNY-K3</bcf:citekey>
+    <bcf:citekey order="19">BM-MMP</bcf:citekey>
+    <bcf:citekey order="20">NY-MMP</bcf:citekey>
+    <bcf:citekey order="21">CHN-WBN-survey</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
@@ -2387,4 +2406,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="anyt/global//global/global"
+                type="entry"
+                sortingtemplatename="anyt"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

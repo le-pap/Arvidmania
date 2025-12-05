@@ -26,18 +26,18 @@
            familyi={B\bibinitperiod},
            given={Arend},
            giveni={A\bibinitperiod}}}%
-        {{hash=a2ad7cab51b78198328f866f02d5f4a2}{%
-           family={Macrı̀},
+        {{hash=dde20fab46679ee12f019e675e562f39}{%
+           family={Macrì},
            familyi={M\bibinitperiod},
            given={Emanuele},
            giveni={E\bibinitperiod}}}%
       }
-      \strng{namehash}{a26a196cfe9ca622f62e0becfe82f6ff}
-      \strng{fullhash}{a26a196cfe9ca622f62e0becfe82f6ff}
-      \strng{bibnamehash}{a26a196cfe9ca622f62e0becfe82f6ff}
-      \strng{authorbibnamehash}{a26a196cfe9ca622f62e0becfe82f6ff}
-      \strng{authornamehash}{a26a196cfe9ca622f62e0becfe82f6ff}
-      \strng{authorfullhash}{a26a196cfe9ca622f62e0becfe82f6ff}
+      \strng{namehash}{4bcf1c10c49d796072cd79e4bedaca95}
+      \strng{fullhash}{4bcf1c10c49d796072cd79e4bedaca95}
+      \strng{bibnamehash}{4bcf1c10c49d796072cd79e4bedaca95}
+      \strng{authorbibnamehash}{4bcf1c10c49d796072cd79e4bedaca95}
+      \strng{authornamehash}{4bcf1c10c49d796072cd79e4bedaca95}
+      \strng{authorfullhash}{4bcf1c10c49d796072cd79e4bedaca95}
       \field{labelalpha}{BM14}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
@@ -45,7 +45,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Inventiones Mathematicae}
       \field{number}{3}
-      \field{title}{{MMP} for moduli of sheaves on {{\(K3\)}}s via wall-crossing: nef and movable cones, {Lagrangian} fibrations}
+      \field{title}{{MMP} for moduli of sheaves on K3s via wall-crossing: nef and movable cones, {Lagrangian} fibrations}
       \field{volume}{198}
       \field{year}{2014}
       \verb{doi}
@@ -107,7 +107,7 @@
       \field{issn}{0012-7094}
       \field{journaltitle}{Duke Mathematical Journal}
       \field{number}{2}
-      \field{title}{Stability conditions on {{\(K3\)}} surfaces}
+      \field{title}{Stability conditions on K3 surfaces}
       \field{volume}{141}
       \field{year}{2008}
       \field{pages}{241\bibrangedash 291}
@@ -167,18 +167,18 @@
            familyi={N\bibinitperiod},
            given={Howard},
            giveni={H\bibinitperiod}}}%
-        {{hash=01ce46b0bff4a5a0bdd6bec94ae889f0}{%
+        {{hash=bd669ae989d3d6fa0f43e9b3dcd81196}{%
            family={Yoshioka},
            familyi={Y\bibinitperiod},
-           given={Kōta},
+           given={Kota},
            giveni={K\bibinitperiod}}}%
       }
-      \strng{namehash}{db742768b128c1b816e9f5930355e1c6}
-      \strng{fullhash}{db742768b128c1b816e9f5930355e1c6}
-      \strng{bibnamehash}{db742768b128c1b816e9f5930355e1c6}
-      \strng{authorbibnamehash}{db742768b128c1b816e9f5930355e1c6}
-      \strng{authornamehash}{db742768b128c1b816e9f5930355e1c6}
-      \strng{authorfullhash}{db742768b128c1b816e9f5930355e1c6}
+      \strng{namehash}{fff35020fd2cff225d4d6181925d24ee}
+      \strng{fullhash}{fff35020fd2cff225d4d6181925d24ee}
+      \strng{bibnamehash}{fff35020fd2cff225d4d6181925d24ee}
+      \strng{authorbibnamehash}{fff35020fd2cff225d4d6181925d24ee}
+      \strng{authornamehash}{fff35020fd2cff225d4d6181925d24ee}
+      \strng{authorfullhash}{fff35020fd2cff225d4d6181925d24ee}
       \field{labelalpha}{CNY23}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
@@ -186,7 +186,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Advances in Mathematics}
       \field{note}{Id/No 109102}
-      \field{title}{The cohomology of the general stable sheaf on a {{\(K3\)}} surface}
+      \field{title}{The cohomology of the general stable sheaf on a K3 surface}
       \field{volume}{426}
       \field{year}{2023}
       \verb{doi}
@@ -297,7 +297,7 @@
            giveni={M\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Basel: Birkhäuser}%
+        {Basel: Birkhauser}%
       }
       \strng{namehash}{cf27d9e4bd394efedf47095891bb2927}
       \strng{fullhash}{cf27d9e4bd394efedf47095891bb2927}
@@ -310,7 +310,7 @@
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the international congress of mathematicians, ICM 94, August 3-11, 1994, Zürich, Switzerland. Vol. I}
+      \field{booktitle}{Proceedings of the international congress of mathematicians, ICM 94, August 3-11, 1994, Zurich, Switzerland. Vol. I}
       \field{isbn}{3-7643-5153-5}
       \field{title}{Homological algebra of mirror symmetry}
       \field{year}{1995}
@@ -319,8 +319,8 @@
     \endentry
     \entry{MS-lectures-bridgeland}{incollection}{}
       \name{author}{2}{}{%
-        {{hash=a2ad7cab51b78198328f866f02d5f4a2}{%
-           family={Macrı̀},
+        {{hash=dde20fab46679ee12f019e675e562f39}{%
+           family={Macrì},
            familyi={M\bibinitperiod},
            given={Emanuele},
            giveni={E\bibinitperiod}}}%
@@ -333,12 +333,12 @@
       \list{publisher}{1}{%
         {Cham: Springer}%
       }
-      \strng{namehash}{3282db34111f09aa85757828d083ccc5}
-      \strng{fullhash}{3282db34111f09aa85757828d083ccc5}
-      \strng{bibnamehash}{3282db34111f09aa85757828d083ccc5}
-      \strng{authorbibnamehash}{3282db34111f09aa85757828d083ccc5}
-      \strng{authornamehash}{3282db34111f09aa85757828d083ccc5}
-      \strng{authorfullhash}{3282db34111f09aa85757828d083ccc5}
+      \strng{namehash}{e288ec8c65cacd65c9abe07f0a9e6567}
+      \strng{fullhash}{e288ec8c65cacd65c9abe07f0a9e6567}
+      \strng{bibnamehash}{e288ec8c65cacd65c9abe07f0a9e6567}
+      \strng{authorbibnamehash}{e288ec8c65cacd65c9abe07f0a9e6567}
+      \strng{authornamehash}{e288ec8c65cacd65c9abe07f0a9e6567}
+      \strng{authorfullhash}{e288ec8c65cacd65c9abe07f0a9e6567}
       \field{labelalpha}{MS17}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
@@ -362,18 +362,18 @@
            familyi={N\bibinitperiod},
            given={Howard},
            giveni={H\bibinitperiod}}}%
-        {{hash=01ce46b0bff4a5a0bdd6bec94ae889f0}{%
+        {{hash=bd669ae989d3d6fa0f43e9b3dcd81196}{%
            family={Yoshioka},
            familyi={Y\bibinitperiod},
-           given={Kōta},
+           given={Kota},
            giveni={K\bibinitperiod}}}%
       }
-      \strng{namehash}{8508f37fbcf5325b244037beb3c75f4b}
-      \strng{fullhash}{8508f37fbcf5325b244037beb3c75f4b}
-      \strng{bibnamehash}{8508f37fbcf5325b244037beb3c75f4b}
-      \strng{authorbibnamehash}{8508f37fbcf5325b244037beb3c75f4b}
-      \strng{authornamehash}{8508f37fbcf5325b244037beb3c75f4b}
-      \strng{authorfullhash}{8508f37fbcf5325b244037beb3c75f4b}
+      \strng{namehash}{248e73505fdb333a652002f52c283ec7}
+      \strng{fullhash}{248e73505fdb333a652002f52c283ec7}
+      \strng{bibnamehash}{248e73505fdb333a652002f52c283ec7}
+      \strng{authorbibnamehash}{248e73505fdb333a652002f52c283ec7}
+      \strng{authornamehash}{248e73505fdb333a652002f52c283ec7}
+      \strng{authorfullhash}{248e73505fdb333a652002f52c283ec7}
       \field{labelalpha}{NY20}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}

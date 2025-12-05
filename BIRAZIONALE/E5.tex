@@ -1,0 +1,219 @@
+
+	\lecture[.]{2025-12-05}
+	
+		\section{Divisori semi-ampi}
+		
+		In geometria birazionale si usano tanto perché permettono di ottenere delle \textbf{contrazioni}.
+		Sia $D$ divisore di Cartier su $X$, varieta proiettiva.
+		Se $H^{0}(X, \Oo_{X}(D)) \ne 0$ ha dimensione $N+1$, allora possiamo associargli una mappa razionale
+		\begin{equation}
+			\phi_{D} : X \dashrightarrow \PP(H^{0}(X, \Oo_{X}(D))) \simeq \PP^{N}\,,
+			\quad \phi_{D}(x) := [s_{0}(x) : \dots : s_{N}(x)]\,,
+		\end{equation}
+		dove $s_{j}$ formano una base dello spazio delle sezioni globali di $D$.
+		Dai primi corsi di geometria algebrica sappiamo che $\phi_{D}$ è un morfismo regolare
+		se e solo se $\Oo_{X}(D)$ è globalmente generato, o equivalentemente se $\Oo_{X}(D)$
+		non ha punti base, e scriveremo $\mathrm{Bs} \lvert D \rvert = \emptyset$.
+		\begin{proof}[Idea]
+			$D$  è ``\emph{positivo}'' se $\phi_{D}$ ha delle buone proprietà
+			(ad esempio $D$ ampio, $D$ molto ampio...). 
+			In geometria birazionale si lavora \emph{asintoticamente}, 
+			i.e. si considera $mD$ , con $m \gge 0$.
+			Le proprietà di positività tendono a aumentare al crescere di $m$.
+		\end{proof}
+		
+		\begin{ex}
+			Sia $D$ un divisore effettivo. Allora
+			\begin{equation}
+				\Oo_{X}(2D) \simeq \Oo_{X}(D) \otimes \Oo_{X}(D)
+			\end{equation}
+			e il prodotto delle sezioni induce un'immersione
+			\begin{equation}
+				\mathrm{Sym}^{2}H^{2}(X, \Oo_{X}(D)) \hookrightarrow H^{0}(X,\Oo_{X}(2D))\,.
+			\end{equation}
+			Osserviamo che $\mathrm{Bs} \lvert 2D \rvert \subset \mathrm{Bs} \lvert D \rvert$,
+			poiché se $x_{0} \in \mathrm{Bs} \lvert 2D \rvert$, allora ogni $s \in H^{0}(X, \Oo_{X}(D))$
+			dà
+			\begin{equation}
+				s^{2}(x_{0}) = s(x_{0})^{2} = 0 \quad \implies \quad  s(x_{0}) = 0 
+				\quad \implies  \quad x_{0} \in \mathrm{Bs} \lvert D \rvert\,.
+			\end{equation}
+		\end{ex}
+		
+		\begin{df}
+			Un divisore $D$ è \textbf{semi-ampio} se esiste 
+			$m \in \N$ tale che $\mathrm{Bs} \lvert mD \rvert = \emptyset$.
+		\end{df}
+		
+		\begin{thm}[\textbf{delle fibrazioni semi-ampie}]\label{thm:cntr-semi}
+				Sia $X$ varietà proiettiva normale e $D$ divisore semi-ampio su $X$.
+				Allora esiste una \textbf{contrazione} $\Phi:X \to Y$, con $Y$ varietà normale proietitva,
+				tale che, per ogni $m \gge 0$ per cui $\mathrm{Bs} \lvert D \rvert = \emptyset$,
+				si ha $Y_{m} := \overline{\phi_{mD}(X)} = Y$ e che $\phi_{mD} = \Phi$.
+				Inoltre, esiste un divisore ampio $A$ su $Y$ tale che $\phi^{*}A = e_{0}D$,
+				dove $e_{0}$ è il più piccolo esponente che divide ogni $m \in \N$ per cui
+				$\mathrm{Bs} \lvert mD \rvert = \emptyset$.
+		\end{thm}
+		
+		Sia $X$ proiettiva, e consideriamo il prodotto di intersezione $- \cdot -$ 
+		 in \eqref{eq:intersezione}. Ogni divisore $D$ definisce in $N_{1}(X)$ l'iperpiano ortogonale
+		  \begin{equation}
+		  	D^{\perp} = \Set{ C \in N_{1}(X) \, | \, D \cdot C = 0} = \ker(D \cdot - )\,.
+		  \end{equation}
+		  
+		 \begin{thm}[\textbf{Criterio di ampiezza di Kleiman}]\label{thm:kleiman}
+		 	Un divisore di Cartier $D$ su $X$ è ampio se e solo se vale $D \cdot z > 0$,
+		 	per ogni $z \in \overline{NE}(X) \setminus \{0\}$.
+		 \end{thm}
+		 
+		 \begin{oss}
+		 	Se $D$ è nef, ma non ampio, allora $D^{\perp}$ intersecca $\overline{NE}(X)$ nella
+		 	sa frontiera; in realtà vale un criterio analogo di quello di Kleiman, 
+		 	ma con la disuguaglianza ``$D \cdot z \ge 0$'', noto come \textbf{criterio di Nakai-Moishezon}.
+		 \end{oss}
+		
+		\begin{thm}[\textbf{del cono di Mori}]\label{thm:cono-Mori}
+			Sia $X$ una varietà liscia proiettiva. Esiste una famiglia numerabile di curve razionali
+			$\Set{ C_{n} }_{n \in \N}$ tale che $0 < -K_{X} \cdot C_{n} \le \dim X +1$ e
+			\begin{equation}
+				\overline{NE}(X) = \Set{ z \in \overline{NE}(X) \, | \, K_{X} \cdot z \ge 0 }
+				+ \sum_{n \in \N} \R^{+}[C_{n}]\,.
+			\end{equation}
+			Le semirette $\R^{+}[C_{n}]$ sono tutti i raggi estremali, $[C_{n}]$ sono
+			generatori primitivi e vivono in 
+			$\Set{ z \in N_{1}(X) \, | \, K_{X} \cdot z < 0}$. Questi raggi sono
+			localmente discreti in questo semispazio e possono accumularsi \emph{solamente}
+			vicino all'iperpiano $K_{X}^{\perp}$.
+		\end{thm}
+		
+		
+		\begin{cor}
+			Esiste sempre una \textbf{contrazione} $X \to Z$ che contrae un raggio estremale.
+		\end{cor}
+		
+		\subsection{Il caso delle superfici}
+			L'obiettivo di questa sezione è quello di classificare le contrazioni di raggi estremali
+			nel caso di $X$ una superficie e, in seguito, fornire esempi su $\overline{NE}(X)$
+			nel caso $X$ varietà di Fano.
+			
+			Siano $C_{n}$ le curve razionali in $X$ fornite dal \textbf{Teorema del cono di Mori~\ref{thm:cono-Mori}} quindi in particolare
+			\begin{equation}
+				0 < - K_{X} \cdot C_{i} \le 3\,,
+			\end{equation}
+			e usando la formula del genere $2g(C_{n})-2 = (K_{X} + C_{n}) \cdot C_{n} = K_{X} \cdot K_{X}+ C^{2}_{n}$ scopriamo che
+			\begin{equation}
+				-1 \le C_{n}^{2} \le 1\,.
+			\end{equation}
+			
+			\begin{itemize}
+				\item[\textbf{Caso 1}:] Supponiamo che $C^{2}_{n} = 0$. Allora $X$ è una superficie
+				rigata $X \to C$, con $C$ una curva proiettiva liscia e fibre $F \simeq \PP^{1}$,
+				$\rho_{X} = 2$.
+				\begin{proof}
+					Sia $H$ ampio su $X$. Dal \textbf{Criterio di Kleiman~\ref{thm:kleiman}},
+					sappiamo che $H \cdot C > 0$, allora se $m > \frac{K_{X} \cdot H}{C \cdot H}$
+					segue che
+					\begin{equation}
+						(K_{X} - mC) \cdot H < 0\,.
+					\end{equation}
+					Per ampiezza di $H$, deduciamo che $(K_{X} - mC)$ non può
+					essere effettivo, quindi per dualità di Serre
+					\begin{equation}
+						0 = H^{0}(X, (K_{X} - mC)) = H^{2}(X,mC)\,.
+					\end{equation}
+					La formula di Riemann-Roch ci dice che
+					\begin{equation}
+						\chi(X,C) = \frac{C^{2} -  C \cdot K_{X}}{2} + \chi(X, \Oo_{X})
+					\end{equation}
+					che quindi si riscrive come
+					\begin{equation}
+						h^{0}(mC) - h^{1}(mC) = m + \chi(X, \Oo_{X})\,.
+					\end{equation}
+					Quindi esiste un $m \in \N$ tale che $1 \ge h^{0}((m-1)C) < h^{0}(mC)$,
+					da cui concludiamo $\dim \lvert mC \rvert \ge 1$.
+					Consideriamo la successione esatta
+					\begin{equation}
+						0 \longrightarrow H^{0}(X, (m-1)C) \longrightarrow  H^{0}(X, mC) \overset{r}{\longrightarrow} H^{0}(C, mC)
+					\end{equation}
+					e notiamo che $\deg \Oo_{C}(mC) = mC^{2} = 0$, ma essendo $C$ razionale
+					segue che $\Oo_{C}(mC) \simeq \Oo_{C}$. Ma allora $H^{0}(C, mC) = \C$,
+					e la mappa di restrizione $r$ è surgettiva, 
+					quindi $\lvert mC \rvert$ non ha punti base.
+					Ma $C^{2}=0$ segue anche che non ci sono punti base in $X \setminus C$
+					(altrimenti in questo punto base sarebbe contato dall'intersezione? Noccapito),
+					e quindi concludiamo che $\Oo_{X}(mC)$ è globalmente generato.
+					Per definizione, $C$ è semi-ampio e quindi per il \textbf{Teorema~\ref{thm:cntr-semi}}
+					esiste una contrazione $\Phi : X \to Y_{m}$ per $m \gge 0$ tale che 
+					$mC=\Phi^{*}A$ per un opportuno divisore ampio $A$ su $Y_{m}$
+					e $\Phi^{*}A \cdot F=0$ se e solo se $F$ è contratta da $\Phi$.
+					Poiché $C$ non è big, allora $Y_{m}$ non può essere una superficie,
+					allora $Y_{m}$ è una curva proiettiva liscia e $\Phi$ contrae $C$, poiché
+					\begin{equation}
+						\Phi^{*}A \cdot C= mC \cdot C = 0\,.	
+\end{equation}										
+					La generica fibra $F$ di $\Phi$ è liscia e $F \equiv aC$, con $a>0$.
+					So che $-K_{X} \cdot C = 2$, quindi $K_{X} \cdot F < 0$ e,
+					essendo $F$ fibra con $F^{2}=0$, allora $K_{F} = (K_{X} + F)\vert_{F}$ è
+					anti-ampio, da cui segue $F \simeq \PP^{1}$. Per concludere che \emph{tutte}
+					le fibre sono $\PP^{1}$, 
+					da $-K_{X} \cdot F = -K_{X} \cdot aC = 2 = -K_{X} \cdot C$,
+					quindi $a=1$ e $F \equiv C$. Ma siccome $[C]$ genera un raggio estremale, in particolare non  è divisibile in $N_{1}(X)$, allora tutte le fibre sono ridotte e irriducibili.
+				\end{proof}
+				
+				\item[\textbf{Caso 2}] Supponiamo che $C_{n} \simeq \PP^{1}$, generatore di un raggio
+				estremale, abbia $C^{2}_{n} = 1$ Allora $\rho_{X}=1$ e $X \simeq \PP^{2}$.
+				\begin{proof}
+					Dato $H$ ampio su $X$, allora consideriamo l'aperto
+					\begin{equation}
+						U := \Set{ z \in N_{1}(X) \, | \, z^{2} > 0, \, H \cdot z > 0}\,.
+					\end{equation}
+					Notiamo che $U$ contiene gli $1$-cicli effettivi con quto-intersezione positiva,
+					in particolare $[C_{n}] \in U$. Ma essendo $[C_{n}]$ estremale,
+					può trovarsi nell'interno di $\overset{NE}(X)$ solo se $\overset{NE}(X) = \R_{+}[C_{n}]$, da cui $\rho_{X}=1$. Ma allora esiste $a \in \N$ tale che $-K_{X} \equiv aC$,
+					e intersecando con $C$ abbiamo
+					\begin{equation}
+						3 = -K_{X} \cdot C = a C^{2} = a \quad \implies \quad a =3\,.
+					\end{equation}
+					Allora $-K_{X} \equiv 3C$ è ampio, di grado $(-K_{X})^{2} = 9$,
+					ma la Del Pezzo di grado $9$ è $X \simeq \PP^{2}$.
+				\end{proof}
+				
+				\item[\textbf{Caso 3}] Sia $C$ una curva razionale che genera un raggio estremale
+				e $C^{2}=-1$. Per il \textbf{Teorema di Castelnuovo} sappiamo che
+				$X \simeq \mathrm{Bl}_{p}X'$, per una qualche superficie liscia $X'$,
+				e $C$ è il divisore eccezionale del blow-up.
+				\begin{proof}
+					L'idea è quella di prendere $H$ un divisore molto ampio e,
+					a meno di sostituire $H$ con un multiplo,
+					possiamo supporre che $h^{1}(H) = 0$.
+					Sia $k = H \cdot C > 0$, e si noti che $D := H + kC$
+					è tale che $D \cdot C=0$. Si dimostra che $\Oo_{X}(D)$ è semi-ampio
+					ed è il divisore che dà la contrazione.
+					Per i dettagli, scritti molto bene, si veda [Hartshorne, V, Theorem~{5.12}].
+				\end{proof}
+			\end{itemize}
+		
+		
+		\begin{ex}
+			Se $X$ è una varietà di Fano, allora dal \textbf{Teorema del cono~\ref{thm:cono-Mori}}
+			si ha
+			\begin{equation}
+				\overline{NE}(X) = NE(X) = \sum_{n} \R_{+}[C_{n}]
+			\end{equation}
+			e, in particolare, siccome $-K_{X}$ è ampio, 
+			non esiste la parte misteriosa $K_{X} \cdot - > 0$ del cono di Mori,
+			su cui i raggi estremali \emph{potrebbero accumularsi};
+			in altri termini, i raggi estremali sono una quantità finita.
+			
+			Supponiamo $\dim X = 2$, i.e. $X$ superficie di Del Pezzo.
+			Da quanto osservato prima, se $C_{n}$ sono curve razionali che generano i raggi estremali,
+			allora ho $3$ possibilità: se esiste $C_{n}$ tale che...
+			\begin{enumerate}[label=\roman*)]
+				\item abbia $C_{n}^{2}=1$, allora $X \simeq \PP^{2}$;
+				\item abbia $C_{n}^{2}=0$,	allora $X$ è rigata, 
+				quindi può essere $X \simeq \PP^{1} \times \PP^{1}$, 
+				oppure è la proiezione $X \simeq \mathrm{Bl}_{p}\PP^{2} \to \PP^{1}$;
+				\item abbia $C_{n}^{2}=-1$, allora $X \simeq \mathrm{Bl}_{p_{1}, \dots, p_{r}} \PP^{2}$,
+				con $r \le 8$.
+			\end{enumerate}
+		\end{ex}
